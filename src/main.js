@@ -1,18 +1,19 @@
 import { Application } from "@splinetool/runtime";
 
-const canvas = document.getElementById("canvas3d");
-const contentWrapper = document.getElementById("content-wrapper");
+document.addEventListener("DOMContentLoaded", () => {
+  const canvas = document.getElementById("canvas3d");
+  const formContainer = document.querySelector(".form-container");
 
-// Hide the content initially
-contentWrapper.style.display = "none";
-
-const app = new Application(canvas);
-app
-  .load("https://prod.spline.design/hDq-udgulNZRbaFB/scene.splinecode")
-  .then(() => {
-    // When the canvas is fully loaded, display the content
-    contentWrapper.style.display = "block";
-  })
-  .catch((error) => {
-    console.error("Error loading canvas:", error);
-  });
+  const app = new Application(canvas);
+  app
+    .load("https://prod.spline.design/hDq-udgulNZRbaFB/scene.splinecode")
+    .then(() => {
+      // Defer the display of the form
+      setTimeout(() => {
+        formContainer.style.display = "flex";
+      }, 2000); // Adjust the delay as needed
+    })
+    .catch((error) => {
+      console.error("Error loading canvas:", error);
+    });
+});
