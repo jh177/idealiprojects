@@ -57,10 +57,26 @@ canvas {
 
 .centered {
     position: relative;
-    width: 100%;
+    width: 70vw;
+    margin: 0 auto;
     text-align: center;
     margin-top: 50vh; /* Adjust the margin-top to center the canvas vertically */
     transform: translateY(-50%); /* Center the canvas vertically */
+}
+
+.scroll-down-btn {
+    visibility: hidden;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.scroll-down-btn:hover {
+    background-color: darkgoldenrod;
 }
 
 /* Header */
