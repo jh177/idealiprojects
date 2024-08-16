@@ -9,8 +9,25 @@
   <title>Ideali Projects</title>
 </head>
 <body>
+  <header>
+    <div class="header-container">
+      <img class="logo" src="./images/ideali-logo-banner.png" alt="Ideali Logo">
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="#about-container">About</a></li>
+          <li><a href="#team-container">Principal</a></li>
+          <li><a href="#projects-container">Past & Current Work</a></li>
+          <li><a href="#form-container">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <i class="fas fa-bars"></i> <!-- FontAwesome hamburger icon -->
+      </div>
+    </div>
+  </header>
+
   <div id="content-wrapper">
-    <div class="centered">
+    <div class="canvas-container">
       <canvas id="canvas3d"></canvas>
       <!-- Import maps polyfill -->
       <!-- Remove this when import maps will be widely supported -->
@@ -22,12 +39,55 @@
           }
         }
       </script>
-      <button id="scroll-down-btn" class="scroll-down-btn"><i class="fas fa-chevron-down"></i></button>
     </div>
 
-    <div class="form-container" style="display: none;">
-      <img class="logo" src="./images/ideali-logo-banner.png" alt="Ideali Logo" class="logo">
-      <p class="form-text">Get in touch with us</p>
+    <div class="about-container" id="about-container">
+      <h2 class="section-title">About Us</h2>
+      <p class="content-text">
+        Founded in 2024, Ideali is driven by a passion for discovering and amplifying unique content that resonates on both
+        local and global scales. Our mission is to bridge cultural nuances with universal appeal, showcasing stories, ideas, and
+        perspectives that transcend borders. We believe in the power of cultural diversity to create compelling narratives that
+        inspire, engage, and unite audiences worldwide. At Ideali, we are dedicated to fostering creativity and collaboration,
+        bringing to light film, TV, and digital content that not only reflects the richness of various cultures but also has the potential to shape
+        conversations on a global platform.
+      </p>
+    </div>
+
+    <div class="team-container" id="team-container">
+      <h2 class="section-title">Principal</h2>
+      <div class="team-content">
+        <img src="./images/profile-img-xian.jpeg" alt="Principal Headshot" class="headshot">
+        <p class="content-text">
+          Xian Li is a multicultural creative executive and producer with over 15 years of experience in the global film and TV
+          industry. With expertise in both domestic and international markets, Xian is passionate about identifying and
+          elevating content with cultural specificities and global reach.
+          Before founding Ideali Projects, Xian had extensive experience as a buyer - as Executive Vice President, Film & TV for
+          SK Global Entertainment, and as Head of Asia for Twentieth Century Fox International. She has spearheaded development
+          and production efforts for years, and has an intimate understanding of what studios want from producers. One of Xian’s
+          greatest talents is identifying undervalued Intellectual Properties. Under her leadership, the companies have found
+          IPs from around the world, and produced/financed over 40 award-winning and commercially successful projects.
+          Xian also worked as an executive for Searchlight Pictures and Sony Pictures in Los Angeles. Born and raised in China,
+          she is a proud alumna of Peking University and the University of Southern California.
+        </p>
+      </div>
+
+    <div class="projects-container" id="projects-container">
+      <h2 class="section-title">Past & Current Work</h2>
+      <div class="projects-grid">
+        <img src="./images/poster-sex_and_vanity.jpg" alt="Sex and Vanity Poster" class="project-image">
+        <img src="./images/poster-crazy_rich_asians-2018.jpg" alt="Crazy Rich Asians Poster" class="project-image">
+        <img src="./images/poster-the_grand_budapest_hotel-2014.jpg" alt="The Grand Budapest Hotel Poster"
+          class="project-image">
+        <img src="./images/poster-birdman_2014.jpg" alt="Birdman Poster" class="project-image">
+        <img src="./images/poster-the_wailing-2016.jpg" alt="The Wailing Poster" class="project-image">
+        <img src="./images/poster-dragon_ball_super_broly-2018.jpg" alt="Dragon Ball Super Broly Poster"
+          class="project-image">
+        <img src="./images/poster-final_cut-2022.jpg" alt="Final Cut Poster" class="project-image">
+      </div>
+    </div>
+
+    <div class="form-container" id="form-container" style="display: none;">
+      <h2 class="section-title">Get In Touch With Us</h2>
       <form name="contact" method="POST" data-netlify="true">
         <div class="input-group">
           <input type="text" id="name" name="name" required>
@@ -44,6 +104,11 @@
         <button type="submit"><i class="fa-solid fa-paper-plane"></i> SUBMIT</button>
       </form>
     </div>
+
+    <!-- Scroll Up Button -->
+    <button id="scroll-up-btn" class="scroll-up-btn">
+      <i class="fas fa-chevron-up"></i>
+    </button>
   </div>
 
   <script type="module" src="./src/main.js" defer></script>
