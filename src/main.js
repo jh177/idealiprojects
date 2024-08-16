@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let lastScrollY = window.scrollY;
 
-  // Show or hide scroll up button
+  // Show or hide scroll up button and update URL when scrolling
   window.addEventListener("scroll", () => {
     if (window.scrollY > canvasSection.offsetHeight) {
       scrollUpBtn.style.display = "flex";
@@ -43,11 +43,22 @@ document.addEventListener("DOMContentLoaded", () => {
       // Scrolling up, show the header
       header.style.transform = "translateY(0)";
     }
+
+    // Remove the hash from the URL when scrolled to the top
+    if (window.scrollY === 0) {
+      history.replaceState(null, null, " "); // Remove the hash when at the top
+    }
+
     lastScrollY = window.scrollY;
   });
 
   scrollUpBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Remove the hash from the URL after smooth scroll to top
+    setTimeout(() => {
+      history.replaceState(null, null, " ");
+    }, 500); // Ensures the scroll completes before removing the hash
   });
 
   // Hamburger menu toggle
