@@ -16,7 +16,7 @@
         <ul>
           <li><a href="#about-container">About</a></li>
           <li><a href="#team-container">Principal</a></li>
-          <li><a href="#projects-container">Past & Current Work</a></li>
+          <li><a href="#projects-container">Notable Work</a></li>
           <li><a href="#form-container">Contact</a></li>
         </ul>
       </nav>
@@ -27,7 +27,7 @@
   </header>
 
   <div id="content-wrapper">
-    <div class="canvas-container">
+    <div class="canvas-container fade-section">
       <canvas id="canvas3d"></canvas>
       <!-- Import maps polyfill -->
       <!-- Remove this when import maps will be widely supported -->
@@ -41,7 +41,7 @@
       </script>
     </div>
 
-    <div class="about-container" id="about-container">
+    <div class="about-container fade-section" id="about-container">
       <h2 class="section-title">About Us</h2>
       <p class="content-text">
         Founded in 2024, Ideali is driven by a passion for discovering and amplifying unique content that resonates on both
@@ -53,7 +53,7 @@
       </p>
     </div>
 
-    <div class="team-container" id="team-container">
+    <div class="team-container fade-section" id="team-container">
       <h2 class="section-title">Principal</h2>
       <div class="team-content">
         <img src="./images/profile-img-xian.jpeg" alt="Principal Headshot" class="headshot">
@@ -71,8 +71,8 @@
         </p>
       </div>
 
-    <div class="projects-container" id="projects-container">
-      <h2 class="section-title">Past & Current Work</h2>
+    <div class="projects-container fade-section" id="projects-container">
+      <h2 class="section-title">Notable Work</h2>
       <div class="projects-grid">
         <img src="./images/poster-sex_and_vanity.jpg" alt="Sex and Vanity Poster" class="project-image">
         <img src="./images/poster-crazy_rich_asians-2018.jpg" alt="Crazy Rich Asians Poster" class="project-image">
@@ -86,8 +86,8 @@
       </div>
     </div>
 
-    <div class="form-container" id="form-container" style="display: none;">
-      <h2 class="section-title">Get In Touch With Us</h2>
+    <div class="form-container fade-section" id="form-container" style="display: none;">
+      <h2 class="section-title">Get in Touch with Us</h2>
       <form name="contact" method="POST" data-netlify="true">
         <div class="input-group">
           <input type="text" id="name" name="name" required>

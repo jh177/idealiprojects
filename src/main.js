@@ -68,6 +68,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Select all sections you want to fade
+  const sections = document.querySelectorAll(".fade-section");
+
+  // Options for the Intersection Observer
+  const observerOptions = {
+    threshold: 0.1, // Trigger when 10% of the section is in view
+  };
+
+  // Callback for the Intersection Observer
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in"); // Add fade-in when in view
+      } else {
+        entry.target.classList.remove("fade-in"); // Remove fade-in when out of view
+      }
+    });
+  };
+
+  // Create an Intersection Observer
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  // Observe each section
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+
   // Initialize the Spline canvas
   const app = new Application(canvas);
   app

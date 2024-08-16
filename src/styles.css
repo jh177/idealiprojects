@@ -66,10 +66,10 @@ canvas {
 
 .canvas-container {
     position: relative;
-    width: 70vw;
+    width: 80vw;
     margin: 0 auto;
     text-align: center;
-    margin-top: 50vh; /* Adjust the margin-top to center the canvas vertically */
+    margin-top: 40vh; /* Adjust the margin-top to center the canvas vertically */
     transform: translateY(-50%); /* Center the canvas vertically */
 }
 
@@ -182,15 +182,15 @@ main {
     margin-top: 20px;
 }
 
-/* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+/* Default state for sections (hidden by opacity) */
+.fade-section {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* When a section is in view, this class will be added to fade it in */
+.fade-in {
+    opacity: 1;
 }
 
 /* Section */
@@ -342,6 +342,17 @@ textarea:valid~label
 {
     top:-35px;
     font-size: 14px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 /* Hide the regular navigation on small screens and show the hamburger menu */
