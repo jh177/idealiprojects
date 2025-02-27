@@ -213,6 +213,15 @@ main {
     font-family: "Playfair Display", serif;
 }
 
+.contact-text {
+    color: darkgoldenrod;
+    text-align: center;
+    width: 90%;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-family: "Playfair Display", serif;
+}
+
 .content-text {
     color: #fff;
     text-align: left;
