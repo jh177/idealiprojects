@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("canvas3d");
   const formContainer = document.querySelector(".form-container");
   const aboutContainer = document.querySelector(".about-container");
-  const teamContainer = document.querySelector(".team-container");
-  const projectsContainer = document.querySelector(".projects-container");
+  const filmTVContainer = document.querySelector("#film-tv");
+  const microDramaContainer = document.querySelector("#micro-drama");
   const header = document.querySelector("header");
   const hamburgerMenu = document.getElementById("hamburger-menu");
   const navMenu = document.getElementById("nav-menu");
@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Hide sections by default
   header.style.opacity = "0";
   aboutContainer.style.display = "none";
-  teamContainer.style.display = "none";
-  projectsContainer.style.display = "none";
+  filmTVContainer.style.display = "none";
+  microDramaContainer.style.display = "none";
   formContainer.style.display = "none";
 
   // Scroll up button
@@ -115,8 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
         header.style.opacity = "1"; // Fade-in the header
         header.style.display = "flex";
         aboutContainer.style.display = "flex";
-        teamContainer.style.display = "flex";
-        projectsContainer.style.display = "flex";
+        filmTVContainer.style.display = "flex";
+        microDramaContainer.style.display = "flex";
         formContainer.style.display = "flex";
       }, 2000);
     })
