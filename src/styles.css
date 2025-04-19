@@ -194,7 +194,7 @@ main {
 }
 
 /* Section */
-.about-container, .team-container, .projects-container {
+.about-container, .team-container, .projects-container{
     width: 80%;
     margin: 0 auto;
     padding: 20px;
@@ -248,24 +248,38 @@ main {
     object-fit: cover;
 }
 
-/* Grid for Projects */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    width: 90%;
+.carousel-box {
+    width: 90vw;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
 }
 
-/* Grid for Micro Drama Projects */
-.projects-grid-2 {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    width: 90%;
+.swiper-container {
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.swiper-container:hover {
+    filter: brightness(0.95);
+    transition: filter 0.3s ease;
+}
+
+.swiper-wrapper {
+    align-items: center;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .project-image {
@@ -275,23 +289,45 @@ main {
     border-radius: 10px;
 }
 
-/* Adjust for second row with 4 images */
-.projects-grid img:nth-child(4),
-.projects-grid img:nth-child(5),
-.projects-grid img:nth-child(6),
-.projects-grid img:nth-child(7) {
-    grid-column: span 1;
-    /* Ensure each image takes one column */
+.swiper-button-prev,
+.swiper-button-next {
+    color: darkgoldenrod;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    position: absolute;
 }
 
-/* Adjust for second row with 5 images */
-.projects-grid-2 img:nth-child(6),
-.projects-grid-2 img:nth-child(7),
-.projects-grid-2 img:nth-child(8),
-.projects-grid-2 img:nth-child(9),
-.projects-grid-2 img:nth-child(10) {
-    grid-column: span 1;
-    /* Ensure each image takes one column */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 20px;
+}
+
+.film-tv-prev,
+.micro-drama-prev {
+    left: -10px;
+}
+
+.film-tv-next,
+.micro-drama-next {
+    right: -10px;
+}
+
+.social-icons {
+  text-align: center;
+}
+
+.social-icons a {
+  color: darkgoldenrod;
+  margin: 0 12px;
+  font-size: 32px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: gold;
 }
 
 /* Form */
@@ -423,28 +459,8 @@ footer {
         height: 100px;
     }
 
-    .projects-grid {
-        grid-template-columns: repeat(3, 1fr);
-        /* 2 columns on small screens */
-    }
-
-    .projects-grid-2 {
-        grid-template-columns: repeat(3, 1fr);
-        /* 2 columns on small screens */
-    }
-
     .canvas-container {
         margin-top: 40px;
         transform: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .projects-grid-2 {
-        grid-template-columns: repeat(2, 1fr);
     }
 }

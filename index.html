@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="./images/ideali-favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./src/styles.css" />
   <script src="https://kit.fontawesome.com/e943b2cf3c.js" crossorigin="anonymous"></script>
   <title>Ideali Projects</title>
@@ -55,37 +56,60 @@
 
     <div class="projects-container fade-section" id="film-tv">
       <h2 class="section-title">Film & TV Projects</h2>
-      <div class="projects-grid">
-        <img src="./images/poster-sex_and_vanity.jpg" alt="Sex and Vanity Poster" class="project-image">
-        <img src="./images/poster-crazy_rich_asians-2018.jpg" alt="Crazy Rich Asians Poster" class="project-image">
-        <img src="./images/poster-the_grand_budapest_hotel-2014.jpg" alt="The Grand Budapest Hotel Poster"
-          class="project-image">
-        <img src="./images/poster-birdman_2014.jpg" alt="Birdman Poster" class="project-image">
-        <img src="./images/poster-the_wailing-2016.jpg" alt="The Wailing Poster" class="project-image">
-        <img src="./images/poster-dragon_ball_super_broly-2018.jpg" alt="Dragon Ball Super Broly Poster"
-          class="project-image">
-        <img src="./images/poster-final_cut-2022.jpg" alt="Final Cut Poster" class="project-image">
-        <img src="./images/poster-a_little_red_flower-2020.jpg" alt="A Little Red Flower Poster" class="project-image">
+      <div class="carousel-box">
+        <div class="swiper-container film-tv-carousel">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./images/poster-sex_and_vanity.jpg" alt="Sex and Vanity Poster"
+                class="project-image"></div>
+            <div class="swiper-slide"><img src="./images/poster-crazy_rich_asians-2018.jpg" alt="Crazy Rich Asians Poster"
+                class="project-image"></div>
+            <div class="swiper-slide"><img src="./images/poster-the_grand_budapest_hotel-2014.jpg" alt="Grand Budapest Poster"
+                class="project-image"></div>
+            <div class="swiper-slide"><img src="./images/poster-birdman_2014.jpg" alt="Birdman Poster" class="project-image">
+            </div>
+            <div class="swiper-slide"><img src="./images/poster-the_wailing-2016.jpg" alt="The Wailing Poster"
+                class="project-image"></div>
+            <div class="swiper-slide"><img src="./images/poster-dragon_ball_super_broly-2018.jpg" alt="Broly Poster"
+                class="project-image"></div>
+            <div class="swiper-slide"><img src="./images/poster-final_cut-2022.jpg" alt="Final Cut Poster"
+                class="project-image"></div>
+            <div class="swiper-slide"><img src="./images/poster-a_little_red_flower-2020.jpg" alt="A Little Red Flower Poster"
+                class="project-image"></div>
+          </div>
+        </div>
+        <div class="swiper-button-prev film-tv-prev"></div>
+        <div class="swiper-button-next film-tv-next"></div>
       </div>
     </div>
 
     <div class="projects-container fade-section" id="micro-drama">
       <h2 class="section-title">Micro Drama Projects</h2>
-      <div class="projects-grid-2">
-        <img src="./images/poster-V-MSRB.jpg" alt="Poster" class="project-image">
-        <img src="./images/poster-V-MFAGD.JPG" alt="Poster" class="project-image">
-        <img src="./images/poster-V-GIB.jpg" alt="Poster" class="project-image">
-        <img src="./images/poster-V-CFBS.jpg" alt="Poster" class="project-image">
-        <img src="./images/poster-V-BHVHMH.jpg" alt="Poster" class="project-image">
-        <img src="./images/poster-V-SBSC.jpg" alt="Poster" class="project-image">
-        <img src="./images/poster-V-LAIR.jpg" alt="Poster" class="project-image">
-        <img src="./images/poster-V-100DFYL.jpg" alt="Poster" class="project-image">
-        <img src="./images/poster-V-DDDD.jpg" alt="Poster" class="project-image">
+      <div class="carousel-box">
+        <div class="swiper-container micro-drama-carousel">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./images/poster-V-MSRB.jpg" alt="Poster" class="project-image"></div>
+            <div class="swiper-slide"><img src="./images/poster-V-MFAGD.JPG" alt="Poster" class="project-image"></div>
+            <div class="swiper-slide"><img src="./images/poster-V-GIB.jpg" alt="Poster" class="project-image"></div>
+            <div class="swiper-slide"><img src="./images/poster-V-CFBS.jpg" alt="Poster" class="project-image"></div>
+            <div class="swiper-slide"><img src="./images/poster-V-BHVHMH.jpg" alt="Poster" class="project-image"></div>
+            <div class="swiper-slide"><img src="./images/poster-V-SBSC.jpg" alt="Poster" class="project-image"></div>
+            <div class="swiper-slide"><img src="./images/poster-V-LAIR.jpg" alt="Poster" class="project-image"></div>
+            <div class="swiper-slide"><img src="./images/poster-V-100DFYL.jpg" alt="Poster" class="project-image"></div>
+            <div class="swiper-slide"><img src="./images/poster-V-DDDD.jpg" alt="Poster" class="project-image"></div>
+          </div>
+        </div>
+        <div class="swiper-button-prev micro-drama-prev"></div>
+        <div class="swiper-button-next micro-drama-next"></div>
       </div>
     </div>
 
     <div class="form-container fade-section" id="contact" style="display: none;">
       <h2 class="section-title">Get in Touch with Us</h2>
+      <div class="social-icons">
+        <a href="https://instagram.com/idealiprojects" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://pro.imdb.com/company/co1081267" target="_blank" aria-label="IMDb"><i class="fab fa-imdb"></i></a>
+        <a href="https://www.linkedin.com/company/ideali-projects" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
       <p class="contact-text">info@idealiprojects.com</p>
       <form name="contact" method="POST" data-netlify="true">
         <div class="input-group">
@@ -110,6 +134,57 @@
     </button>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script type="module" src="./src/main.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filmTVSwiper = new Swiper('.film-tv-carousel', {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        loop: true,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.film-tv-next',
+          prevEl: '.film-tv-prev',
+        },
+        breakpoints: {
+          1024: { slidesPerView: 4 },
+          768: { slidesPerView: 3 },
+          0: { slidesPerView: 2 },
+        },
+      });
+
+      const microDramaSwiper = new Swiper('.micro-drama-carousel', {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        loop: true,
+        autoplay: {
+          delay: 1500,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.micro-drama-next',
+          prevEl: '.micro-drama-prev',
+        },
+        breakpoints: {
+          1024: { slidesPerView: 4 },
+          768: { slidesPerView: 3 },
+          0: { slidesPerView: 2 },
+        },
+      });
+
+      document.querySelector('.film-tv-carousel').addEventListener('mouseenter', () => filmTVSwiper.autoplay.stop());
+      document.querySelector('.film-tv-carousel').addEventListener('mouseleave', () => filmTVSwiper.autoplay.start());
+
+      document.querySelector('.micro-drama-carousel').addEventListener('mouseenter', () => microDramaSwiper.autoplay.stop());
+      document.querySelector('.micro-drama-carousel').addEventListener('mouseleave', () => microDramaSwiper.autoplay.start());
+    });
+  </script>
+
+
 </body>
 </html>
