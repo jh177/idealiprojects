@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
         header.style.display = "flex";
         aboutContainer.style.display = "flex";
         filmTVContainer.style.display = "flex";
-        DigitalMediaContainer.style.display = "flex";
+        digitalMediaContainer.style.display = "flex";
         formContainer.style.display = "flex";
       }, 2000);
     })
