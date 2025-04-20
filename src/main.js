@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const formContainer = document.querySelector(".form-container");
   const aboutContainer = document.querySelector(".about-container");
   const filmTVContainer = document.querySelector("#film-tv");
-  const microDramaContainer = document.querySelector("#micro-drama");
+  const digitalMediaContainer = document.querySelector("#digital-media");
   const header = document.querySelector("header");
   const hamburgerMenu = document.getElementById("hamburger-menu");
   const navMenu = document.getElementById("nav-menu");
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   header.style.opacity = "0";
   aboutContainer.style.display = "none";
   filmTVContainer.style.display = "none";
-  microDramaContainer.style.display = "none";
+  digitalMediaContainer.style.display = "none";
   formContainer.style.display = "none";
 
   // Scroll up button
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
         header.style.display = "flex";
         aboutContainer.style.display = "flex";
         filmTVContainer.style.display = "flex";
-        microDramaContainer.style.display = "flex";
+        DigitalMediaContainer.style.display = "flex";
         formContainer.style.display = "flex";
       }, 2000);
     })

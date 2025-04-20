@@ -150,7 +150,7 @@
         },
       });
 
-      const microDramaSwiper = new Swiper('.digital-media-carousel', {
+      const digitalMediaSwiper = new Swiper('.digital-media-carousel', {
         slidesPerView: 4,
         spaceBetween: 10,
         loop: true,
@@ -172,8 +172,8 @@
       document.querySelector('.film-tv-carousel').addEventListener('mouseenter', () => filmTVSwiper.autoplay.stop());
       document.querySelector('.film-tv-carousel').addEventListener('mouseleave', () => filmTVSwiper.autoplay.start());
 
-      document.querySelector('.digital-media-carousel').addEventListener('mouseenter', () => microDramaSwiper.autoplay.stop());
-      document.querySelector('.digital-media-carousel').addEventListener('mouseleave', () => microDramaSwiper.autoplay.start());
+      document.querySelector('.digital-media-carousel').addEventListener('mouseenter', () => digitalMediaSwiper.autoplay.stop());
+      document.querySelector('.digital-media-carousel').addEventListener('mouseleave', () => digitalMediaSwiper.autoplay.start());
     });
   </script>
 
