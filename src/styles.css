@@ -306,12 +306,12 @@ main {
 }
 
 .film-tv-prev,
-.micro-drama-prev {
+.digital-media-prev {
     left: -10px;
 }
 
 .film-tv-next,
-.micro-drama-next {
+.digital-media-next {
     right: -10px;
 }
 

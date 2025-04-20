@@ -17,7 +17,7 @@
         <ul>
           <li><a href="#about-us">About</a></li>
           <li><a href="#film-tv">Film & TV</a></li>
-          <li><a href="#micro-drama">Micro Drama</a></li>
+          <li><a href="#digital-media">Digital Media</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -74,10 +74,10 @@
       </div>
     </div>
 
-    <div class="projects-container fade-section" id="micro-drama">
-      <h2 class="section-title">Micro Drama Projects</h2>
+    <div class="projects-container fade-section" id="digital-media">
+      <h2 class="section-title">Digital Media Projects</h2>
       <div class="carousel-box">
-        <div class="swiper-container micro-drama-carousel">
+        <div class="swiper-container digital-media-carousel">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="./images/poster-V-MSRB.jpg" alt="Poster" class="project-image"></div>
             <div class="swiper-slide"><img src="./images/poster-V-MFAGD.JPG" alt="Poster" class="project-image"></div>
@@ -90,8 +90,8 @@
             <div class="swiper-slide"><img src="./images/poster-V-DDDD.jpg" alt="Poster" class="project-image"></div>
           </div>
         </div>
-        <div class="swiper-button-prev micro-drama-prev"></div>
-        <div class="swiper-button-next micro-drama-next"></div>
+        <div class="swiper-button-prev digital-media-prev"></div>
+        <div class="swiper-button-next digital-media-next"></div>
       </div>
     </div>
 
@@ -150,7 +150,7 @@
         },
       });
 
-      const microDramaSwiper = new Swiper('.micro-drama-carousel', {
+      const microDramaSwiper = new Swiper('.digital-media-carousel', {
         slidesPerView: 4,
         spaceBetween: 10,
         loop: true,
@@ -159,8 +159,8 @@
           disableOnInteraction: false,
         },
         navigation: {
-          nextEl: '.micro-drama-next',
-          prevEl: '.micro-drama-prev',
+          nextEl: '.digital-media-next',
+          prevEl: '.digital-media-prev',
         },
         breakpoints: {
           1024: { slidesPerView: 3 },
@@ -172,8 +172,8 @@
       document.querySelector('.film-tv-carousel').addEventListener('mouseenter', () => filmTVSwiper.autoplay.stop());
       document.querySelector('.film-tv-carousel').addEventListener('mouseleave', () => filmTVSwiper.autoplay.start());
 
-      document.querySelector('.micro-drama-carousel').addEventListener('mouseenter', () => microDramaSwiper.autoplay.stop());
-      document.querySelector('.micro-drama-carousel').addEventListener('mouseleave', () => microDramaSwiper.autoplay.start());
+      document.querySelector('.digital-media-carousel').addEventListener('mouseenter', () => microDramaSwiper.autoplay.stop());
+      document.querySelector('.digital-media-carousel').addEventListener('mouseleave', () => microDramaSwiper.autoplay.start());
     });
   </script>
 
