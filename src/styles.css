@@ -248,15 +248,21 @@ main {
     object-fit: cover;
 }
 
-.carousel-box {
+.carousel-wrapper {
     width: 90vw;
     max-width: 960px;
     margin: 0 auto;
+    position: relative;
     padding: 20px 0;
+    /* optional, adjust based on spacing you want */
+}
+
+/* Adjust carousel-box (keep overflow hidden on slides only) */
+.carousel-box {
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.03);
     border-radius: 20px;
     overflow: hidden;
-    position: relative;
 }
 
 .swiper-container {
@@ -291,14 +297,27 @@ main {
 
 .swiper-button-prev,
 .swiper-button-next {
-    color: darkgoldenrod;
+    color: white;
     width: 40px;
     height: 40px;
     top: 50%;
     transform: translateY(-50%);
+    border-radius: 50%;
+    border: none;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     z-index: 10;
     position: absolute;
 }
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: darkgoldenrod;
+}
+
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
@@ -307,12 +326,12 @@ main {
 
 .film-tv-prev,
 .digital-media-prev {
-    left: -10px;
+    left: -50px;
 }
 
 .film-tv-next,
 .digital-media-next {
-    right: -10px;
+    right: -50px;
 }
 
 .social-icons {
