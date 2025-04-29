@@ -249,7 +249,7 @@ main {
 }
 
 .carousel-wrapper {
-    width: 90vw;
+    width: 80vw;
     max-width: 960px;
     margin: 0 auto;
     position: relative;
@@ -259,7 +259,7 @@ main {
 
 /* Adjust carousel-box (keep overflow hidden on slides only) */
 .carousel-box {
-    width: 100%;
+    /* width: 80vw; */
     background-color: rgba(255, 255, 255, 0.03);
     border-radius: 20px;
     overflow: hidden;
@@ -326,12 +326,12 @@ main {
 
 .film-tv-prev,
 .digital-media-prev {
-    left: -50px;
+    left: -40px;
 }
 
 .film-tv-next,
 .digital-media-next {
-    right: -50px;
+    right: -40px;
 }
 
 .social-icons {
