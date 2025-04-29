@@ -326,12 +326,12 @@ main {
 
 .film-tv-prev,
 .digital-media-prev {
-    left: -40px;
+    left: -50px;
 }
 
 .film-tv-next,
 .digital-media-next {
-    right: -40px;
+    right: -50px;
 }
 
 .social-icons {
