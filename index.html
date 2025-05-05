@@ -134,11 +134,14 @@
   <script type="module" src="./src/main.js" defer></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('load', () => {
+      const filmSlides = document.querySelectorAll('.film-tv-carousel .swiper-slide').length;
+      const filmLoop = filmSlides > 6;
+
       const filmTVSwiper = new Swiper('.film-tv-carousel', {
         slidesPerView: 3,
         spaceBetween: 10,
-        loop: true,
+        loop: filmLoop,
         autoplay: {
           delay: 2000,
           disableOnInteraction: false,
@@ -154,10 +157,13 @@
         },
       });
 
+      const digitalSlides = document.querySelectorAll('.digital-media-carousel .swiper-slide').length;
+      const digitalLoop = digitalSlides > 6;
+
       const digitalMediaSwiper = new Swiper('.digital-media-carousel', {
         slidesPerView: 4,
         spaceBetween: 10,
-        loop: true,
+        loop: digitalLoop,
         autoplay: {
           delay: 1500,
           disableOnInteraction: false,
