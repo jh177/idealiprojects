@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector("header");
   const hamburgerMenu = document.getElementById("hamburger-menu");
   const navMenu = document.getElementById("nav-menu");
+  const footer = document.getElementById("site-footer");
 
   // Hide sections by default
   header.style.opacity = "0";
@@ -50,6 +51,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     lastScrollY = window.scrollY;
+
+    // Show footer only when scrolled to bottom
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const pageHeight = document.documentElement.scrollHeight;
+
+    if (scrollPosition >= pageHeight - 5) {
+      footer.classList.add("visible");
+    } else {
+      footer.classList.remove("visible");
+    }
   });
 
   scrollUpBtn.addEventListener("click", () => {

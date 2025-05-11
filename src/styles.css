@@ -430,14 +430,23 @@ textarea:valid~label
 }
 
 /* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
+#site-footer {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Match navMenu background */
+    color: white;
+    /* Match nav link color */
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 20px 0;
+    font-size: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#site-footer.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Hide the regular navigation on small screens and show the hamburger menu */
