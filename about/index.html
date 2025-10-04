@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="../images/ideali-favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: { DEFAULT: '#0f172a', accent: '#f97316' } },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'] },
+          boxShadow: { card: '0 8px 30px rgba(0,0,0,.08)' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../src/styles.css" />
+  <title>About — Ideali Projects</title>
+  <meta name="description"
+    content="About Ideali Projects: film, TV, digital media, and live entertainment from Los Angeles." />
+</head>
+
+<body class="bg-white">
+  <!-- Header partial -->
+  <div data-include="/partials/header.html"></div>
+
+  <main class="pt-[calc(var(--header-h))]">
+    <!-- Two-column frame: left image (sticky), right content (scroll on md+) -->
+    <section class="grid md:grid-cols-2">
+
+      <!-- LEFT: Tall, static image -->
+      <aside class="relative h-[60vh] md:sticky md:top-[var(--header-h)] md:h-[calc(100svh-var(--header-h))]">
+        <img src="/images/hero_about.jpeg" alt="Ideali Projects studio imagery"
+          class="absolute inset-0 w-full h-full object-cover img-dim" fetchpriority="high" />
+      </aside>
+
+      <!-- RIGHT: Content (independent scroll on md+) -->
+      <div class="bg-white">
+        <div class="px-4 md:px-10 py-10 md:py-14 md:max-h-[calc(100svh-var(--header-h))] md:overflow-y-auto">
+
+          <!-- Tag -->
+          <!-- <div class="text-xs sm:text-sm tracking-[0.22em] uppercase text-gray-500">Ideali Projects</div> -->
+
+          <!-- About text -->
+          <article class="mt-4 md:mt-6 max-w-2xl text-brand">
+            <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">About Us</h1>
+
+            <div class="mt-6 space-y-5 text-base md:text-lg leading-7 text-gray-700">
+              <p>
+                Ideali is driven by a passion for discovering and amplifying unique content that
+                resonates on both local and global scales. Our mission is to bridge cultural nuances with universal
+                appeal, showcasing stories, ideas, and perspectives that transcend borders.
+              </p>
+              <p>
+                We believe in the power of cultural diversity to create compelling narratives that inspire, engage, and
+                unite audiences worldwide. At Ideali, we are dedicated to fostering creativity and collaboration,
+                bringing to light film, TV, digital content, and live entertainment that not only reflects the richness
+                of various cultures but also has the potential to shape conversations on a global platform.
+              </p>
+            </div>
+          </article>
+
+          <!-- Divider -->
+          <hr class="my-10 border-black/10">
+
+          <!-- Team -->
+          <section aria-labelledby="team-heading" class="max-w-5xl">
+            <h2 id="team-heading" class="text-2xl md:text-3xl font-semibold tracking-tight text-brand">The Team</h2>
+            <p class="mt-3 text-gray-700 max-w-2xl">
+              A collaborative studio with experience spanning storytelling, production, design, and live entertainment.
+            </p>
+
+            <!-- Rectangular portrait grid (5 members) -->
+            <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+              <!-- Member 1 -->
+              <li>
+                <figure class="group">
+                  <figcaption class="mt-3">
+                    <div class="text-base font-semibold text-brand">Xian</div>
+                    <div class="text-xs tracking-widest uppercase text-gray-500 mt-0.5">Principal</div>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <!-- Member 2 -->
+              <li>
+                <figure class="group">
+                  <figcaption class="mt-3">
+                    <div class="text-base font-semibold text-brand">James</div>
+                    <div class="text-xs tracking-widest uppercase text-gray-500 mt-0.5">Business Affairs</div>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <!-- Member 3 -->
+              <li>
+                <figure class="group">
+                  <figcaption class="mt-3">
+                    <div class="text-base font-semibold text-brand">Tim</div>
+                    <div class="text-xs tracking-widest uppercase text-gray-500 mt-0.5">Post Production Supervisor</div>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <!-- Member 4 -->
+              <li>
+                <figure class="group">
+                  <figcaption class="mt-3">
+                    <div class="text-base font-semibold text-brand">Sandree</div>
+                    <div class="text-xs tracking-widest uppercase text-gray-500 mt-0.5">Associate Producer</div>
+                  </figcaption>
+                </figure>
+              </li>
+
+            </ul>
+          </section>
+
+          <!-- Spacer -->
+          <div class="h-10"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer partial -->
+  <div data-include="/partials/footer.html"></div>
+
+  <!-- Partials + interactions -->
+  <script type="module">
+    import { includePartials } from "/src/partials.js";
+    import { initSite } from "/src/main.js";
+    includePartials().then(initSite);
+  </script>
+</body>
+
+</html>

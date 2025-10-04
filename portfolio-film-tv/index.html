@@ -1,0 +1,263 @@
+<!-- /portfolio-film-tv/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/images/ideali-favicon.png" />
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: { DEFAULT: '#0f172a', accent: '#f97316' } },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'] },
+          boxShadow: { card: '0 8px 30px rgba(0,0,0,.08)' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/src/styles.css" />
+  <title>Film &amp; TV — Ideali Projects</title>
+  <meta name="description" content="Selected Film & TV projects connected to our team's creative footprint." />
+</head>
+
+<body class="bg-white">
+  <!-- HEADER -->
+  <div data-include="/partials/header.html"></div>
+
+  <main id="content-wrapper">
+    <!-- Page hero -->
+    <section class="pt-[calc(var(--header-h)+56px)] md:pt-[calc(var(--header-h)+72px)] pb-8 bg-white">
+      <div class="max-w-6xl mx-auto px-6 md:px-10 xl:px-16">
+        <h1 class="text-3xl md:text-5xl font-semibold tracking-tight text-brand">
+          Highlights from Our Team’s Film &amp; TV Work
+        </h1>
+        <p class="mt-3 text-base md:text-xl text-gray-700 max-w-3xl">
+          Selected past and current film and television projects our team has contributed to.
+        </p>
+      </div>
+    </section>
+
+    <!-- Grid of posters (9) -->
+    <section class="pb-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6 md:px-10 xl:px-16">
+        <!-- 2 cols mobile, 3 cols tablet, 4 cols desktop -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 place-items-center">
+
+          <!-- Card template:
+               - outer <a> has a max width so posters stay smaller
+               - centered inside its grid cell via mx-auto / place-items-center
+          -->
+
+          <!-- 1 -->
+          <a href="https://en.wikipedia.org/wiki/Sex_and_Vanity" target="_blank" rel="noopener"
+            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
+            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
+              <img src="/images/film-tv/poster-the_season.webp" alt="The Season poster"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 class="text-white font-semibold">The Season</h3>
+                <p class="text-white/85 text-xs">TV Series — Coming Soon</p>
+              </div>
+            </div>
+            <div class="mt-3">
+              <h3 class="font-medium text-brand">The Season</h3>
+              <p class="text-sm text-gray-600">TV Series — Coming Soon</p>
+            </div>
+          </a>
+
+          <!-- 2 -->
+          <a href="https://en.wikipedia.org/wiki/Sex_and_Vanity" target="_blank" rel="noopener"
+            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
+            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
+              <img src="/images/film-tv/poster-sex_and_vanity.jpg" alt="Sex And Vanity poster"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 class="text-white font-semibold">Sex And Vanity</h3>
+                <p class="text-white/85 text-xs">Feature — Coming Soon</p>
+              </div>
+            </div>
+            <div class="mt-3">
+              <h3 class="font-medium text-brand">Sex And Vanity</h3>
+              <p class="text-sm text-gray-600">Feature — Coming Soon</p>
+            </div>
+          </a>
+
+          <!-- 3 -->
+          <a href="https://www.imdb.com/title/tt7034992" target="_blank" rel="noopener"
+            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
+            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
+              <img src="/images/film-tv/poster-i_want_to_know_your_parents-2022.jpg" alt="I Want to Know Your Parents poster"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 class="text-white font-semibold">I Want to Know Your Parents</h3>
+                <p class="text-white/85 text-xs">Feature — 2022</p>
+              </div>
+            </div>
+            <div class="mt-3">
+              <h3 class="font-medium text-brand">I Want to Know Your Parents</h3>
+              <p class="text-sm text-gray-600">Feature — 2022</p>
+            </div>
+          </a>
+
+          <!-- 4 -->
+          <a href="https://www.imdb.com/title/tt14317880/" target="_blank" rel="noopener"
+            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
+            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
+              <img src="/images/film-tv/poster-final_cut-2022.jpg" alt="Final Cut poster"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 class="text-white font-semibold">Final Cut</h3>
+                <p class="text-white/85 text-xs">Feature — 2022</p>
+              </div>
+            </div>
+            <div class="mt-3">
+              <h3 class="font-medium text-brand">Final Cut</h3>
+              <p class="text-sm text-gray-600">Feature — 2022</p>
+            </div>
+          </a>
+
+          <!-- 5 -->
+          <a href="https://www.imdb.com/title/tt7961060/" target="_blank" rel="noopener"
+            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
+            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
+              <img src="/images/film-tv/poster-dragon_ball_super_broly-2018.jpg" alt="Dragon Ball Super: Broly poster"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 class="text-white font-semibold">Dragon Ball Super: Broly</h3>
+                <p class="text-white/85 text-xs">Feature — 2018</p>
+              </div>
+            </div>
+            <div class="mt-3">
+              <h3 class="font-medium text-brand">Dragon Ball Super: Broly</h3>
+              <p class="text-sm text-gray-600">Feature — 2018</p>
+            </div>
+          </a>
+
+          <!-- 6 -->
+          <a href="https://www.imdb.com/title/tt3104988/" target="_blank" rel="noopener"
+            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
+            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
+              <img src="/images/film-tv/poster-crazy_rich_asians-2018.jpg" alt="Crazy Rich Asians poster"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 class="text-white font-semibold">Crazy Rich Asians</h3>
+                <p class="text-white/85 text-xs">Feature — 2018</p>
+              </div>
+            </div>
+            <div class="mt-3">
+              <h3 class="font-medium text-brand">Crazy Rich Asians</h3>
+              <p class="text-sm text-gray-600">Feature — 2018</p>
+            </div>
+          </a>
+
+          <!-- 7 -->
+          <a href="https://www.imdb.com/title/tt5215952/" target="_blank" rel="noopener"
+            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
+            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
+              <img src="/images/film-tv/poster-the_wailing-2016.jpg" alt="The Wailing poster"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 class="text-white font-semibold">The Wailing</h3>
+                <p class="text-white/85 text-xs">Feature — 2016</p>
+              </div>
+            </div>
+            <div class="mt-3">
+              <h3 class="font-medium text-brand">The Wailing</h3>
+              <p class="text-sm text-gray-600">Feature — 2016</p>
+            </div>
+          </a>
+
+          <!-- 8 -->
+          <a href="https://www.imdb.com/title/tt2278388/" target="_blank" rel="noopener"
+            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
+            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
+              <img src="/images/film-tv/poster-the_grand_budapest_hotel-2014.jpg" alt="The Grand Budapest Hotel poster"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 class="text-white font-semibold">The Grand Budapest Hotel</h3>
+                <p class="text-white/85 text-xs">Feature — 2014</p>
+              </div>
+            </div>
+            <div class="mt-3">
+              <h3 class="font-medium text-brand">The Grand Budapest Hotel</h3>
+              <p class="text-sm text-gray-600">Feature — 2014</p>
+            </div>
+          </a>
+
+          <!-- 9 -->
+          <a href="https://www.imdb.com/title/tt2562232/" target="_blank" rel="noopener" class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
+            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
+              <img src="/images/film-tv/poster-birdman_2014.jpg" alt="Birdman poster"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 class="text-white font-semibold">Birdman</h3>
+                <p class="text-white/85 text-xs">Feature — 2014</p>
+              </div>
+            </div>
+            <div class="mt-3">
+              <h3 class="font-medium text-brand">Birdman</h3>
+              <p class="text-sm text-gray-600">Feature — 2014</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <div data-include="/partials/footer.html"></div>
+
+  <!-- Partials + interactions -->
+  <script type="module">
+    import { includePartials } from "/src/partials.js";
+    import { initSite } from "/src/main.js";
+    includePartials().then(initSite);
+  </script>
+</body>
+
+</html>
