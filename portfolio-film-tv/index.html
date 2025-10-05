@@ -12,7 +12,7 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { brand: { DEFAULT: '#0f172a', accent: '#f97316' } },
+          colors: { brand: { DEFAULT: '#0f172a', accent: '#ed2100' } },
           fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'] },
           boxShadow: { card: '0 8px 30px rgba(0,0,0,.08)' }
         }
@@ -36,7 +36,7 @@
           Highlights from Our Team’s Film &amp; TV Work
         </h1>
         <p class="mt-3 text-base md:text-xl text-gray-700 max-w-3xl">
-          Selected past and current film and television projects our team has contributed to.
+          Selected past and current film and television projects our team is involved in.
         </p>
       </div>
     </section>
@@ -45,7 +45,8 @@
     <section class="pb-24 bg-white">
       <div class="max-w-6xl mx-auto px-6 md:px-10 xl:px-16">
         <!-- 2 cols mobile, 3 cols tablet, 4 cols desktop -->
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 place-items-center">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 justify-items-center items-start">
+
 
           <!-- Card template:
                - outer <a> has a max width so posters stay smaller
@@ -139,7 +140,28 @@
             </div>
           </a>
 
-          <!-- 5 -->
+          <!-- Little Red Flower -->
+          <a href="https://www.imdb.com/title/tt12497408/" target="_blank" rel="noopener"
+            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
+            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
+              <img src="/images/film-tv/poster-a_little_red_flower-2020.jpg" alt="A Little Red Flower poster"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 class="text-white font-semibold">A Little Red Flower</h3>
+                <p class="text-white/85 text-xs">Feature — 2020</p>
+              </div>
+            </div>
+            <div class="mt-3">
+              <h3 class="font-medium text-brand">A Little Red Flower</h3>
+              <p class="text-sm text-gray-600">Feature — 2020</p>
+            </div>
+          </a>
+
+          <!-- Dragon Ball -->
           <a href="https://www.imdb.com/title/tt7961060/" target="_blank" rel="noopener"
             class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
             <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
@@ -160,7 +182,7 @@
             </div>
           </a>
 
-          <!-- 6 -->
+          <!-- CRA -->
           <a href="https://www.imdb.com/title/tt3104988/" target="_blank" rel="noopener"
             class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
             <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
@@ -177,6 +199,27 @@
             </div>
             <div class="mt-3">
               <h3 class="font-medium text-brand">Crazy Rich Asians</h3>
+              <p class="text-sm text-gray-600">Feature — 2018</p>
+            </div>
+          </a>
+
+          <!-- Biblia -->
+          <a href="https://www.imdb.com/title/tt6525872/" target="_blank" rel="noopener"
+            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
+            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
+              <img src="/images/film-tv/poster-biblia_koshodo_2018.jpg" alt="Biblia Koshodô no Jiken Techô"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 class="text-white font-semibold">Biblia Koshodô no Jiken Techô</h3>
+                <p class="text-white/85 text-xs">Feature — 2018</p>
+              </div>
+            </div>
+            <div class="mt-3">
+              <h3 class="font-medium text-brand">Biblia Koshodô no Jiken Techô</h3>
               <p class="text-sm text-gray-600">Feature — 2018</p>
             </div>
           </a>
@@ -241,6 +284,27 @@
             <div class="mt-3">
               <h3 class="font-medium text-brand">Birdman</h3>
               <p class="text-sm text-gray-600">Feature — 2014</p>
+            </div>
+          </a>
+
+          <!-- 9 -->
+          <a href="https://www.imdb.com/title/tt1541995/" target="_blank" rel="noopener" class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
+            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
+              <img src="/images/film-tv/poster-snow_flower_secret_fan_2011.jpg" alt="Snow Flower and the Secret Fan poster"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 class="text-white font-semibold">Snow Flower and the Secret Fan</h3>
+                <p class="text-white/85 text-xs">Feature — 2011</p>
+              </div>
+            </div>
+            <div class="mt-3">
+              <h3 class="font-medium text-brand">Snow Flower and the Secret Fan</h3>
+              <p class="text-sm text-gray-600">Feature — 2011</p>
             </div>
           </a>
 

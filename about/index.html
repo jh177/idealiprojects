@@ -1,3 +1,4 @@
+<!-- /about/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,7 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { brand: { DEFAULT: '#0f172a', accent: '#f97316' } },
+          colors: { brand: { DEFAULT: '#0f172a', accent: '#ed2100' } },
           fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'] },
           boxShadow: { card: '0 8px 30px rgba(0,0,0,.08)' }
         }
@@ -20,7 +21,7 @@
   <link rel="stylesheet" href="../src/styles.css" />
   <title>About — Ideali Projects</title>
   <meta name="description"
-    content="About Ideali Projects: film, TV, digital media, and live entertainment from Los Angeles." />
+    content="About Ideali Projects and founder Xian Li: film, TV, digital media, and live entertainment from Los Angeles." />
 </head>
 
 <body class="bg-white">
@@ -33,14 +34,13 @@
 
       <!-- LEFT: Tall, static image -->
       <aside class="relative h-[60vh] md:sticky md:top-[var(--header-h)] md:h-[calc(100svh-var(--header-h))]">
-        <img src="/images/hero_about.jpeg" alt="Ideali Projects studio imagery"
+        <img src="/images/hero_about.jpeg" alt="Ideali Projects — studio imagery"
           class="absolute inset-0 w-full h-full object-cover img-dim" fetchpriority="high" />
       </aside>
 
       <!-- RIGHT: Content (independent scroll on md+) -->
       <div class="bg-white">
-        <div class="px-4 md:px-10 py-10 md:py-14 md:max-h-[calc(100svh-var(--header-h))] md:overflow-y-auto">
-
+        <div class="px-6 md:px-10 xl:px-16 py-10 md:py-14 md:max-h-[calc(100svh-var(--header-h))] md:overflow-y-auto">
           <!-- Tag -->
           <!-- <div class="text-xs sm:text-sm tracking-[0.22em] uppercase text-gray-500">Ideali Projects</div> -->
 
@@ -50,15 +50,21 @@
 
             <div class="mt-6 space-y-5 text-base md:text-lg leading-7 text-gray-700">
               <p>
-                Ideali is driven by a passion for discovering and amplifying unique content that
-                resonates on both local and global scales. Our mission is to bridge cultural nuances with universal
-                appeal, showcasing stories, ideas, and perspectives that transcend borders.
+                Ideali Projects is an independent studio headquartered in Los Angeles and founded by veteran executive <strong>Xian Li</strong>.
+                We originate and produce film, television, mobile-first series, and live entertainment distinguished by cultural
+                specificity and built for global reach. We believe every story—and every artist—deserves its ideal medium.
               </p>
               <p>
-                We believe in the power of cultural diversity to create compelling narratives that inspire, engage, and
-                unite audiences worldwide. At Ideali, we are dedicated to fostering creativity and collaboration,
-                bringing to light film, TV, digital content, and live entertainment that not only reflects the richness
-                of various cultures but also has the potential to shape conversations on a global platform.
+                In a rapidly evolving media landscape, we diversify our efforts across formats, platforms, and release windows—pairing
+                each story and artist with its ideal medium to maximize creative impact and commercial reach. Our mission is to bridge
+                East and West through universally resonant storytelling. We combine market intelligence with modern, efficient
+                production workflows to deliver high-impact, premium content—without compromise.
+              </p>
+              <p>
+                From development through delivery, we partner with world-class creators and companies to champion diverse talent and
+                build durable IP and franchises. Whether a mobile micro-drama, an event-theatrical feature, a marquee scripted series,
+                or a large-scale live show, Ideali Projects unites creative ambition with operational rigor to deliver work that moves
+                audiences and endures—artistically and commercially.
               </p>
             </div>
           </article>
@@ -66,56 +72,48 @@
           <!-- Divider -->
           <hr class="my-10 border-black/10">
 
-          <!-- Team -->
-          <section aria-labelledby="team-heading" class="max-w-5xl">
-            <h2 id="team-heading" class="text-2xl md:text-3xl font-semibold tracking-tight text-brand">The Team</h2>
-            <p class="mt-3 text-gray-700 max-w-2xl">
-              A collaborative studio with experience spanning storytelling, production, design, and live entertainment.
-            </p>
+          <!-- Founder & Principal -->
+          <section aria-labelledby="founder-heading" class="max-w-3xl">
+            <h2 id="founder-heading" class="text-2xl md:text-3xl font-semibold tracking-tight text-brand">
+              Founder &amp; Principal
+            </h2>
 
-            <!-- Rectangular portrait grid (5 members) -->
-            <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-              <!-- Member 1 -->
-              <li>
-                <figure class="group">
-                  <figcaption class="mt-3">
-                    <div class="text-base font-semibold text-brand">Xian</div>
-                    <div class="text-xs tracking-widest uppercase text-gray-500 mt-0.5">Principal</div>
-                  </figcaption>
-                </figure>
-              </li>
+            <!-- Card: rectangular portrait + name/title + bio -->
+            <div class="mt-6 grid gap-6 sm:grid-cols-3 items-start">
+              <!-- Rectangular portrait (vertical) -->
+              <figure class="sm:col-span-1">
+                <div class="overflow-hidden rounded-xl ring-1 ring-black/10 shadow-sm bg-white">
+                  <!-- Vertical rectangle (3:4). Replace src with actual portrait path if different -->
+                  <img src="/images/team/team-xian.jpg" alt="Xian Li" class="w-full h-full object-cover aspect-[3/4]"
+                    loading="lazy" />
+                </div>
+                <figcaption class="mt-3">
+                  <div class="text-base font-semibold text-brand">Xian Li</div>
+                  <div class="text-xs tracking-widest uppercase text-gray-500 mt-0.5">Founder &amp; Principal</div>
+                </figcaption>
+              </figure>
 
-              <!-- Member 2 -->
-              <li>
-                <figure class="group">
-                  <figcaption class="mt-3">
-                    <div class="text-base font-semibold text-brand">James</div>
-                    <div class="text-xs tracking-widest uppercase text-gray-500 mt-0.5">Business Affairs</div>
-                  </figcaption>
-                </figure>
-              </li>
+              <!-- Bio -->
+              <div class="sm:col-span-2 text-[15px] md:text-base leading-7 text-gray-700 space-y-4">
+                <p>
+                  Xian Li is an acclaimed executive and producer with decades of experience in the global entertainment industry. With
+                  years of experience across creative development, packaging, financing, distribution, and cross-cultural partnerships,
+                  Xian brings a deep understanding of the changing media landscape. Under her leadership, Ideali Projects swiftly garnered
+                  acclaim for its innovative approach—producing content that has grossed tens of millions of dollars while significantly
+                  reducing traditional production costs.
 
-              <!-- Member 3 -->
-              <li>
-                <figure class="group">
-                  <figcaption class="mt-3">
-                    <div class="text-base font-semibold text-brand">Tim</div>
-                    <div class="text-xs tracking-widest uppercase text-gray-500 mt-0.5">Post Production Supervisor</div>
-                  </figcaption>
-                </figure>
-              </li>
-
-              <!-- Member 4 -->
-              <li>
-                <figure class="group">
-                  <figcaption class="mt-3">
-                    <div class="text-base font-semibold text-brand">Sandree</div>
-                    <div class="text-xs tracking-widest uppercase text-gray-500 mt-0.5">Associate Producer</div>
-                  </figcaption>
-                </figure>
-              </li>
-
-            </ul>
+                </p>
+                <p>
+                  Previously, Xian held leadership roles at top-tier Hollywood studios, including serving as <strong>Executive Vice President,
+                  Film &amp; TV</strong> at <strong>SK Global Entertainment</strong>, and as <strong>Head of Asia</strong> at <strong>Twentieth Century Fox International</strong>. Her tenure at these
+                  companies was marked by a strong instinct for content that resonates worldwide and generates significant returns.
+                </p>
+                <p>
+                  Xian has also held executive roles at <strong>Searchlight Pictures</strong> and <strong>Sony Pictures</strong> in Los Angeles. Originally from China, she
+                  is a proud alum of Peking University and the University of Southern California.
+                </p>
+              </div>
+            </div>
           </section>
 
           <!-- Spacer -->
