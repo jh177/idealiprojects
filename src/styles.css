@@ -71,268 +71,141 @@ body {
 
 /* ----- Header / Navigation ------------------------------------------------ */
 header {
-    position: fixed;
-    inset: 0 0 auto 0;
-    z-index: 1000;
-    background-color: rgba(255, 255, 255, .46);
-    backdrop-filter: saturate(180%) blur(12px);
-    border-bottom: 1px solid rgba(15, 23, 42, .04);
-    padding: clamp(12px, 1.8vw, 20px) 24px;
-    transition: transform .25s ease, background-color .2s ease, border-color .2s ease, backdrop-filter .2s ease;
-    transform: translateY(0);
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 1000;
+  /* Transparent by default */
+  background-color: transparent;
+  backdrop-filter: none;
+  border-bottom: none;
+  padding: clamp(12px, 1.8vw, 20px) 24px;
+  transition:
+    transform .25s ease,
+    background-color .2s ease,
+    border-color .2s ease,
+    backdrop-filter .2s ease;
+  transform: translateY(0);
 }
 
-.header--hidden {
-    transform: translateY(-100%);
+/* Show subtle blur ONLY when hovering or focusing (like the reference) */
+header:hover,
+header:focus-within,
+header:has(+ .nav-mobile.active) {
+  background-color: rgba(255, 255, 255, .08);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  backdrop-filter: saturate(180%) blur(12px);
 }
+
+.header--hidden { transform: translateY(-100%); }
 
 /* Keep header visible while drawer is open */
-header:has(+ .nav-mobile.active) {
-    transform: none !important;
-}
+header:has(+ .nav-mobile.active) { transform: none !important; }
 
 .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-    gap: 12px;
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%; margin: 0 auto; padding: 0 20px; gap: 12px;
 }
 
 /* Logo */
-.logo {
-    width: clamp(130px, 18vw, 220px);
-    height: auto;
-}
+.logo { width: clamp(130px, 18vw, 220px); height: auto; }
 
-/* Hamburger */
+/* Always show hamburger (white) */
+/* Transparent header already set; keep your hover/active blur rules */
+
+/* Hamburger: white circular outline, white icon */
 .hamburger-menu {
-    display: inline-flex;
+    display: inline-flex !important;
     align-items: center;
     justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 9999px;
+    border: 1.6px solid rgba(255, 255, 255, .95);
     background: transparent;
-    border: 0;
+    color: #fff;
+    /* icon lines use currentColor */
     line-height: 0;
     cursor: pointer;
-    color: var(--text);
-    padding: 0;
+    transition: background .2s ease, border-color .2s ease, transform .08s ease;
+}
+
+.hamburger-menu:hover,
+.hamburger-menu:focus-visible {
+    background: rgba(255, 255, 255, .14);
+    border-color: rgba(255, 255, 255, 1);
+    outline: none;
+}
+
+.hamburger-menu:active {
+    transform: scale(0.98);
 }
 
 .hamburger-menu svg {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
 }
 
-/* ===== Desktop nav ===== */
-.nav-desktop {
-    margin-left: auto;
-}
-
-@media (min-width:768px) {
-    .nav-desktop {
-        display: block;
-    }
-
-    .nav-list {
-        display: flex;
-        align-items: center;
-        gap: clamp(16px, 3vw, 28px);
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    .nav-link {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        padding: 8px 2px;
-        font-weight: 600;
-        color: var(--text);
-        letter-spacing: .01em;
-        text-decoration: none;
-        transition: color .18s ease;
-    }
-
-    .nav-link:hover,
-    .nav-link:focus-visible {
-        color: var(--accent);
-    }
-
-    .nav-link::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -4px;
-        height: 2px;
-        background: currentColor;
-        opacity: .85;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform .22s ease;
-    }
-
-    .nav-link:hover::after,
-    .nav-link:focus-visible::after {
-        transform: scaleX(1);
-    }
-
-    .hamburger-menu {
-        display: none;
-    }
-}
-
-/* ===== Mobile: show hamburger, hide desktop nav ===== */
-@media (max-width:767.98px) {
-    .nav-desktop {
-        display: none !important;
-    }
-
-    .hamburger-menu {
-        display: inline-flex !important;
-        margin-left: auto;
-    }
-}
+/* Hide desktop nav everywhere (we’re hamburger-only) */
+.nav-desktop { display: none !important; }
 
 /* ===== Mobile Drawer (outside header) — slide-in full screen ============ */
 .nav-mobile {
-    position: fixed;
-    inset: 0;
-    z-index: 2000;
-    /* above header */
-    pointer-events: none;
-    /* disabled until active */
-    /* always present so we can animate; no display:none */
+  position: fixed; inset: 0; z-index: 2000; pointer-events: none;
 }
 
-/* Scrim */
 .nav-scrim {
-    position: absolute;
-    inset: 0;
-    display: block;
-    background: rgba(15, 23, 42, .45);
-    opacity: 0;
-    transition: opacity .25s ease;
-    pointer-events: none;
-    /* enabled when active */
-    z-index: 10;
-    /* BELOW panel */
+  position: absolute; inset: 0; display: block;
+  background: rgba(15, 23, 42, .45); opacity: 0; transition: opacity .25s ease;
+  pointer-events: none; z-index: 10;
 }
 
-/* Drawer panel */
 .nav-panel {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: min(88vw, 420px);
-    background: rgba(255, 255, 255, .96);
-    color: var(--text);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border-left: 1px solid rgba(15, 23, 42, .08);
-    box-shadow: -10px 0 40px rgba(0, 0, 0, .18);
-    transform: translateX(100%);
-    transition: transform .28s cubic-bezier(.2, .7, .2, 1);
-    padding: 20px 24px 32px;
-    overflow-y: auto;
-    padding-left: max(24px, env(safe-area-inset-left));
-    padding-right: max(24px, env(safe-area-inset-right));
-    padding-bottom: max(32px, env(safe-area-inset-bottom));
-    z-index: 20;
-    /* ABOVE scrim */
-    isolation: isolate;
-    /* guarantee a fresh stacking context */
+  position: absolute; top: 0; right: 0; bottom: 0;
+  width: min(88vw, 420px);
+  background: rgba(255, 255, 255, .96); color: var(--text);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(15, 23, 42, .08);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, .18);
+  transform: translateX(100%); transition: transform .28s cubic-bezier(.2,.7,.2,1);
+  padding: 20px 24px 32px; overflow-y: auto;
+  padding-left: max(24px, env(safe-area-inset-left));
+  padding-right: max(24px, env(safe-area-inset-right));
+  padding-bottom: max(32px, env(safe-area-inset-bottom));
+  z-index: 20; isolation: isolate;
 }
 
-/* Close button */
 .mobile-close {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: var(--text);
-    background: rgba(255, 255, 255, .8);
-    border: 1px solid rgba(15, 23, 42, .06);
-    z-index: 30;
-    /* over everything in panel */
+  position: absolute; top: 14px; right: 14px;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 10px; text-decoration: none;
+  color: var(--text); background: rgba(255, 255, 255, .8);
+  border: 1px solid rgba(15, 23, 42, .06); z-index: 30;
 }
+.mobile-close:hover { background: rgba(255, 255, 255, .95); }
 
-.mobile-close:hover {
-    background: rgba(255, 255, 255, .95);
-}
-
-/* Menu items */
 .mobile-list {
-    position: relative;
-    z-index: 25;
-    /* ensure above scrim */
-    list-style: none;
-    margin: 48px 0 0;
-    padding: 0;
-    display: grid;
-    gap: 16px;
+  position: relative; z-index: 25; list-style: none;
+  margin: 48px 0 0; padding: 0; display: grid; gap: 16px;
 }
-
 .mobile-list a {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    padding: 12px 2px;
-    font-weight: 700;
-    font-size: 18px;
-    letter-spacing: .01em;
-    color: var(--text);
-    text-decoration: none;
-    transition: color .18s ease;
+  position: relative; display: inline-flex; align-items: center;
+  padding: 12px 2px; font-weight: 700; font-size: 18px; letter-spacing: .01em;
+  color: var(--text); text-decoration: none; transition: color .18s ease;
 }
-
-.mobile-list a:hover,
-.mobile-list a:focus-visible {
-    color: var(--accent);
-}
-
+.mobile-list a:hover, .mobile-list a:focus-visible { color: var(--accent); }
 .mobile-list a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -4px;
-    height: 2px;
-    background: currentColor;
-    opacity: .85;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .22s ease;
+  content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px;
+  background: currentColor; opacity: .85; transform: scaleX(0); transform-origin: left;
+  transition: transform .22s ease;
 }
+.mobile-list a:hover::after, .mobile-list a:focus-visible::after { transform: scaleX(1); }
 
-.mobile-list a:hover::after,
-.mobile-list a:focus-visible::after {
-    transform: scaleX(1);
-}
+/* Active drawer state */
+.nav-mobile.active { pointer-events: auto; }
+.nav-mobile.active .nav-scrim { opacity: 1; pointer-events: auto; }
+.nav-mobile.active .nav-panel { transform: translateX(0); }
 
-/* Active state toggled by JS */
-.nav-mobile.active {
-    pointer-events: auto;
-}
-
-.nav-mobile.active .nav-scrim {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.nav-mobile.active .nav-panel {
-    transform: translateX(0);
-}
 
 /* ----- Typography helpers ------------------------------------------------- */
 .section-title {
