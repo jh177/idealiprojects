@@ -68,59 +68,56 @@
   <div data-include="/partials/header.html"></div>
 
   <div id="content-wrapper">
-    <!-- HERO SECTION -->
-    <section class="relative full-screen overflow-hidden">
+    <!-- HERO SECTION (mobile: image on top, text below; md+: 2 columns) -->
+    <section class="relative overflow-hidden min-h-[calc(var(--vh)*100)] h-[calc(var(--vh)*100)]">
       <div class="grid h-full md:grid-cols-2">
+        <!-- IMAGE first on mobile (50% height) -->
+        <div class="order-1 relative h-[calc(var(--vh)*50)] md:order-2 md:h-full overflow-hidden">
+          <img src="/images/hero_2.png" alt="Ideali montage" class="w-full h-full object-cover img-dim"
+            fetchpriority="high" />
+        </div>
 
-        <!-- LEFT: big stacked words -->
-        <div class="relative z-[1] order-2 md:order-1 flex items-center px-4 md:px-10">
+        <!-- TEXT second on mobile (remaining 50%) -->
+        <div class="relative z-[1] order-2 md:order-1 flex items-center px-4 md:px-10 py-8 md:py-0
+                    h-[calc(var(--vh)*50)] md:h-auto overflow-y-auto">
           <div class="w-full max-w-2xl text-brand">
             <div class="hero-stack">
               <a href="/portfolio-film-tv"
-                class="hero-word hero-pill hover:bg-white hover:shadow-card transition rounded-[14px] focus:outline-none focus:ring-2 focus:ring-brand/30">
+                class="hero-word hero-pill transition rounded-[14px] focus:outline-none focus:ring-2 focus:ring-brand/30">
                 Film &amp; TV
               </a>
 
               <a href="/portfolio-digital-media"
-                class="hero-word hero-pill hover:bg-white hover:shadow-card transition rounded-[14px] focus:outline-none focus:ring-2 focus:ring-brand/30">
+                class="hero-word hero-pill transition rounded-[14px] focus:outline-none focus:ring-2 focus:ring-brand/30">
                 Digital Media
               </a>
 
               <a href="/portfolio-live-entertainment"
-                class="hero-word hero-pill hover:bg-white hover:shadow-card transition rounded-[14px] focus:outline-none focus:ring-2 focus:ring-brand/30">
+                class="hero-word hero-pill transition rounded-[14px] focus:outline-none focus:ring-2 focus:ring-brand/30">
                 Live Entertainment
               </a>
             </div>
-
-            <!-- optional small subline / CTA row -->
-            <!-- <div class="mt-6 text-gray-700">Cross-cultural storytelling from Los Angeles.</div> -->
           </div>
-        </div>
-
-        <!-- RIGHT: full-bleed image with overlay via ::after -->
-        <div class="absolute inset-0 md:relative md:order-2 md:h-full overflow-hidden">
-          <img src="/images/hero_2.png" alt="Ideali montage" class="w-full h-full object-cover img-dim" fetchpriority="high" />
         </div>
       </div>
     </section>
 
-    <!-- SERVICE SECTION -->
-    <section id="services" class="relative full-screen fade-section bg-white">
-      <div class="grid grid-rows-1 md:grid-cols-2 h-full">
-        <!-- IMAGE COLUMN -->
-        <div
-          class="relative absolute top-0 left-0 right-0 h-[calc(var(--vh)*100)] md:relative md:order-1 md:h-full overflow-hidden">
-          <img src="/images/hero_3.png" alt="On set: camera and lighting for Ideali production" loading="eager"
-            class="w-full h-full object-cover img-dim" />
+
+    <!-- SERVICE SECTION (mobile: image on top, text below; md+: split) -->
+    <section id="services" class="relative bg-white md:min-h-[calc(var(--vh)*100)] md:h-[calc(var(--vh)*100)]">
+      <div class="grid h-auto md:h-full md:grid-cols-2">
+
+        <!-- IMAGE first on mobile -->
+        <div class="order-1 relative h-[48vh] sm:h-[56vh] md:order-1 md:h-full overflow-hidden">
+          <img src="/images/hero_3.png" alt="On set: camera and lighting for Ideali production"
+            class="w-full h-full object-cover img-dim" loading="eager" />
         </div>
 
-        <!-- TEXT COLUMN -->
+        <!-- TEXT second on mobile -->
         <div
-          class="relative z-[1] order-1 md:order-2 flex items-center justify-center md:justify-start min-h-[calc(var(--vh)*100)] md:min-h-0 px-4 md:px-8 py-8 md:py-0">
-          <div
-            class="max-w-xl w-full mx-auto bg-white/70 backdrop-blur-sm rounded-xl p-6 md:bg-transparent md:backdrop-blur-0 md:p-0">
-            <!-- <h2 class="section-title text-4xl md:text-5xl font-semibold tracking-tight">Services</h2> -->
-            <p class="mt-5 text-lg md:text-xl text-gray-700">
+          class="relative z-[1] order-2 md:order-2 flex items-center justify-center md:justify-start px-4 md:px-8 py-8 md:py-0">
+          <div class="max-w-xl w-full mx-auto">
+            <p class="text-lg md:text-xl text-gray-700">
               End-to-end creative and production across Film, TV, digital content, and live events.
               We build cross-cultural projects that travel.
             </p>
@@ -178,24 +175,24 @@
               </li>
             </ul>
 
-            <!-- CTA -->
+            <!-- CTA (white background, brand accent text) -->
             <div class="mt-8 md:mt-10">
-              <a href="/about" class="group inline-flex items-center gap-2 rounded-lg bg-brand-accent text-white px-5 py-3
-                       ring-1 ring-brand-accent/20 hover:bg-brand-accent/90
-                       focus:outline-none focus:ring-2 focus:ring-brand-accent/40 transition">
+              <a href="/about" class="group inline-flex items-center gap-2 rounded-lg bg-white text-brand-accent px-5 py-3
+                        ring-1 ring-brand-accent hover:bg-brand-accent/5
+                        focus:outline-none focus:ring-2 focus:ring-brand-accent/40 transition">
                 Learn more
-                <svg viewBox="0 0 24 24" class="h-5 w-5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2">
+                <svg viewBox="0 0 24 24" class="h-5 w-5 transition-transform group-hover:translate-x-0.5" fill="none"
+                  stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
                 </svg>
               </a>
             </div>
-
           </div>
         </div>
 
-
       </div>
     </section>
+
 
     <!-- FEATURED PROJECT #1 -->
     <section class="relative fade-section min-h-screen h-[calc(var(--vh)*100)] overflow-hidden">
