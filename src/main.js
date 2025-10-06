@@ -7,6 +7,16 @@ export function initSite() {
   const footer = document.getElementById("site-footer");
   const scrollUpBtn = document.getElementById("scroll-up-btn");
 
+  // Mark header for white hamburger on the homepage only
+  const isHome =
+    window.location.pathname === "/" ||
+    window.location.pathname.endsWith("/index.html");
+
+  if (header) {
+    if (isHome) header.classList.add("header--on-hero");
+    else header.classList.remove("header--on-hero");
+  }
+
   /* ------------------ viewport unit & header height fixes ------------------ */
   const setVh = () => {
     const vh = window.innerHeight * 0.01;
