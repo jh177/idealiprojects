@@ -30,16 +30,16 @@
 
   <main class="pt-[calc(var(--header-h))]">
     <!-- Two-column frame: left image (sticky), right content (scroll on md+) -->
-    <section class="grid md:grid-cols-2">
+    <section class="grid md:grid-cols-5">
 
       <!-- LEFT: Tall, static image -->
-      <aside class="relative h-[60vh] md:sticky md:top-[var(--header-h)] md:h-[calc(100svh-var(--header-h))]">
+      <aside class="relative h-[60vh] md:sticky md:top-[var(--header-h)] md:h-[calc(100svh-var(--header-h))] md:col-span-2">
         <img src="/images/hero_about.jpeg" alt="Ideali Projects — studio imagery"
           class="absolute inset-0 w-full h-full object-cover img-dim" fetchpriority="high" />
       </aside>
 
       <!-- RIGHT: Content (independent scroll on md+) -->
-      <div class="bg-white">
+      <div class="bg-white md:col-span-3">
         <div class="px-6 md:px-10 xl:px-16 py-10 md:py-14 md:max-h-[calc(100svh-var(--header-h))] md:overflow-y-auto">
           <!-- Tag -->
           <!-- <div class="text-xs sm:text-sm tracking-[0.22em] uppercase text-gray-500">Ideali Projects</div> -->
