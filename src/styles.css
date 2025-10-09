@@ -107,7 +107,7 @@ header:has(+ .nav-mobile.active) { transform: none !important; }
 }
 
 /* Logo */
-.logo { width: clamp(130px, 18vw, 220px); height: auto; }
+/* .logo { width: clamp(130px, 18vw, 220px); height: auto; } */
 
 /* Always show hamburger (white) */
 /* Transparent header already set; keep your hover/active blur rules */
