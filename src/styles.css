@@ -166,10 +166,15 @@ header:has(+ .nav-mobile.active) { transform: none !important; }
     border-color: #fff;
 }
 
-.is-home header {
-    background-color: rgba(var(--surface-rgb), .12);
-    -webkit-backdrop-filter: saturate(180%) blur(12px);
-    backdrop-filter: saturate(180%) blur(12px);
+/* Home header background ONLY on small/mobile (image-over-text layout) */
+@media (max-width: 767.98px) {
+
+    .header--on-hero,
+    .is-home header {
+        background-color: rgba(var(--surface-rgb), .12);
+        -webkit-backdrop-filter: saturate(180%) blur(12px);
+        backdrop-filter: saturate(180%) blur(12px);
+    }
 }
 
 /* Hide desktop nav everywhere (we’re hamburger-only) */

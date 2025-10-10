@@ -80,11 +80,10 @@
 
             <!-- Card: rectangular portrait + name/title + bio -->
             <div class="mt-6 grid gap-6 sm:grid-cols-3 items-start">
-              <!-- Rectangular portrait (vertical) -->
-              <figure class="sm:col-span-1">
-                <div class="overflow-hidden rounded-xl ring-1 ring-black/10 shadow-sm bg-white">
-                  <!-- Vertical rectangle (3:4). Replace src with actual portrait path if different -->
-                  <img src="/images/team/team-xian.jpg" alt="Xian Li" class="w-full h-full object-cover aspect-[3/4]"
+              <!-- Founder & Principal -->
+              <figure class="sm:col-span-1 text-center md:text-left">
+                <div class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto max-w-[320px] md:max-w-[360px]">
+                  <img src="/images/team/team-xian-transparent.png" alt="Xian Li" class="w-full h-auto object-contain aspect-[3/4]"
                     loading="lazy" />
                 </div>
                 <figcaption class="mt-3">
@@ -96,7 +95,7 @@
               <!-- Bio -->
               <div class="sm:col-span-2 text-[15px] md:text-base leading-7 text-gray-700 space-y-4">
                 <p>
-                  <strong>Xian Li</strong> is an acclaimed executive and producer with decades of experience in the global entertainment industry. With
+                  <strong>Xian</strong> is an acclaimed executive and producer with decades of experience in the global entertainment industry. With
                   expertise across creative development, packaging, financing, distribution, and cross-cultural partnerships,
                   Xian brings a deep understanding of the changing media landscape. Under her leadership, Ideali Projects swiftly garnered
                   acclaim for its innovative approach—producing content that has grossed tens of millions of dollars while significantly
@@ -115,6 +114,59 @@
               </div>
             </div>
           </section>
+
+          <!-- Team (one row of three; responsive) -->
+          <section aria-labelledby="team-heading" class="max-w-3xl mt-12">
+            <h2 id="team-heading" class="sr-only">Team</h2>
+
+            <ul class="grid grid-cols-1 sm:grid-cols-3 gap-10">
+              <!-- Member 1 -->
+              <li>
+                <figure class="text-center md:text-left">
+                  <div class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto
+                                            max-w-[160px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px]">
+                    <img src="/images/team/team-james-transparent.png" alt="James" class="w-full h-auto object-contain aspect-[3/4]"
+                      loading="lazy" />
+                  </div>
+                  <figcaption class="mt-3">
+                    <div class="text-base font-semibold text-brand">James</div>
+                    <div class="text-xs tracking-widest uppercase text-gray-500">Business Affairs</div>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <!-- Member 2 -->
+              <li>
+                <figure class="text-center md:text-left">
+                  <div class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto
+                              max-w-[160px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px]">
+                    <img src="/images/team/team-sandree-transparent.png" alt="Sandree"
+                      class="w-full h-auto object-contain aspect-[3/4]" loading="lazy" />
+                  </div>
+                  <figcaption class="mt-3">
+                    <div class="text-base font-semibold text-brand">Sandree</div>
+                    <div class="text-xs tracking-widest uppercase text-gray-500">Production</div>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <!-- Member 3 -->
+              <li>
+                <figure class="text-center md:text-left">
+                  <div class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto
+                              max-w-[160px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px]">
+                    <img src="/images/team/team-deneb-transparent.png" alt="Deneb"
+                      class="w-full h-auto object-contain aspect-[3/4]" loading="lazy" />
+                  </div>
+                  <figcaption class="mt-3">
+                    <div class="text-base font-semibold text-brand">Deneb</div>
+                    <div class="text-xs tracking-widest uppercase text-gray-500">Post-Production</div>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+          </section>
+
 
           <!-- Spacer -->
           <div class="h-10"></div>
