@@ -81,6 +81,9 @@ header {
   /* Transparent by default */
   background-color: transparent;
   backdrop-filter: none;
+  /* background-color: rgba(var(--surface-rgb), .12);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  backdrop-filter: saturate(180%) blur(12px); */
   border-bottom: none;
   padding: clamp(12px, 1.8vw, 20px) 24px;
   transition:
@@ -161,6 +164,12 @@ header:has(+ .nav-mobile.active) { transform: none !important; }
 .header--on-hero .hamburger-menu:focus-visible {
     background: rgba(255, 255, 255, .14);
     border-color: #fff;
+}
+
+.is-home header {
+    background-color: rgba(var(--surface-rgb), .12);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    backdrop-filter: saturate(180%) blur(12px);
 }
 
 /* Hide desktop nav everywhere (we’re hamburger-only) */
