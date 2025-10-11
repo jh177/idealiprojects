@@ -166,7 +166,7 @@ header:has(+ .nav-mobile.active) { transform: none !important; }
     border-color: #fff;
 }
 
-/* Home header background ONLY on small/mobile (image-over-text layout) */
+/* Home header background ONLY on small/mobile (image-over-text layout)
 @media (max-width: 767.98px) {
 
     .header--on-hero,
@@ -175,7 +175,7 @@ header:has(+ .nav-mobile.active) { transform: none !important; }
         -webkit-backdrop-filter: saturate(180%) blur(12px);
         backdrop-filter: saturate(180%) blur(12px);
     }
-}
+} */
 
 /* Hide desktop nav everywhere (we’re hamburger-only) */
 .nav-desktop { display: none !important; }
