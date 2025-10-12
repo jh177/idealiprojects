@@ -6,20 +6,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="/images/ideali-favicon.png" />
-  <!-- Tailwind (CDN) -->
+  <link rel="stylesheet" href="/src/styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { brand: { DEFAULT: '#0f172a', accent: '#ed2100' } },
-          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'] },
-          boxShadow: { card: '0 8px 30px rgba(0,0,0,.08)' }
-        }
-      }
-    }
-  </script>
-  <link rel="stylesheet" href="/src/styles.css" />
+  <script src="/src/tw-setup.js"></script>
   <title>Digital Media — Ideali Projects</title>
   <meta name="description"
     content="Highlights from our team’s digital media work — Mini-series and online projects." />
@@ -49,6 +38,27 @@
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 justify-items-center items-start">
 
           <!-- Card template: smaller, centered posters with hover overlay/caption -->
+          <!-- TLMTL -->
+          <a href="https://www.imdb.com/title/tt38644728/?ref_=fn_all_ttl_1" target="_blank" rel="noopener" class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
+            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
+              <img src="/images/digital-media/poster-V-TLMTL.JPG" alt="They love me too late poster"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 class="text-white font-semibold">They Love Me Too Late</h3>
+                <p class="text-white/85 text-xs">Digial Mini Series — 2025</p>
+              </div>
+            </div>
+            <div class="mt-3">
+              <h3 class="font-medium text-brand">They Love Me Too Late</h3>
+              <p class="text-sm text-gray-600">Digital Mini Series — 2025</p>
+            </div>
+          </a>
+
           <!-- CUB -->
           <a href="https://www.imdb.com/title/tt37672959/?ref_=nm_flmg_job_1_cdt_c_1" target="_blank" rel="noopener" class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
             <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">

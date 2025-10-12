@@ -5,19 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="./images/ideali-favicon.png">
   <!-- Tailwind (CDN) -->
+  <link rel="stylesheet" href="/src/styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { brand: { DEFAULT: '#0f172a', accent: '#ed2100' } },
-          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'] },
-          boxShadow: { card: '0 8px 30px rgba(0,0,0,.08)' }
-        }
-      }
-    }
-  </script>
-  <link rel="stylesheet" href="./src/styles.css" />
+  <script src="/src/tw-setup.js"></script>
   <!-- <script src="https://kit.fontawesome.com/e943b2cf3c.js" crossorigin="anonymous"></script> -->
   <title>Ideali Projects</title>
   <title>Ideali Projects — Film · TV · Digital Media · Live Events</title>
@@ -25,27 +15,33 @@
     content="Premium content built for global audience. Ideali Projects produces film, TV, digital micro-dramas, and live events from Los Angeles." />
 
   <!-- Open Graph -->
-<meta property="og:title" content="Ideali Projects — Film · TV · Digital Media · Live Events" />
-<meta property="og:description" content="Premium content built for global audience." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://idealiprojects.com/" />
+  <meta property="og:title" content="Ideali Projects — Film · TV · Digital Media · Live Events" />
+  <meta property="og:description" content="Premium content built for global audience." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://idealiprojects.com/" />
 
-<!-- Use logo banner for previews -->
-<meta property="og:image" content="https://idealiprojects.com/images/ideali-logo-banner.png?v=2" />
-<meta property="og:image:secure_url" content="https://idealiprojects.com/images/ideali-logo-banner.png?v=2" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Ideali Projects logo" />
+  <!-- Use logo banner for previews -->
+  <meta property="og:image" content="https://idealiprojects.com/images/ideali-logo-banner.png?v=2" />
+  <meta property="og:image:secure_url" content="https://idealiprojects.com/images/ideali-logo-banner.png?v=2" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ideali Projects logo" />
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Ideali Projects — Film · TV · Digital Media · Live Events" />
-<meta name="twitter:description" content="Premium content built for global audience." />
-<meta name="twitter:image" content="https://idealiprojects.com/images/ideali-logo-banner.png?v=2" />
-<meta name="twitter:image:alt" content="Ideali Projects logo" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ideali Projects — Film · TV · Digital Media · Live Events" />
+  <meta name="twitter:description" content="Premium content built for global audience." />
+  <meta name="twitter:image" content="https://idealiprojects.com/images/ideali-logo-banner.png?v=2" />
+  <meta name="twitter:image:alt" content="Ideali Projects logo" />
 
   <!-- (Optional) Preload hero image for faster LCP -->
-  <link rel="preload" as="image" href="/images/hero-still.jpg" imagesrcset="/images/hero-still.jpg" imagesizes="100vw" />
+  <link rel="preload" as="image" href="/images/hero_7.jpeg" imagesrcset="/images/hero_7" imagesizes="100vw" />
+
+  <!-- Jost (variable) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
 
   <!-- JSON-LD Organization -->
   <script type="application/ld+json">
@@ -109,97 +105,87 @@
       </div>
     </section>
 
-
-    <!-- SERVICE SECTION (mobile: image on top, text below; md+: split) -->
-    <section id="services" class="relative bg-[var(--surface)] md:min-h-[calc(var(--vh)*100)] md:h-[calc(var(--vh)*100)]">
-      <div class="grid h-auto md:h-full md:grid-cols-2">
-
-        <!-- IMAGE first on mobile -->
-        <div class="order-1 relative h-[48vh] sm:h-[56vh] md:order-1 md:h-full overflow-hidden">
+    <!-- SERVICE SECTION (centered; icons always in one row; smaller descriptions) -->
+    <section id="services" class="relative bg-[var(--surface)]">
+      <div class="grid md:grid-cols-2">
+        <!-- LEFT: image -->
+        <div class="order-1 relative h-[48vh] sm:h-[56vh] md:h-[calc(var(--vh)*100)] overflow-hidden">
           <img src="/images/hero_3.png" alt="On set: camera and lighting for Ideali production"
-            class="w-full h-full object-cover img-dim" loading="eager" />
+            class="absolute inset-0 w-full h-full object-cover img-dim" loading="eager" />
         </div>
 
-        <!-- TEXT second on mobile -->
-        <div
-          class="relative z-[1] order-2 md:order-2 flex items-center justify-center md:justify-start px-4 md:px-8 py-8 md:py-0">
-          <div class="max-w-xl w-full mx-auto">
-            <p class="text-lg md:text-xl text-gray-700">
+        <!-- RIGHT: content -->
+        <div class="order-2 flex items-center px-6 py-10 md:px-12 md:py-0">
+          <div class="w-full max-w-2xl mx-auto text-center">
+            <!-- Top copy -->
+            <p class="text-xl md:text-2xl leading-relaxed text-brand/90">
               End-to-end creative and production across Film, TV, digital content, and live events.
               We build cross-cultural projects that travel.
             </p>
 
-            <ul class="mt-8 space-y-6">
+            <!-- Icons row: always 3 columns -->
+            <div class="mt-10 grid grid-cols-3 gap-6 sm:gap-8">
               <!-- Development -->
-              <li class="flex items-start gap-4">
-                <span class="mt-1 flex h-12 w-12 min-w-[3rem] flex-none items-center justify-center rounded-xl
-                            bg-brand-accent/10 text-brand-accent ring-1 ring-brand-accent/20">
-                  <svg viewBox="0 0 24 24" class="h-6 w-6 flex-none" fill="none" stroke="currentColor" stroke-width="1.8"
+              <div class="flex flex-col items-center gap-2">
+                <span
+                  class="inline-flex h-12 w-12 items-center justify-center rounded-full ring-1 ring-black/10 bg-[var(--surface)]">
+                  <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8"
                     aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round"
                       d="M9 18h6m-5 3h4M6 9a6 6 0 1112 0c0 2.05-.86 3.38-2.06 4.66-.65.7-1.3 1.53-1.53 2.59H9.59c-.23-1.06-.88-1.89-1.53-2.6C6.86 12.37 6 11.04 6 9z" />
                   </svg>
                 </span>
-                <div>
-                  <h3 class="text-lg md:text-xl font-semibold">Development</h3>
-                  <p class="text-base md:text-md text-gray-600">IP sourcing, packaging, writers’ room, cross-border
-                    partnerships.</p>
-                </div>
-              </li>
+                <h3 class="font-semibold text-brand">Development</h3>
+                <p class="text-xs text-gray-700">IP sourcing, packaging, writers’ room.</p>
+              </div>
 
               <!-- Production -->
-              <li class="flex items-start gap-4">
-                <span class="mt-1 flex h-12 w-12 min-w-[3rem] flex-none items-center justify-center rounded-xl
-                            bg-brand-accent/10 text-brand-accent ring-1 ring-brand-accent/20">
-                  <svg viewBox="0 0 24 24" class="h-6 w-6 flex-none" fill="none" stroke="currentColor" stroke-width="1.8"
+              <div class="flex flex-col items-center gap-2">
+                <span
+                  class="inline-flex h-12 w-12 items-center justify-center rounded-full ring-1 ring-black/10 bg-[var(--surface)]">
+                  <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8"
                     aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round"
                       d="M3 10h18v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8zM3 10l3.6-5.4a2 2 0 011.66-.9H21l-3 4.5M7 10l3-6m4 6l3-6" />
                   </svg>
                 </span>
-                <div>
-                  <h3 class="text-lg md:text-xl font-semibold">Production</h3>
-                  <p class="text-base md:text-md text-gray-600">From script to screen for film, TV and digital media.</p>
-                </div>
-              </li>
+                <h3 class="font-semibold text-brand">Production</h3>
+                <p class="text-xs text-gray-700">From script to screen</p>
+              </div>
 
               <!-- Live Events -->
-              <li class="flex items-start gap-4">
-                <span class="mt-1 flex h-12 w-12 min-w-[3rem] flex-none items-center justify-center rounded-xl
-                            bg-brand-accent/10 text-brand-accent ring-1 ring-brand-accent/20">
-                  <svg viewBox="0 0 24 24" class="h-6 w-6 flex-none" fill="none" stroke="currentColor" stroke-width="1.8"
+              <div class="flex flex-col items-center gap-2">
+                <span
+                  class="inline-flex h-12 w-12 items-center justify-center rounded-full ring-1 ring-black/10 bg-[var(--surface)]">
+                  <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8"
                     aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round"
                       d="M4 8a3 3 0 000 6v2a2 2 0 002 2h12a2 2 0 002-2v-2a3 3 0 000-6V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2z" />
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10 7v10" />
                   </svg>
                 </span>
-                <div>
-                  <h3 class="text-lg md:text-xl font-semibold">Live Events</h3>
-                  <p class="text-base md:text-md text-gray-600">Concerts, touring, venue partnerships, international
-                    productions.</p>
-                </div>
-              </li>
-            </ul>
+                <h3 class="font-semibold text-brand">Live Events</h3>
+                <p class="text-xs text-gray-700">Concerts productions, venue partnerships</p>
+              </div>
+            </div>
 
-            <!-- CTA (white background, brand accent text) -->
-            <div class="mt-8 md:mt-10">
-              <a href="/about" class="group inline-flex items-center gap-2 rounded-lg bg-[var(--surface)] text-brand-accent px-5 py-3
-                      ring-1 ring-brand-accent hover:bg-brand-accent/5
-                      focus:outline-none focus:ring-2 focus:ring-brand-accent/40 transition">
+            <!-- CTA -->
+            <div class="mt-12 flex justify-center">
+              <a href="/about" class="group inline-flex items-center gap-3 text-lg md:text-xl font-semibold
+                        text-brand/80 hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand/30
+                        rounded px-3 py-2 -mx-3 -my-2">
                 Learn more
-                <svg viewBox="0 0 24 24" class="h-5 w-5 transition-transform group-hover:translate-x-0.5" fill="none"
-                  stroke="currentColor" stroke-width="2">
+                <svg viewBox="0 0 24 24" class="h-6 w-6 transition-transform translate-x-0.5 group-hover:translate-x-1" fill="none"
+                  stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
                 </svg>
               </a>
             </div>
+
           </div>
         </div>
-
       </div>
     </section>
-
 
     <!-- FEATURED PROJECT #Wailing -->
     <section class="relative fade-section min-h-screen h-[calc(var(--vh)*100)] overflow-hidden">
@@ -212,7 +198,7 @@
       <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent pointer-events-none"></div>
 
       <!-- Bottom-half content panel -->
-      <div class="relative max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-0 md:absolute md:inset-x-0 md:bottom-0 md:h-1/2"
+      <div class="relative max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-0 md:absolute md:inset-x-0 md:bottom-8 md:h-1/2"
         data-feature="panel"
         style="padding-right: max(env(safe-area-inset-right), 1rem); padding-left: max(env(safe-area-inset-left), 1rem);">
         <!-- md+: center-align vertically, space between horizontally -->
@@ -243,7 +229,7 @@
           </div>
 
           <!-- RIGHT: poster (centered vertically, padded from right) -->
-          <div class="w-full md:w-auto flex md:items-center md:justify-center md:pr-4">
+          <div class="w-full md:w-auto flex md:items-left md:justify-center md:pr-4">
             <a href="/portfolio-film-tv/" class="relative block mx-auto md:ml-8 rounded-[14px] overflow-hidden bg-white/5 ring-1 ring-white/60
                       shadow-[0_8px_30px_rgba(0,0,0,0.25)] focus:outline-none focus:ring-2 focus:ring-white/70"
               data-feature-poster>
@@ -269,7 +255,7 @@
       <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent pointer-events-none"></div>
 
       <!-- Bottom-half content panel -->
-      <div class="relative max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-0 md:absolute md:inset-x-0 md:bottom-0 md:h-1/2"
+      <div class="relative max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-0 md:absolute md:inset-x-0 md:bottom-8 md:h-1/2"
         data-feature="panel"
         style="padding-right: max(env(safe-area-inset-right), 1rem); padding-left: max(env(safe-area-inset-left), 1rem);">
         <!-- md+: center-align vertically, space between horizontally -->
@@ -326,7 +312,7 @@
       <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent pointer-events-none"></div>
 
       <!-- Bottom-half content panel -->
-      <div class="relative max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-0 md:absolute md:inset-x-0 md:bottom-0 md:h-1/2"
+      <div class="relative max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-0 md:absolute md:inset-x-0 md:bottom-8 md:h-1/2"
         data-feature="panel"
         style="padding-right: max(env(safe-area-inset-right), 1rem); padding-left: max(env(safe-area-inset-left), 1rem);">
         <!-- md+: center-align vertically, space between horizontally -->
@@ -383,7 +369,7 @@
       <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent pointer-events-none"></div>
 
       <!-- Bottom-half content panel -->
-      <div class="relative max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-0 md:absolute md:inset-x-0 md:bottom-0 md:h-1/2"
+      <div class="relative max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-0 md:absolute md:inset-x-0 md:bottom-8 md:h-1/2"
         data-feature="panel"
         style="padding-right: max(env(safe-area-inset-right), 1rem); padding-left: max(env(safe-area-inset-left), 1rem);">
         <!-- md+: center-align vertically, space between horizontally -->

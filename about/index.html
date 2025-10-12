@@ -6,25 +6,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="../images/ideali-favicon.png" />
+  <link rel="stylesheet" href="/src/styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { brand: { DEFAULT: '#0f172a', accent: '#ed2100' } },
-          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'] },
-          boxShadow: { card: '0 8px 30px rgba(0,0,0,.08)' }
-        }
-      }
-    }
-  </script>
-  <link rel="stylesheet" href="../src/styles.css" />
+  <script src="/src/tw-setup.js"></script>
   <title>About — Ideali Projects</title>
   <meta name="description"
     content="About Ideali Projects and founder Xian Li: film, TV, digital media, and live entertainment from Los Angeles." />
 </head>
 
-<body class="bg-[var(--surface)]">
+<body class="bg-[var(--surface)] font-sans">
   <!-- Header partial -->
   <div data-include="/partials/header.html"></div>
 
@@ -119,18 +109,18 @@
           <section aria-labelledby="team-heading" class="max-w-3xl mt-12">
             <h2 id="team-heading" class="sr-only">Team</h2>
 
-            <ul class="grid grid-cols-1 sm:grid-cols-3 gap-10">
-              <!-- Member 1 -->
+            <ul class="grid grid-cols-1 sm:grid-cols-4 gap-10">
+              <!-- Member 4 -->
               <li>
                 <figure class="text-center md:text-left">
                   <div class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto
                                             max-w-[160px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px]">
-                    <img src="/images/team/team-james-transparent.png" alt="James" class="w-full h-auto object-contain aspect-[3/4]"
+                    <img src="/images/team/team-tyler-transparent.png" alt="Tyler" class="w-full h-auto object-contain aspect-[3/4]"
                       loading="lazy" />
                   </div>
                   <figcaption class="mt-3">
-                    <div class="text-base font-semibold text-brand">James</div>
-                    <div class="text-xs tracking-widest uppercase text-gray-500">Business Affairs</div>
+                    <div class="text-base font-semibold text-brand">Tyler</div>
+                    <div class="text-xs tracking-widest uppercase text-gray-500">Creative</div>
                   </figcaption>
                 </figure>
               </li>
@@ -164,6 +154,22 @@
                   </figcaption>
                 </figure>
               </li>
+
+              <!-- Member 1 -->
+              <li>
+                <figure class="text-center md:text-left">
+                  <div class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto
+                                                          max-w-[160px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px]">
+                    <img src="/images/team/team-james-transparent.png" alt="James" class="w-full h-auto object-contain aspect-[3/4]"
+                      loading="lazy" />
+                  </div>
+                  <figcaption class="mt-3">
+                    <div class="text-base font-semibold text-brand">James</div>
+                    <div class="text-xs tracking-widest uppercase text-gray-500">Business Affairs</div>
+                  </figcaption>
+                </figure>
+              </li>
+
             </ul>
           </section>
 
