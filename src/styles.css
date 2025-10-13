@@ -434,7 +434,14 @@ button[type="submit"]:active {
 /* ----- Big stacked hero type --------------------------------------------- */
 .hero-stack {
     display: grid;
-    gap: clamp(8px, 1.4vw, 14px);
+    gap: clamp(18px, 2.2vw, 44px);
+}
+
+/* extra spacing on very large screens */
+@media (min-width: 1280px) {
+    .hero-stack {
+        gap: clamp(24px, 2.6vw, 56px);
+    }
 }
 
 .hero-word {
