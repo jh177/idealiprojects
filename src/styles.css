@@ -441,7 +441,7 @@ button[type="submit"]:active {
     font-weight: 600;
     letter-spacing: -.02em;
     line-height: 1.02;
-    font-size: clamp(2rem, 5.6vw, 4.4rem);
+    font-size: clamp(2rem, 4.6vw, 4.4rem);
     opacity: 0;
     transform: translateY(16px);
     animation: hero-loop var(--hero-loop) cubic-bezier(.2, .7, .2, 1) infinite both;
