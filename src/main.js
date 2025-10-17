@@ -207,4 +207,30 @@ export function initSite() {
     );
     sections.forEach((s) => io.observe(s));
   }
+
+  /* ---------------------------- slide-in reveal ---------------------------- */
+  // Auto-stagger groups (3 items get 0, 90ms, 180ms, etc.)
+  document.querySelectorAll("[data-reveal-group]").forEach((group) => {
+    const kids = group.querySelectorAll("[data-reveal]");
+    kids.forEach((el, i) =>
+      el.style.setProperty("--reveal-delay", `${i * 90}ms`)
+    );
+  });
+
+  // Observe reveal elements
+  const revealEls = document.querySelectorAll("[data-reveal]");
+  if (revealEls.length) {
+    const rio = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-visible");
+            rio.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -10% 0px" }
+    );
+    revealEls.forEach((el) => rio.observe(el));
+  }
 }
