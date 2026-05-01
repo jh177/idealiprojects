@@ -1,0 +1,112 @@
+<!-- /about/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="../images/ideali-favicon.png" />
+  <link rel="stylesheet" href="/src/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/src/tw-setup.js"></script>
+  <title>About Us — Ideali Projects</title>
+  <meta name="description"
+    content="Ideali Projects is an independent Los Angeles studio producing film, television, digital short-form series, and live entertainment for global audiences." />
+</head>
+
+<body class="bg-[var(--surface)]">
+  <div data-include="/partials/header.html"></div>
+
+  <main class="pt-[calc(var(--header-h))]">
+    <section class="grid md:grid-cols-4">
+
+      <!-- LEFT: Tall, static image -->
+      <aside
+        class="relative h-[60vh] md:sticky md:top-[var(--header-h)] md:h-[calc(100svh-var(--header-h))] md:col-span-2">
+        <img src="/images/hero_about.jpeg" alt="Ideali Projects — studio imagery"
+          class="absolute inset-0 w-full h-full object-cover img-dim" fetchpriority="high" />
+      </aside>
+
+      <!-- RIGHT: About content -->
+      <div class="bg-[var(--surface)] md:col-span-2">
+        <div class="px-6 md:px-10 xl:px-16 py-10 md:py-14 md:max-h-[calc(100svh-var(--header-h))] md:overflow-y-auto">
+
+          <article class="mt-4 md:mt-6 max-w-2xl text-brand">
+            <h1 class="mt-4 text-3xl md:text-4xl font-semibold tracking-tight">
+              About Us
+            </h1>
+
+            <div class="mt-6 space-y-5 text-base md:text-lg leading-7 text-gray-700">
+              <p>
+                Ideali Projects is an independent studio headquartered in Los Angeles and founded by veteran executive
+                <strong>Xian Li</strong>.
+                We originate and produce film, television, mobile-first series, and live entertainment distinguished by
+                cultural
+                specificity and built for global reach. We believe every story—and every artist—deserves its ideal
+                medium.
+              </p>
+              <p>
+                In a rapidly evolving media landscape, we diversify our efforts across formats, platforms, and release
+                windows—pairing
+                each story and artist with its ideal medium to maximize creative impact and commercial reach. Our
+                mission is to bridge
+                East and West through universally resonant storytelling. We combine market intelligence with modern,
+                efficient
+                production workflows to deliver high-impact, premium content—without compromise.
+              </p>
+              <p>
+                From development through delivery, we partner with world-class creators and companies to champion
+                diverse talent and
+                build durable IP and franchises. Whether a mobile micro-drama, an event-theatrical feature, a marquee
+                scripted series,
+                or a large-scale live show, Ideali Projects unites creative ambition with operational rigor to deliver
+                work that moves
+                audiences and endures—artistically and commercially.
+              </p>
+            </div>
+
+            <!-- What We Do -->
+            <div class="mt-10 grid gap-4 sm:grid-cols-3">
+              <div class="border border-black/10 rounded-xl p-4">
+                <div class="text-sm tracking-widest uppercase text-gray-500">Film & TV</div>
+                <p class="mt-2 text-sm leading-6 text-gray-700">Development, packaging, production, and delivery.</p>
+              </div>
+
+              <div class="border border-black/10 rounded-xl p-4">
+                <div class="text-sm tracking-widest uppercase text-gray-500">Short Form</div>
+                <p class="mt-2 text-sm leading-6 text-gray-700">Mobile-first storytelling built for today’s platforms.
+                </p>
+              </div>
+
+              <div class="border border-black/10 rounded-xl p-4">
+                <div class="text-sm tracking-widest uppercase text-gray-500">Live Entertainment</div>
+                <p class="mt-2 text-sm leading-6 text-gray-700">Concerts, venue partnerships, and live entertainment.
+                </p>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-10">
+              <a href="/team/"
+                class="inline-flex items-center text-sm tracking-[0.18em] uppercase text-brand border-b border-brand pb-1 hover:opacity-70 transition">
+                Meet the Team
+              </a>
+            </div>
+          </article>
+
+          <div class="h-10"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/partials/footer.html"></div>
+
+  <script type="module">
+    import { includePartials } from "/src/partials.js";
+    import { initSite } from "/src/main.js";
+    includePartials().then(initSite);
+  </script>
+</body>
+
+</html>

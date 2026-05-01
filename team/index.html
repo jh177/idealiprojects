@@ -1,4 +1,4 @@
-<!-- /about/index.html -->
+<!-- /team/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,218 +9,159 @@
   <link rel="stylesheet" href="/src/styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/src/tw-setup.js"></script>
-  <title>About — Ideali Projects</title>
-  <meta name="description"
-    content="About Ideali Projects and founder Xian Li: film, TV, digital media, and live entertainment from Los Angeles." />
+  <title>Team — Ideali Projects</title>
+  <meta name="description" content="Meet the Ideali Projects team, led by founder and principal Xian Li." />
 </head>
 
 <body class="bg-[var(--surface)]">
-  <!-- Header partial -->
   <div data-include="/partials/header.html"></div>
 
   <main class="pt-[calc(var(--header-h))]">
-    <!-- Two-column frame: left image (sticky), right content (scroll on md+) -->
-    <section class="grid md:grid-cols-4">
+    <section class="px-6 md:px-10 xl:px-16 py-12 md:py-20">
 
-      <!-- LEFT: Tall, static image -->
-      <aside
-        class="relative h-[60vh] md:sticky md:top-[var(--header-h)] md:h-[calc(100svh-var(--header-h))] md:col-span-2">
-        <img src="/images/hero_about.jpeg" alt="Ideali Projects — studio imagery"
-          class="absolute inset-0 w-full h-full object-cover img-dim" fetchpriority="high" />
-      </aside>
+      <!-- Page Intro -->
+        <h1 class="text-center mt-4 text-3xl md:text-5xl font-semibold tracking-tight text-brand">
+          The Team
+        </h1>
 
-      <!-- RIGHT: Content (independent scroll on md+) -->
-      <div class="bg-[var(--surface)] md:col-span-2">
-        <div class="px-6 md:px-10 xl:px-16 py-10 md:py-14 md:max-h-[calc(100svh-var(--header-h))] md:overflow-y-auto">
-          <!-- Tag -->
-          <!-- <div class="text-xs sm:text-sm tracking-[0.22em] uppercase text-gray-500">Ideali Projects</div> -->
+        <p class="mt-3 text-base md:text-lg leading-8 text-gray-700 max-w-2xl mx-auto">
+          A cross-disciplinary team bringing together creative development, production, post-production,
+          and live entertainment execution.
+        </p>
 
-          <!-- About text -->
-          <article class="mt-4 md:mt-6 max-w-2xl text-brand">
-            <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">About Us</h1>
+      <!-- Founder Feature -->
+      <section aria-labelledby="founder-heading" class="max-w-6xl mx-auto mt-14 md:mt-20">
+        <div class="grid gap-10 md:grid-cols-5 items-center border-t border-black/10 pt-10">
 
-            <div class="mt-6 space-y-5 text-base md:text-lg leading-7 text-gray-700">
-              <p>
-                Ideali Projects is an independent studio headquartered in Los Angeles and founded by veteran executive
-                <strong>Xian Li</strong>.
-                We originate and produce film, television, mobile-first series, and live entertainment distinguished by
-                cultural
-                specificity and built for global reach. We believe every story—and every artist—deserves its ideal
-                medium.
-              </p>
-              <p>
-                In a rapidly evolving media landscape, we diversify our efforts across formats, platforms, and release
-                windows—pairing
-                each story and artist with its ideal medium to maximize creative impact and commercial reach. Our
-                mission is to bridge
-                East and West through universally resonant storytelling. We combine market intelligence with modern,
-                efficient
-                production workflows to deliver high-impact, premium content—without compromise.
-              </p>
-              <p>
-                From development through delivery, we partner with world-class creators and companies to champion
-                diverse talent and
-                build durable IP and franchises. Whether a mobile micro-drama, an event-theatrical feature, a marquee
-                scripted series,
-                or a large-scale live show, Ideali Projects unites creative ambition with operational rigor to deliver
-                work that moves
-                audiences and endures—artistically and commercially.
-              </p>
+          <figure class="md:col-span-2 text-center">
+            <div class="overflow-hidden rounded-2xl bg-[var(--surface)] mx-auto max-w-[360px]">
+              <img src="/images/team/team-xian-transparent.png" alt="Xian Li"
+                class="w-full h-auto object-contain aspect-[3/4]" loading="lazy" />
             </div>
-          </article>
+          </figure>
 
-          <!-- Divider -->
-          <hr class="my-10 border-black/10">
-
-          <!-- Founder & Principal -->
-          <section aria-labelledby="founder-heading" class="max-w-3xl">
+          <div class="md:col-span-3">
             <h2 id="founder-heading" class="text-2xl md:text-3xl font-semibold tracking-tight text-brand">
-              The Team
+              Xian Li
             </h2>
 
-            <!-- Card: rectangular portrait + name/title + bio -->
-            <div class="mt-6 grid gap-6 sm:grid-cols-3 items-start">
-              <!-- Founder & Principal -->
-              <figure class="sm:col-span-1 text-center md:text-left">
-                <div class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto max-w-[320px] md:max-w-[360px]">
-                  <img src="/images/team/team-xian-transparent.png" alt="Xian Li"
-                    class="w-full h-auto object-contain aspect-[3/4]" loading="lazy" />
-                </div>
-                <figcaption class="mt-3">
-                  <div class="text-base font-semibold text-brand">Xian Li</div>
-                  <div class="text-xs tracking-widest uppercase text-gray-500 mt-0.5">Founder &amp; Principal</div>
-                </figcaption>
-              </figure>
-
-              <!-- Bio -->
-              <div class="sm:col-span-2 text-[15px] md:text-base leading-7 text-gray-700 space-y-4">
-                <p>
-                  <strong>Xian</strong> is an acclaimed executive and producer with decades of experience in the global
-                  entertainment industry. With
-                  expertise across creative development, packaging, financing, distribution, and cross-cultural
-                  partnerships,
-                  Xian brings a deep understanding of the changing media landscape. Under her leadership, Ideali
-                  Projects swiftly garnered
-                  acclaim for its innovative approach—producing content that has grossed tens of millions of dollars
-                  while significantly
-                  reducing traditional production costs.
-
-                </p>
-                <p>
-                  Previously, Xian held leadership roles at top-tier Hollywood studios, including serving as
-                  <strong>Executive Vice President,
-                    Film &amp; TV</strong> at <strong>SK Global Entertainment</strong>, and as <strong>Head of
-                    Asia</strong> at <strong>Twentieth Century Fox International</strong>. Her tenure at these
-                  companies was marked by a strong instinct for content that resonates worldwide and generates billions
-                  in returns.
-                </p>
-                <p>
-                  Xian has also held executive roles at <strong>Searchlight Pictures</strong> and <strong>Sony
-                    Pictures</strong> in Los Angeles. Xian is a proud alum of Peking University and the University of Southern California.
-                </p>
-              </div>
+            <div class="mt-2 text-xs tracking-widest uppercase text-gray-500">
+              Founder &amp; Principal
             </div>
-          </section>
 
-          <!-- Team (one row of three; responsive) -->
-          <section aria-labelledby="team-heading" class="max-w-3xl mt-12">
-            <!-- <h3 id="team-heading"
-              class="text-2xl md:text-3xl font-semibold tracking-tight text-brand mb-6 text-center md:text-left">
-              Team
-            </h3> -->
+            <div class="mt-6 space-y-4 text-[15px] md:text-base leading-7 text-gray-700">
+              <p>
+                <strong>Xian</strong> is an acclaimed executive and producer with decades of experience in the global
+                entertainment industry. With
+                expertise across creative development, packaging, financing, distribution, and cross-cultural
+                partnerships,
+                Xian brings a deep understanding of the changing media landscape. Under her leadership, Ideali
+                Projects swiftly garnered
+                acclaim for its innovative approach—producing content that has grossed tens of millions of dollars
+                while significantly
+                reducing traditional production costs.
 
-            <ul class="grid grid-cols-1 sm:grid-cols-3 gap-10">
-              <!-- Member 1 -->
-              <li>
-                <figure class="text-center md:text-left">
-                  <div class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto
-                                            max-w-[160px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px]">
-                    <img src="/images/team/team-tyler-transparent.png" alt="Tyler"
-                      class="w-full h-auto object-contain aspect-[3/4]" loading="lazy" />
-                  </div>
-                  <figcaption class="mt-3">
-                    <div class="text-base font-semibold text-brand">Tyler</div>
-                    <div class="text-xs tracking-widest uppercase text-gray-500">Creative</div>
-                  </figcaption>
-                </figure>
-              </li>
-
-              <!-- Member 2 -->
-              <li>
-                <figure class="text-center md:text-left">
-                  <div class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto
-                              max-w-[160px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px]">
-                    <img src="/images/team/team-sandree-transparent.png" alt="Sandree"
-                      class="w-full h-auto object-contain aspect-[3/4]" loading="lazy" />
-                  </div>
-                  <figcaption class="mt-3">
-                    <div class="text-base font-semibold text-brand">Sandree</div>
-                    <div class="text-xs tracking-widest uppercase text-gray-500">Production</div>
-                  </figcaption>
-                </figure>
-              </li>
-
-              <!-- Member 3 -->
-              <li>
-                <figure class="text-center md:text-left">
-                  <div class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto
-                              max-w-[160px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px]">
-                    <img src="/images/team/team-ava-transparent.png" alt="ava"
-                      class="w-full h-auto object-contain aspect-[3/4]" loading="lazy" />
-                  </div>
-                  <figcaption class="mt-3">
-                    <div class="text-base font-semibold text-brand">Ava</div>
-                    <div class="text-xs tracking-widest uppercase text-gray-500">Physical Production</div>
-                  </figcaption>
-                </figure>
-              </li>
-
-              <!-- Member 4 -->
-              <li>
-                <figure class="text-center md:text-left">
-                  <div class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto
-                              max-w-[160px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px]">
-                    <img src="/images/team/team-deneb-transparent.png" alt="Deneb"
-                      class="w-full h-auto object-contain aspect-[3/4]" loading="lazy" />
-                  </div>
-                  <figcaption class="mt-3">
-                    <div class="text-base font-semibold text-brand">Deneb</div>
-                    <div class="text-xs tracking-widest uppercase text-gray-500">Post Production</div>
-                  </figcaption>
-                </figure>
-              </li>
-
-              <!-- Member 5 -->
-              <li>
-                <figure class="text-center md:text-left">
-                  <div
-                    class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto
-                                                          max-w-[160px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px]">
-                    <img src="/images/team/team-james-transparent.png" alt="James"
-                      class="w-full h-auto object-contain aspect-[3/4]" loading="lazy" />
-                  </div>
-                  <figcaption class="mt-3">
-                    <div class="text-base font-semibold text-brand">James</div>
-                    <div class="text-xs tracking-widest uppercase text-gray-500">Business Affairs</div>
-                  </figcaption>
-                </figure>
-              </li>
-
-            </ul>
-          </section>
-
-
-          <!-- Spacer -->
-          <div class="h-10"></div>
+              </p>
+              <p>
+                Previously, Xian held leadership roles at top-tier Hollywood studios, including serving as
+                <strong>Executive Vice President,
+                  Film &amp; TV</strong> at <strong>SK Global Entertainment</strong>, and as <strong>Head of
+                  Asia</strong> at <strong>Twentieth Century Fox International</strong>. Her tenure at these
+                companies was marked by a strong instinct for content that resonates worldwide and generates billions
+                in returns.
+              </p>
+              <p>
+                Xian has also held executive roles at <strong>Searchlight Pictures</strong> and <strong>Sony
+                  Pictures</strong> in Los Angeles. Xian is a proud alum of Peking University and the University of Southern
+                California.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Team Grid -->
+      <section aria-labelledby="team-grid-heading" class="max-w-6xl mx-auto mt-16 md:mt-20">
+        <h2 id="team-grid-heading"
+          class="text-2xl md:text-3xl font-semibold tracking-tight text-brand text-center md:text-left">
+          Our Team
+        </h2>
+
+        <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+
+          <li>
+            <figure class="text-center">
+              <div class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto max-w-[220px]">
+                <img src="/images/team/team-tyler-transparent.png" alt="Tyler"
+                  class="w-full h-auto object-contain aspect-[3/4]" loading="lazy" />
+              </div>
+              <figcaption class="mt-3">
+                <div class="text-base font-semibold text-brand">Tyler</div>
+                <div class="text-xs tracking-widest uppercase text-gray-500">Creative</div>
+              </figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <figure class="text-center">
+              <div class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto max-w-[220px]">
+                <img src="/images/team/team-sandree-transparent.png" alt="Sandree"
+                  class="w-full h-auto object-contain aspect-[3/4]" loading="lazy" />
+              </div>
+              <figcaption class="mt-3">
+                <div class="text-base font-semibold text-brand">Sandree</div>
+                <div class="text-xs tracking-widest uppercase text-gray-500">Production</div>
+              </figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <figure class="text-center">
+              <div class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto max-w-[220px]">
+                <img src="/images/team/team-ava-transparent.png" alt="Ava"
+                  class="w-full h-auto object-contain aspect-[3/4]" loading="lazy" />
+              </div>
+              <figcaption class="mt-3">
+                <div class="text-base font-semibold text-brand">Ava</div>
+                <div class="text-xs tracking-widest uppercase text-gray-500">Physical Production</div>
+              </figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <figure class="text-center">
+              <div class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto max-w-[220px]">
+                <img src="/images/team/team-deneb-transparent.png" alt="Deneb"
+                  class="w-full h-auto object-contain aspect-[3/4]" loading="lazy" />
+              </div>
+              <figcaption class="mt-3">
+                <div class="text-base font-semibold text-brand">Deneb</div>
+                <div class="text-xs tracking-widest uppercase text-gray-500">Post Production</div>
+              </figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <figure class="text-center">
+              <div class="overflow-hidden rounded-xl bg-[var(--surface)] mx-auto max-w-[220px]">
+                <img src="/images/team/team-james-transparent.png" alt="James"
+                  class="w-full h-auto object-contain aspect-[3/4]" loading="lazy" />
+              </div>
+              <figcaption class="mt-3">
+                <div class="text-base font-semibold text-brand">James</div>
+                <div class="text-xs tracking-widest uppercase text-gray-500">Business Affairs</div>
+              </figcaption>
+            </figure>
+          </li>
+
+        </ul>
+      </section>
+
     </section>
   </main>
 
-  <!-- Footer partial -->
   <div data-include="/partials/footer.html"></div>
 
-  <!-- Partials + interactions -->
   <script type="module">
     import { includePartials } from "/src/partials.js";
     import { initSite } from "/src/main.js";
