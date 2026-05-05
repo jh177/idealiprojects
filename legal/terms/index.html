@@ -1,0 +1,99 @@
+<!-- /legal/terms/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/images/ideali-favicon.png" />
+  <link rel="stylesheet" href="/src/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/src/tw-setup.js"></script>
+  <title>Terms — Ideali Projects</title>
+  <meta name="description" content="Terms of use for idealiprojects.com." />
+</head>
+
+<body class="bg-[var(--surface)]">
+  <div data-include="/partials/header.html"></div>
+
+  <main class="pt-[calc(var(--header-h))]">
+    <section class="bg-[var(--surface)]">
+      <div class="mx-auto max-w-3xl px-6 md:px-10 xl:px-16 py-10 md:py-14">
+        <h1 class="text-3xl md:text-4xl font-semibold tracking-tight text-brand">Terms</h1>
+
+        <div class="mt-6 space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
+          <p><strong>Effective date:</strong> May 5, 2026</p>
+
+          <p>
+            By accessing this website, you agree to these Terms. If you do not agree, do not use the site.
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Intellectual property</h2>
+          <p>
+            All content on this site (including text, images, logos, and audiovisual materials) is owned by Ideali
+            Projects or used
+            with permission and is protected by applicable intellectual property laws.
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Permitted use</h2>
+          <p>
+            You may view and share links to the site for informational purposes. You may not copy, reproduce,
+            distribute, or exploit
+            site content without prior written permission.
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Third-party links</h2>
+          <p>
+            This site may include links to third-party websites and services. We do not control and are not responsible
+            for the
+            content, policies, or practices of third parties.
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Disclaimer</h2>
+          <p>
+            This site is provided “as is” without warranties of any kind. We do not warrant that the site will be
+            uninterrupted or
+            error-free.
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Limitation of liability</h2>
+          <p>
+            To the maximum extent permitted by law, Ideali Projects will not be liable for any indirect, incidental,
+            special,
+            consequential, or punitive damages arising from or related to your use of the site.
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Governing law</h2>
+          <p>
+            These Terms are governed by the laws of the State of California, without regard to conflict of laws
+            principles.
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Changes to these Terms</h2>
+          <p>
+            We may update these Terms from time to time. Continued use of the site after changes become effective
+            constitutes
+            acceptance of the updated Terms.
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Contact</h2>
+          <p>
+            Questions? Email us at
+            <a class="underline underline-offset-4 hover:opacity-80"
+              href="mailto:info@idealiprojects.com">info@idealiprojects.com</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/partials/footer.html"></div>
+
+  <script type="module">
+    import { includePartials } from "/src/partials.js";
+    import { initSite } from "/src/main.js";
+    includePartials().then(initSite);
+  </script>
+</body>
+
+</html>

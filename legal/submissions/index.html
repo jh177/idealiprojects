@@ -1,0 +1,87 @@
+<!-- /legal/submissions/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/images/ideali-favicon.png" />
+  <link rel="stylesheet" href="/src/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/src/tw-setup.js"></script>
+  <title>Submissions — Ideali Projects</title>
+  <meta name="description" content="Unsolicited submissions policy for Ideali Projects." />
+</head>
+
+<body class="bg-[var(--surface)]">
+  <div data-include="/partials/header.html"></div>
+
+  <main class="pt-[calc(var(--header-h))]">
+    <section class="bg-[var(--surface)]">
+      <div class="mx-auto max-w-3xl px-6 md:px-10 xl:px-16 py-10 md:py-14">
+        <h1 class="text-3xl md:text-4xl font-semibold tracking-tight text-brand">Submissions</h1>
+
+        <div class="mt-6 space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
+          <p><strong>Effective date:</strong> May 5, 2026</p>
+
+          <p>
+            Ideali Projects does not accept or consider unsolicited creative submissions (including scripts, treatments,
+            pitches,
+            concepts, formats, characters, storylines, or other materials).
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Do not send unsolicited materials
+          </h2>
+          <p>
+            Please do not send unsolicited submissions through email, mail, social media, or any other channel. We only
+            consider
+            submissions at our request and typically through an authorized representative (e.g.,
+            agent/manager/attorney).
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">No confidential relationship</h2>
+          <p>
+            No confidential relationship is created by sending us materials, and we do not agree to treat unsolicited
+            submissions
+            as confidential.
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">If you still send materials</h2>
+          <p>
+            If you nonetheless send us unsolicited materials, you understand and agree that:
+          </p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Your submission will be treated as <strong>non-confidential</strong>.</li>
+            <li>We have <strong>no obligation</strong> to review, acknowledge, or return the materials.</li>
+            <li>We may already be developing or may later develop projects similar to your submission.</li>
+            <li>You will not be entitled to compensation, credit, or any rights based on your submission.</li>
+          </ul>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Submission releases</h2>
+          <p>
+            If we ever request a submission, we may require a written submission release (or similar agreement) before
+            reviewing
+            any materials.
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Contact</h2>
+          <p>
+            Questions? Email us at
+            <a class="underline underline-offset-4 hover:opacity-80"
+              href="mailto:info@idealiprojects.com">info@idealiprojects.com</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/partials/footer.html"></div>
+
+  <script type="module">
+    import { includePartials } from "/src/partials.js";
+    import { initSite } from "/src/main.js";
+    includePartials().then(initSite);
+  </script>
+</body>
+
+</html>

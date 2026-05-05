@@ -1,0 +1,99 @@
+<!-- /legal/privacy/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/images/ideali-favicon.png" />
+  <link rel="stylesheet" href="/src/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/src/tw-setup.js"></script>
+  <title>Privacy — Ideali Projects</title>
+  <meta name="description" content="Privacy notice for Ideali Projects." />
+</head>
+
+<body class="bg-[var(--surface)]">
+  <div data-include="/partials/header.html"></div>
+
+  <main class="pt-[calc(var(--header-h))]">
+    <section class="bg-[var(--surface)]">
+      <div class="mx-auto max-w-3xl px-6 md:px-10 xl:px-16 py-10 md:py-14">
+        <h1 class="text-3xl md:text-4xl font-semibold tracking-tight text-brand">Privacy</h1>
+
+        <div class="mt-6 space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
+          <p><strong>Effective date:</strong> May 5, 2026</p>
+
+          <p>
+            Ideali Projects is a marketing/portfolio website. We do not offer user accounts, and we do not collect
+            personal
+            information directly through website forms.
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Information you provide</h2>
+          <p>
+            If you contact us by email, we will receive the information you choose to share (such as your name, email
+            address,
+            and the contents of your message) in order to respond.
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Basic technical information</h2>
+          <p>
+            Like most websites, our hosting and content delivery providers may process basic technical information when
+            you visit
+            (such as IP address, device/browser type, and standard server logs) to deliver, maintain, and secure the
+            site.
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Third-party services</h2>
+          <p>
+            Some site features rely on third-party services. When these load, the third party may receive technical
+            information
+            from your device (for example, IP address and browser/device information).
+          </p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>
+              <strong>Fonts:</strong> We may load web fonts (e.g., Google Fonts) to display typography.
+            </li>
+            <li>
+              <strong>Video embeds:</strong> Some pages may include embedded video (e.g., Vimeo). Where practical, we
+              may use
+              click-to-load embeds to reduce passive third-party loading.
+            </li>
+          </ul>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Do Not Track</h2>
+          <p>
+            Browser settings such as “Do Not Track” may affect how third-party services behave. If we use embed
+            parameters intended
+            to reduce tracking, they may limit new tracking for that session but cannot guarantee blocking of all
+            third-party
+            processing.
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Changes</h2>
+          <p>
+            We may update this notice from time to time. If we do, we will update the effective date above.
+          </p>
+
+          <h2 class="pt-3 text-xl md:text-2xl font-semibold tracking-tight text-brand">Contact</h2>
+          <p>
+            Questions? Email us at
+            <a class="underline underline-offset-4 hover:opacity-80"
+              href="mailto:info@idealiprojects.com">info@idealiprojects.com</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/partials/footer.html"></div>
+
+  <script type="module">
+    import { includePartials } from "/src/partials.js";
+    import { initSite } from "/src/main.js";
+    includePartials().then(initSite);
+  </script>
+</body>
+
+</html>
