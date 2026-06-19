@@ -6,6 +6,7 @@ export function initSite() {
   const mobileMenu = document.getElementById("nav-menu-mobile"); // slide-in drawer
   const footer = document.getElementById("site-footer");
   const scrollUpBtn = document.getElementById("scroll-up-btn");
+  initVimeoTrailerModal();
 
   // Mark header for white hamburger on the homepage only
   const isHome =
@@ -233,4 +234,116 @@ export function initSite() {
     );
     revealEls.forEach((el) => rio.observe(el));
   }
+}
+
+function initVimeoTrailerModal() {
+  applyVimeoTrailerRegistry();
+  markImdbProjectLinks();
+
+  const trailerCards = document.querySelectorAll("[data-vimeo-id], [data-vimeo-url]");
+  if (!trailerCards.length) return;
+  if (document.querySelector(".trailer-modal")) return;
+
+  const modal = document.createElement("div");
+  modal.className = "trailer-modal";
+  modal.setAttribute("role", "dialog");
+  modal.setAttribute("aria-modal", "true");
+  modal.setAttribute("aria-hidden", "true");
+  modal.innerHTML = `
+    <div class="trailer-modal__backdrop" data-trailer-close></div>
+    <div class="trailer-modal__panel" role="document">
+      <button class="trailer-modal__close" type="button" data-trailer-close aria-label="Close trailer">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6l-12 12" />
+        </svg>
+      </button>
+      <div class="trailer-modal__frame-wrap">
+        <iframe class="trailer-modal__frame" title="Project trailer" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
+
+  const frame = modal.querySelector(".trailer-modal__frame");
+  const closeBtn = modal.querySelector(".trailer-modal__close");
+  let previousFocus = null;
+
+  const getVimeoId = (card) => {
+    const id = card.dataset.vimeoId;
+    if (id) return id;
+
+    const url = card.dataset.vimeoUrl || "";
+    const match = url.match(/(?:vimeo\.com\/(?:video\/)?|player\.vimeo\.com\/video\/)(\d+)/);
+    return match ? match[1] : "";
+  };
+
+  const openTrailer = (card) => {
+    const id = getVimeoId(card);
+    if (!id) return;
+
+    previousFocus = document.activeElement;
+    const title = card.dataset.trailerTitle || card.querySelector("h3")?.textContent?.trim() || "Project trailer";
+    frame.title = title;
+    frame.src = `https://player.vimeo.com/video/${id}?badge=0&title=0&byline=0&portrait=0&dnt=1`;
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("trailer-modal-open");
+    closeBtn.focus({ preventScroll: true });
+  };
+
+  const closeTrailer = () => {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    frame.src = "";
+    document.body.classList.remove("trailer-modal-open");
+    if (previousFocus && typeof previousFocus.focus === "function") {
+      previousFocus.focus({ preventScroll: true });
+    }
+  };
+
+  trailerCards.forEach((card) => {
+    card.classList.add("has-trailer");
+    card.setAttribute("aria-label", `${card.dataset.trailerTitle || card.querySelector("h3")?.textContent?.trim() || "Project"} trailer`);
+
+    card.addEventListener("click", (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      openTrailer(card);
+    });
+  });
+
+  modal.querySelectorAll("[data-trailer-close]").forEach((closeControl) => {
+    closeControl.addEventListener("click", closeTrailer);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("is-open")) {
+      closeTrailer();
+    }
+  });
+}
+
+function applyVimeoTrailerRegistry() {
+  const registry = window.digitalProjectTrailers;
+  if (!registry || typeof registry !== "object") return;
+
+  document.querySelectorAll("main a[href]").forEach((card) => {
+    const imdbId = card.href.match(/title\/(tt\d+)/)?.[1];
+    const trailer = imdbId ? registry[imdbId] : null;
+    if (!trailer) return;
+
+    if (/^\d+$/.test(trailer)) {
+      card.dataset.vimeoId = trailer;
+    } else {
+      card.dataset.vimeoUrl = trailer;
+    }
+  });
+}
+
+function markImdbProjectLinks() {
+  if (!window.digitalProjectTrailers) return;
+
+  document.querySelectorAll("main a[href*='imdb.com/title/']").forEach((card) => {
+    if (card.dataset.vimeoId || card.dataset.vimeoUrl) return;
+    card.classList.add("has-imdb-link");
+  });
 }
