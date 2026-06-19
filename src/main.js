@@ -6,7 +6,7 @@ export function initSite() {
   const mobileMenu = document.getElementById("nav-menu-mobile"); // slide-in drawer
   const footer = document.getElementById("site-footer");
   const scrollUpBtn = document.getElementById("scroll-up-btn");
-  initVimeoTrailerModal();
+  initTrailerModal();
 
   // Mark header for white hamburger on the homepage only
   const isHome =
@@ -236,11 +236,11 @@ export function initSite() {
   }
 }
 
-function initVimeoTrailerModal() {
+function initTrailerModal() {
   applyVimeoTrailerRegistry();
   markImdbProjectLinks();
 
-  const trailerCards = document.querySelectorAll("[data-vimeo-id], [data-vimeo-url]");
+  const trailerCards = document.querySelectorAll("[data-vimeo-id], [data-vimeo-url], [data-youtube-id], [data-youtube-url]");
   if (!trailerCards.length) return;
   if (document.querySelector(".trailer-modal")) return;
 
@@ -267,23 +267,31 @@ function initVimeoTrailerModal() {
   const closeBtn = modal.querySelector(".trailer-modal__close");
   let previousFocus = null;
 
-  const getVimeoId = (card) => {
-    const id = card.dataset.vimeoId;
-    if (id) return id;
+  const getTrailer = (card) => {
+    const vimeoId = card.dataset.vimeoId;
+    if (vimeoId) return { aspect: "vertical", src: `https://player.vimeo.com/video/${vimeoId}?badge=0&title=0&byline=0&portrait=0&dnt=1` };
 
-    const url = card.dataset.vimeoUrl || "";
-    const match = url.match(/(?:vimeo\.com\/(?:video\/)?|player\.vimeo\.com\/video\/)(\d+)/);
-    return match ? match[1] : "";
+    const vimeoMatch = (card.dataset.vimeoUrl || "").match(/(?:vimeo\.com\/(?:video\/)?|player\.vimeo\.com\/video\/)(\d+)/);
+    if (vimeoMatch) return { aspect: "vertical", src: `https://player.vimeo.com/video/${vimeoMatch[1]}?badge=0&title=0&byline=0&portrait=0&dnt=1` };
+
+    const youtubeId = card.dataset.youtubeId;
+    if (youtubeId) return { aspect: "horizontal", src: `https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1` };
+
+    const youtubeMatch = (card.dataset.youtubeUrl || "").match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([A-Za-z0-9_-]{11})/);
+    if (youtubeMatch) return { aspect: "horizontal", src: `https://www.youtube.com/embed/${youtubeMatch[1]}?rel=0&modestbranding=1` };
+
+    return null;
   };
 
   const openTrailer = (card) => {
-    const id = getVimeoId(card);
-    if (!id) return;
+    const trailer = getTrailer(card);
+    if (!trailer) return;
 
     previousFocus = document.activeElement;
     const title = card.dataset.trailerTitle || card.querySelector("h3")?.textContent?.trim() || "Project trailer";
     frame.title = title;
-    frame.src = `https://player.vimeo.com/video/${id}?badge=0&title=0&byline=0&portrait=0&dnt=1`;
+    frame.src = trailer.src;
+    modal.classList.toggle("trailer-modal--horizontal", trailer.aspect === "horizontal");
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("trailer-modal-open");
@@ -292,6 +300,7 @@ function initVimeoTrailerModal() {
 
   const closeTrailer = () => {
     modal.classList.remove("is-open");
+    modal.classList.remove("trailer-modal--horizontal");
     modal.setAttribute("aria-hidden", "true");
     frame.src = "";
     document.body.classList.remove("trailer-modal-open");
@@ -304,10 +313,25 @@ function initVimeoTrailerModal() {
     card.classList.add("has-trailer");
     card.setAttribute("aria-label", `${card.dataset.trailerTitle || card.querySelector("h3")?.textContent?.trim() || "Project"} trailer`);
 
+    const poster = card.querySelector(":scope > div:first-child");
+    if (poster && !poster.querySelector(".trailer-pill")) {
+      const trigger = document.createElement("button");
+      trigger.type = "button";
+      trigger.className = "trailer-pill";
+      trigger.textContent = "Watch trailer";
+      trigger.setAttribute("aria-label", card.getAttribute("aria-label"));
+      poster.appendChild(trigger);
+
+      trigger.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        openTrailer(card);
+      });
+    }
+
     card.addEventListener("click", (event) => {
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
-      openTrailer(card);
     });
   });
 
@@ -345,5 +369,25 @@ function markImdbProjectLinks() {
   document.querySelectorAll("main a[href*='imdb.com/title/']").forEach((card) => {
     if (card.dataset.vimeoId || card.dataset.vimeoUrl) return;
     card.classList.add("has-imdb-link");
+
+    const poster = card.querySelector(":scope > div:first-child");
+    if (poster && !poster.querySelector(".imdb-pill")) {
+      const pill = document.createElement("button");
+      pill.type = "button";
+      pill.className = "imdb-pill";
+      pill.textContent = "View IMDb";
+      poster.appendChild(pill);
+
+      pill.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        window.open(card.href, card.target || "_self", "noopener");
+      });
+    }
+
+    card.addEventListener("click", (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+    });
   });
 }
