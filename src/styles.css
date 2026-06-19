@@ -436,7 +436,8 @@ button[type="submit"]:active {
     cursor: pointer;
 }
 
-.digital-portfolio-grid>a>div:first-child>.absolute.left-3.right-3.bottom-3 {
+.digital-portfolio-grid>a>div:first-child>.absolute.left-3.right-3.bottom-3,
+.portfolio-poster-grid>a>div:first-child>.absolute.left-3.right-3.bottom-3 {
     display: none;
 }
 
