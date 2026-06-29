@@ -370,9 +370,6 @@ function applyVimeoTrailerRegistry() {
       card.dataset.vimeoUrl = trailer;
     } else {
       card.dataset.externalTrailerUrl = trailer;
-      if (trailer.includes("reelshort.com")) {
-        card.dataset.trailerLabel = "Watch on ReelShort";
-      }
     }
   });
 }
