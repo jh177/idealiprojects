@@ -671,7 +671,11 @@ button[type="submit"]:active {
 }
 
 /* Category links (Film & TV / Digital Short-Form / Live Entertainment) —
-   Anton display type, uppercase, with a simple hover shift. */
+   Anton display type, uppercase. Same fade rhythm as the site's original
+   hero-loop animation (fade in, hold, fade out, hold hidden, repeat), but
+   all three run in sync (no per-item stagger) and on the same var(--hero-loop)
+   timing. Kept to opacity only so it never fights the :hover transition
+   below, which only ever touches transform. */
 .hero-link {
     display: block;
     font-family: "Anton", "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -682,51 +686,25 @@ button[type="submit"]:active {
     color: var(--brand);
     text-decoration: none;
     opacity: 0;
-    transition: opacity .18s ease, transform .18s ease;
-    animation: hero-link-in .8s cubic-bezier(.16, .8, .28, 1) forwards;
+    transition: transform .18s ease;
+    animation: hero-link-fade var(--hero-loop) cubic-bezier(.2, .7, .2, 1) infinite both;
 }
 
-/* Once the entrance animation finishes, main.js swaps this class in. From
-   here the link settles into a slow infinite fade-out/in "breathing" loop
-   (opacity only — kept off `transform` so it never fights the :hover
-   transition below, which only ever touches transform). */
-.hero-link.hero-link--in {
-    opacity: 1;
-    animation: hero-pulse 7s ease-in-out infinite;
-}
-
-.hero-stack .hero-link:nth-child(1) { animation-delay: .05s; }
-.hero-stack .hero-link:nth-child(2) { animation-delay: .2s; }
-.hero-stack .hero-link:nth-child(3) { animation-delay: .35s; }
-
-/* Stagger the loop itself once it starts, so the three don't fade together. */
-.hero-stack .hero-link:nth-child(1).hero-link--in { animation-delay: 0s; }
-.hero-stack .hero-link:nth-child(2).hero-link--in { animation-delay: 2s; }
-.hero-stack .hero-link:nth-child(3).hero-link--in { animation-delay: 4s; }
-
-@keyframes hero-link-in {
-    from {
-        opacity: 0;
-        transform: translateY(28px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes hero-pulse {
-    0%, 50% {
-        opacity: 1;
-    }
-    65% {
+@keyframes hero-link-fade {
+    0% {
         opacity: 0;
     }
-    85% {
+    12% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 1;
+    }
+    80% {
         opacity: 0;
     }
     100% {
-        opacity: 1;
+        opacity: 0;
     }
 }
 
@@ -737,8 +715,7 @@ button[type="submit"]:active {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hero-link,
-    .hero-link.hero-link--in {
+    .hero-link {
         animation: none !important;
         opacity: 1 !important;
     }
@@ -750,41 +727,6 @@ button[type="submit"]:active {
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: -.01em;
-}
-
-@keyframes hero-loop {
-    0% {
-        opacity: 0;
-        transform: translateY(16px);
-    }
-
-    12% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    55% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    80% {
-        opacity: 0;
-        transform: translateY(-8px);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(-8px);
-    }
-}
-
-@media (prefers-reduced-motion:reduce) {
-    .hero-word {
-        animation: none;
-        opacity: 1;
-        transform: none;
-    }
 }
 
 /* Universal image dimmer */
