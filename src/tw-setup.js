@@ -2,16 +2,10 @@
 tailwind.config = {
   theme: {
     extend: {
-      colors: {
-        brand: { DEFAULT: "#00522d", accent: "#db3c8a" },
-        cream: "#fff8f6",
-        blush: "#fce5df",
-        lilac: "#d1cfe4",
-        bubblegum: "#f29ebd",
-        cotton: "#e878b2",
-      },
+      colors: { brand: { DEFAULT: "#0f172a", accent: "#ed2100" } },
       fontFamily: {
         sans: [
+          "Jost",
           "Inter",
           "ui-sans-serif",
           "system-ui",
@@ -20,13 +14,6 @@ tailwind.config = {
           "Roboto",
           "Helvetica",
           "Arial",
-          "sans-serif",
-        ],
-        display: [
-          "Anton",
-          "Inter",
-          "ui-sans-serif",
-          "system-ui",
           "sans-serif",
         ],
       },

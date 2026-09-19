@@ -33,358 +33,157 @@
     <!-- Grid of posters (9) -->
     <section class="pb-24 bg-[var(--surface)]">
       <div class="mx-auto px-6 md:px-10 xl:px-16">
-        <!-- 2 cols mobile, 3 cols tablet, 4 cols desktop -->
-        <div class="portfolio-poster-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 justify-items-center items-start">
-
-
-          <!-- Card template:
-               - outer <a> has a max width so posters stay smaller
-               - centered inside its grid cell via mx-auto / place-items-center
-          -->
-
-          <!-- The Season -->
-          <a href="https://www.imdb.com/title/tt36237567" target="_blank" rel="noopener"
-            data-youtube-url="https://www.youtube.com/watch?v=Guk10M9Qy-s"
-            data-trailer-title="The Season trailer"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/film-tv/poster-the season-2026.jpg" alt="The Season poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <!-- Add data-vimeo-id="123456789" or data-vimeo-url="https://vimeo.com/123456789" to any card to enable its trailer modal. -->
+        <div class="carousel" data-carousel>
+          <div class="carousel__viewport">
+            <div class="carousel__track" data-carousel-track>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt36237567" target="_blank" rel="noopener" data-youtube-url="https://www.youtube.com/watch?v=Guk10M9Qy-s" data-trailer-title="The Season trailer" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/film-tv/poster-the season-2026.jpg" alt="The Season poster" loading="lazy">
               </div>
-              <div
-                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">The Season</h3>
-                <p class="text-white/85 text-xs">TV Series — 2026</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">TV Series</span>
+              <span class="pill-badge">2026</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">The Season</h3>
-              <p class="text-sm text-gray-600">TV Series — 2026</p>
-            </div>
-          </a>
-
-          <!-- Sex and Vanity -->
-          <a
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/film-tv/poster-sex_and_vanity.jpg" alt="Sex And Vanity poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">The Season</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/film-tv/poster-sex_and_vanity.jpg" alt="Sex And Vanity poster" loading="lazy">
               </div>
-              <div
-                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Sex And Vanity</h3>
-                <p class="text-white/85 text-xs">Feature — Coming Soon</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Feature</span>
+              <span class="pill-badge">Coming Soon</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Sex And Vanity</h3>
-              <p class="text-sm text-gray-600">Feature — Coming Soon</p>
-            </div>
-          </a>
-
-          <!-- CRA Sequel-->
-          <a
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/film-tv/poster-crazy_rich_asians_sequel.jpeg" alt="Crazy Rich Asians Sequel poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Sex And Vanity</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/film-tv/poster-crazy_rich_asians_sequel.jpeg" alt="Crazy Rich Asians Sequel poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Crazy Rich Asians Sequel</h3>
-                <p class="text-white/85 text-xs">Feature — Coming Soon</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Feature</span>
+              <span class="pill-badge">Coming Soon</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Crazy Rich Asians Sequel</h3>
-              <p class="text-sm text-gray-600">Feature — Coming Soon</p>
-            </div>
-          </a>
-
-          <!-- The Walled City-->
-          <a
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/film-tv/poster-the_walled_city.jpeg" alt="The Walled City poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Crazy Rich Asians Sequel</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/film-tv/poster-the_walled_city.jpeg" alt="The Walled City poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">The Walled City</h3>
-                <p class="text-white/85 text-xs">Feature — Coming Soon</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Feature</span>
+              <span class="pill-badge">Coming Soon</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">The Walled City</h3>
-              <p class="text-sm text-gray-600">Feature — Coming Soon</p>
-            </div>
-          </a>
-
-          <!-- 3 -->
-          <a href="https://www.imdb.com/title/tt7034992" target="_blank" rel="noopener"
-            data-youtube-url="https://www.youtube.com/watch?v=uwK3bqI-3zI"
-            data-trailer-title="I Want to Know Your Parents trailer"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/film-tv/poster-i_want_to_know_your_parents-2022.jpg" alt="I Want to Know Your Parents poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">The Walled City</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt7034992" target="_blank" rel="noopener" data-youtube-url="https://www.youtube.com/watch?v=uwK3bqI-3zI" data-trailer-title="I Want to Know Your Parents trailer" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/film-tv/poster-i_want_to_know_your_parents-2022.jpg" alt="I Want to Know Your Parents poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">I Want to Know Your Parents</h3>
-                <p class="text-white/85 text-xs">Feature — 2022</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Feature</span>
+              <span class="pill-badge">2022</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">I Want to Know Your Parents</h3>
-              <p class="text-sm text-gray-600">Feature — 2022</p>
-            </div>
-          </a>
-
-          <!-- 4 -->
-          <!-- <a href="https://www.imdb.com/title/tt14317880/" target="_blank" rel="noopener"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/film-tv/poster-final_cut-2022.jpg" alt="Final Cut poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">I Want to Know Your Parents</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt12497408/" target="_blank" rel="noopener" data-youtube-url="https://www.youtube.com/watch?v=bm1ZdJRtdJE" data-trailer-title="A Little Red Flower trailer" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/film-tv/poster-a_little_red_flower-2020.jpg" alt="A Little Red Flower poster" loading="lazy">
               </div>
-              <div
-                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Final Cut</h3>
-                <p class="text-white/85 text-xs">Feature — 2022</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Feature</span>
+              <span class="pill-badge">2020</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Final Cut</h3>
-              <p class="text-sm text-gray-600">Feature — 2022</p>
-            </div>
-          </a> -->
-
-          <!-- Little Red Flower -->
-          <a href="https://www.imdb.com/title/tt12497408/" target="_blank" rel="noopener"
-            data-youtube-url="https://www.youtube.com/watch?v=bm1ZdJRtdJE"
-            data-trailer-title="A Little Red Flower trailer"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/film-tv/poster-a_little_red_flower-2020.jpg" alt="A Little Red Flower poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">A Little Red Flower</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt7961060/" target="_blank" rel="noopener" data-youtube-url="https://www.youtube.com/watch?v=FHgm89hKpXU" data-trailer-title="Dragon Ball Super: Broly trailer" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/film-tv/poster-dragon_ball_super_broly-2018.jpg" alt="Dragon Ball Super: Broly poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">A Little Red Flower</h3>
-                <p class="text-white/85 text-xs">Feature — 2020</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Feature</span>
+              <span class="pill-badge">2018</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">A Little Red Flower</h3>
-              <p class="text-sm text-gray-600">Feature — 2020</p>
-            </div>
-          </a>
-
-          <!-- Dragon Ball -->
-          <a href="https://www.imdb.com/title/tt7961060/" target="_blank" rel="noopener"
-            data-youtube-url="https://www.youtube.com/watch?v=FHgm89hKpXU"
-            data-trailer-title="Dragon Ball Super: Broly trailer"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/film-tv/poster-dragon_ball_super_broly-2018.jpg" alt="Dragon Ball Super: Broly poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Dragon Ball Super: Broly</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt6525872/" target="_blank" rel="noopener" data-youtube-url="https://www.youtube.com/watch?v=F6ntAk_VNIw" data-trailer-title="Biblia Koshodô no Jiken Techô trailer" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/film-tv/poster-biblia_koshodo_2018.jpg" alt="Biblia Koshodô no Jiken Techô" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Dragon Ball Super: Broly</h3>
-                <p class="text-white/85 text-xs">Feature — 2018</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Feature</span>
+              <span class="pill-badge">2018</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Dragon Ball Super: Broly</h3>
-              <p class="text-sm text-gray-600">Feature — 2018</p>
-            </div>
-          </a>
-
-          <!-- Biblia -->
-          <a href="https://www.imdb.com/title/tt6525872/" target="_blank" rel="noopener"
-            data-youtube-url="https://www.youtube.com/watch?v=F6ntAk_VNIw"
-            data-trailer-title="Biblia Koshodô no Jiken Techô trailer"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/film-tv/poster-biblia_koshodo_2018.jpg" alt="Biblia Koshodô no Jiken Techô"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Biblia Koshodô no Jiken Techô</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt6010020/" target="_blank" rel="noopener" data-youtube-url="https://www.youtube.com/watch?v=ZIaHCSmgmY4&t=2s" data-trailer-title="Warriors of the Dawn trailer" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/film-tv/poster-warrios_of_the_dawn-2017.jpg" alt="The Wailing poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Biblia Koshodô no Jiken Techô</h3>
-                <p class="text-white/85 text-xs">Feature — 2018</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Feature</span>
+              <span class="pill-badge">2017</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Biblia Koshodô no Jiken Techô</h3>
-              <p class="text-sm text-gray-600">Feature — 2018</p>
-            </div>
-          </a>
-
-          <!-- 7 -->
-          <a href="https://www.imdb.com/title/tt6010020/" target="_blank" rel="noopener"
-            data-youtube-url="https://www.youtube.com/watch?v=ZIaHCSmgmY4&t=2s"
-            data-trailer-title="Warriors of the Dawn trailer"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/film-tv/poster-warrios_of_the_dawn-2017.jpg" alt="The Wailing poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Warriors of the Dawn</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt5215952/" target="_blank" rel="noopener" data-youtube-url="https://www.youtube.com/watch?v=43uAputjI4k" data-trailer-title="The Wailing trailer" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/film-tv/poster-the_wailing-2016.jpg" alt="The Wailing poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Warriors of the Dawn</h3>
-                <p class="text-white/85 text-xs">Feature — 2017</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Feature</span>
+              <span class="pill-badge">2016</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Warriors of the Dawn</h3>
-              <p class="text-sm text-gray-600">Feature — 2017</p>
-            </div>
-          </a>
-
-          <!-- 7 -->
-          <a href="https://www.imdb.com/title/tt5215952/" target="_blank" rel="noopener"
-            data-youtube-url="https://www.youtube.com/watch?v=43uAputjI4k"
-            data-trailer-title="The Wailing trailer"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/film-tv/poster-the_wailing-2016.jpg" alt="The Wailing poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">The Wailing</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt1541995/" target="_blank" rel="noopener" data-youtube-url="https://www.youtube.com/watch?v=Aa93drpm30E" data-trailer-title="Snow Flower and the Secret Fan trailer" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/film-tv/poster-snow_flower_secret_fan_2011.jpg" alt="Snow Flower and the Secret Fan poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">The Wailing</h3>
-                <p class="text-white/85 text-xs">Feature — 2016</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Feature</span>
+              <span class="pill-badge">2011</span>
               </div>
+              <h3 class="project-card__title">Snow Flower and the Secret Fan</h3>
+            </a>
+          </div>
             </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">The Wailing</h3>
-              <p class="text-sm text-gray-600">Feature — 2016</p>
-            </div>
-          </a>
-
-          <!-- 8 -->
-          <!-- <a href="https://www.imdb.com/title/tt2278388/" target="_blank" rel="noopener"
-            data-youtube-url="https://www.youtube.com/watch?v=1Fg5iWmQjwk"
-            data-trailer-title="The Grand Budapest Hotel trailer"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/film-tv/poster-the_grand_budapest_hotel-2014.jpg" alt="The Grand Budapest Hotel poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">The Grand Budapest Hotel</h3>
-                <p class="text-white/85 text-xs">Feature — 2014</p>
-              </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">The Grand Budapest Hotel</h3>
-              <p class="text-sm text-gray-600">Feature — 2014</p>
-            </div>
-          </a> -->
-
-          <!-- 9 -->
-          <!-- <a href="https://www.imdb.com/title/tt2562232/" target="_blank" rel="noopener"
-            data-youtube-url="https://www.youtube.com/watch?v=uJfLoE6hanc"
-            data-trailer-title="Birdman trailer"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/film-tv/poster-birdman_2014.jpg" alt="Birdman poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              </div>
-              <div
-                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Birdman</h3>
-                <p class="text-white/85 text-xs">Feature — 2014</p>
-              </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Birdman</h3>
-              <p class="text-sm text-gray-600">Feature — 2014</p>
-            </div>
-          </a> -->
-
-          <!-- 10 -->
-          <!-- <a href="https://www.imdb.com/title/tt1839492/" target="_blank" rel="noopener"
-            data-youtube-url="https://www.youtube.com/watch?v=xb3_AE-UinY"
-            data-trailer-title="Ruby Sparks trailer"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/film-tv/poster-ruby_sparks-2012.jpg" alt="Ruby Sparks poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              </div>
-              <div
-                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Ruby Sparks</h3>
-                <p class="text-white/85 text-xs">Feature — 2012</p>
-              </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Ruby Sparks</h3>
-              <p class="text-sm text-gray-600">Feature — 2012</p>
-            </div>
-          </a> -->
-
-          <!-- 11 -->
-          <a href="https://www.imdb.com/title/tt1541995/" target="_blank" rel="noopener"
-            data-youtube-url="https://www.youtube.com/watch?v=Aa93drpm30E"
-            data-trailer-title="Snow Flower and the Secret Fan trailer"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/film-tv/poster-snow_flower_secret_fan_2011.jpg" alt="Snow Flower and the Secret Fan poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              </div>
-              <div
-                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Snow Flower and the Secret Fan</h3>
-                <p class="text-white/85 text-xs">Feature — 2011</p>
-              </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Snow Flower and the Secret Fan</h3>
-              <p class="text-sm text-gray-600">Feature — 2011</p>
-            </div>
-          </a>
-
+          </div>
+          <div class="carousel__controls">
+            <button type="button" class="carousel__arrow" data-carousel-prev aria-label="Previous projects">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7" />
+              </svg>
+            </button>
+            <div class="carousel__dots" data-carousel-dots></div>
+            <button type="button" class="carousel__arrow" data-carousel-next aria-label="Next projects">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>

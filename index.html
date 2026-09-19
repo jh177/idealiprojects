@@ -37,10 +37,10 @@
   <!-- (Optional) Preload hero image for faster LCP -->
   <link rel="preload" as="image" href="/images/hero_7.jpeg" imagesrcset="/images/hero_7" imagesizes="100vw" />
 
-  <!-- Anton (display) + Inter (body) -->
+  <!-- Jost (variable) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet">
 
   <!-- JSON-LD Organization -->
@@ -71,225 +71,268 @@
   <div data-include="/partials/header.html"></div>
 
   <div id="content-wrapper">
+    <!-- HERO SECTION (mobile: image on top, text below; md+: 2 columns) -->
+    <section class="relative overflow-hidden min-h-[calc(var(--vh)*100)] h-[calc(var(--vh)*100)]">
+      <div class="grid h-full md:grid-cols-2">
+        <!-- IMAGE first on mobile (50% height) -->
+        <div class="order-1 relative h-[calc(var(--vh)*50)] md:order-2 md:h-full overflow-hidden">
+          <img src="/images/hero_7.jpeg" alt="Ideali montage" class="w-full h-full object-cover img-dim"
+            fetchpriority="high" />
+        </div>
 
-    <!-- ================= HOME: full-bleed editorial sequence ================= -->
+        <!-- TEXT second on mobile (remaining 50%) -->
+        <div class="relative z-[1] order-2 md:order-1 flex items-center px-4 md:px-10 py-8 md:py-0
+                    h-[calc(var(--vh)*50)] md:h-auto overflow-y-auto">
+          <div class="w-full max-w-2xl text-brand">
+            <div class="hero-stack">
+              <a href="/portfolio-film-tv"
+                class="hero-link transition focus:outline-none focus:ring-2 focus:ring-brand/30"
+                style="font-size: clamp(2rem, 4.6vw, 4.4rem);">
+                Film &amp; TV
+              </a>
 
-    <!-- 1) OPENING — category portal, bottom-anchored display type -->
-    <section class="relative overflow-hidden flex items-end"
-      style="min-height: calc(var(--vh)*100); background-color: var(--surface); padding: 140px 24px 60px;">
-      <div class="w-full max-w-5xl mx-auto md:mx-0 md:pl-10 xl:pl-16">
-        <span class="section-label">Ideali Projects — Los Angeles</span>
-        <div class="hero-stack">
-          <a href="/portfolio-film-tv" class="hero-link display-heading block transition"
-            style="font-size: clamp(2.6rem, 9vw, 7rem);">
-            Film &amp; TV
-          </a>
-          <a href="/portfolio-digital-short-form" class="hero-link display-heading block transition"
-            style="font-size: clamp(2.6rem, 9vw, 7rem); color: var(--foudre-cotton);">
-            Digital Short-Form
-          </a>
-          <a href="/portfolio-live-entertainment" class="hero-link display-heading block transition"
-            style="font-size: clamp(2.6rem, 9vw, 7rem); color: var(--brand);">
-            Live Entertainment
-          </a>
+              <a href="/portfolio-digital-short-form"
+                class="hero-link transition focus:outline-none focus:ring-2 focus:ring-brand/30"
+                style="font-size: clamp(2rem, 4.6vw, 4.4rem);">
+                Digital Short-Form
+              </a>
+
+              <a href="/portfolio-live-entertainment"
+                class="hero-link transition focus:outline-none focus:ring-2 focus:ring-brand/30"
+                style="font-size: clamp(2rem, 4.6vw, 4.4rem);">
+                Live Entertainment
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 2) RAW PHOTO BREAK — full-bleed, no frame, no shadow -->
-    <section class="relative overflow-hidden" style="height: calc(var(--vh)*100);">
-      <img src="/images/hero_3.png" alt="On set: camera and lighting for an Ideali Projects production"
-        class="absolute inset-0 w-full h-full object-cover" loading="eager" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none"></div>
-      <div class="absolute left-6 md:left-14 bottom-8 md:bottom-10">
-        <span class="section-label" style="color:#fff; margin-bottom:0;">On Set — Los Angeles</span>
-      </div>
-    </section>
+    <!-- FEATURED PROJECT #The Season -->
+    <section class="relative fade-section min-h-screen h-[calc(var(--vh)*100)] overflow-hidden">
+      <!-- Background -->
+      <img src="/images/background_the_season.jpg" alt="" aria-hidden="true"
+        class="absolute inset-0 w-full h-full object-cover object-center" />
 
-    <!-- 3) WHAT WE DO — statement + numbered process list -->
-    <section id="services" class="relative fade-section" style="background-color: var(--surface); padding: 110px 24px;">
-      <div class="max-w-5xl mx-auto md:pl-10 xl:pl-16">
-        <span class="section-label">What We Do</span>
-        <h2 class="display-heading" style="font-size: clamp(2.4rem, 7vw, 5.5rem);" data-reveal="up">
-          Development.
-          <span style="color: var(--foudre-cotton);">Production.</span>
-          <span style="color: var(--brand);">Live&nbsp;Events.</span>
-        </h2>
-        <p class="mt-8 body-copy text-lg md:text-xl" data-reveal="up" style="--reveal-delay: 80ms;">
-          End-to-end creative development and production across film, TV, digital content, and live events.
-        </p>
+      <!-- Global overlays -->
+      <div class="absolute inset-0 bg-black/55"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent pointer-events-none"></div>
 
-        <div class="process-list mt-16" data-reveal-group>
-          <div class="process-row" data-reveal="up">
-            <div class="flex items-baseline">
-              <span class="process-row__index">01</span>
-              <h3 class="process-row__label">Development</h3>
-            </div>
-            <p class="process-row__desc">IP Sourcing, Packaging, Writers' Room</p>
-          </div>
-          <div class="process-row" data-reveal="up">
-            <div class="flex items-baseline">
-              <span class="process-row__index">02</span>
-              <h3 class="process-row__label">Production</h3>
-            </div>
-            <p class="process-row__desc">From Script To Screen</p>
-          </div>
-          <div class="process-row" data-reveal="up">
-            <div class="flex items-baseline">
-              <span class="process-row__index">03</span>
-              <h3 class="process-row__label">Live Events</h3>
-            </div>
-            <p class="process-row__desc">Concerts Productions, Venue Partnerships</p>
-          </div>
-        </div>
+      <!-- Bottom-half content panel -->
+      <div class="relative max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-0 md:absolute md:inset-x-0 md:bottom-8 md:h-1/2"
+        data-feature="panel"
+        style="padding-right: max(env(safe-area-inset-right), 1rem); padding-left: max(env(safe-area-inset-left), 1rem);">
+        <!-- md+: center-align vertically, space between horizontally -->
+        <div
+          class="h-full flex flex-col items-start justify-end gap-6 md:flex-row md:items-center md:justify-center md:gap-10">
 
-        <div class="mt-14">
-          <a href="/about" class="ghost-link ghost-link__underline text-lg md:text-xl"
-            data-reveal="up" style="--reveal-delay: 120ms">
-            Learn more
-            <span class="circle-btn" style="width: 36px; height: 36px;">
-              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
-              </svg>
-            </span>
-          </a>
+          <!-- LEFT: text -->
+          <div class="text-white max-w-2xl p-6 sm:p-8 md:p-10" data-feature-text data-reveal="up">
+            <p class="text-xs sm:text-sm tracking-[0.22em] uppercase opacity-90">TV Series · 2026</p>
+            <h2 class="mt-3 text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.05]">The Season</h2>
+            <p class="mt-4 sm:mt-5 text-base sm:text-lg max-w-xl opacity-95">
+              <i>New drama series centered on a privileged group of friends whose summer of luxury in Hong Kong devolves into a
+              complex web of deception and power struggles.</i>
+            </p>
+
+            <!-- CTA: only the arrow is clickable -->
+            <div class="mt-7 inline-flex items-center gap-3">
+              <span class="text-white/95">Stream Now</span>
+              <a href="https://www.hulu.com/series/the-season-404a7124-e11c-4a40-91dc-37f2ba179d69" target="_blank" rel="noopener"
+                aria-label="Stream The Season on Hulu"
+                class="inline-flex h-12 w-12 items-center justify-center rounded-full ring-1 ring-white/40 bg-white/5
+                                    transition-transform hover:translate-x-1 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/70">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-5 w-5" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT: poster (centered vertically, padded from right) -->
+          <div class="w-full md:w-auto flex md:items-center md:justify-center md:pr-4">
+            <a href="/portfolio-film-tv/" class="relative block mx-auto md:ml-8 rounded-[14px] overflow-hidden bg-white/5 ring-1 ring-white/60
+                      shadow-[0_8px_30px_rgba(0,0,0,0.25)] focus:outline-none focus:ring-2 focus:ring-white/70"
+              data-feature-poster>
+              <img src="/images/film-tv/poster-the season-2026.jpg" alt="Coming Soon image"
+                class="absolute inset-0 w-full h-full object-cover" />
+              <!-- Mobile spacer keeps aspect until image paints -->
+              <div class="relative pb-[66.666%] md:hidden"></div>
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- 4) SELECTED WORK — the project carousel -->
-    <section class="relative fade-section" style="background-color: var(--surface); padding: 110px 0 130px;">
-      <div class="max-w-6xl mx-auto px-6 md:px-10 xl:px-16">
-        <span class="section-label">Selected Work</span>
-        <h2 class="display-heading" style="font-size: clamp(2.4rem, 7vw, 5.5rem);">Featured Projects</h2>
-      </div>
+    <!-- FEATURED PROJECT CUB -->
+    <section class="relative fade-section min-h-screen h-[calc(var(--vh)*100)] overflow-hidden">
+      <!-- Background -->
+      <img src="/images/background_CUB.jpg" alt="" aria-hidden="true"
+        class="absolute inset-0 w-full h-full object-cover object-center" />
 
-      <div class="max-w-6xl mx-auto mt-14 px-6 md:px-10 xl:px-16">
-        <div class="carousel carousel--feature" data-carousel>
-          <div class="carousel__viewport">
-            <div class="carousel__track" data-carousel-track>
+      <!-- Global overlays -->
+      <div class="absolute inset-0 bg-black/55"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent pointer-events-none"></div>
 
-              <!-- The Season -->
-              <div class="carousel__slide">
-                <a href="https://www.hulu.com/series/the-season-404a7124-e11c-4a40-91dc-37f2ba179d69" target="_blank"
-                  rel="noopener" aria-label="Stream The Season on Hulu" class="feature-slide group">
-                  <div class="feature-slide__media">
-                    <img src="/images/background_the_season.jpg" alt="The Season" loading="lazy">
-                  </div>
-                  <div class="feature-slide__body">
-                    <div class="feature-slide__tags">
-                      <span class="pill-badge">TV Series</span>
-                      <span class="pill-badge">2026</span>
-                    </div>
-                    <h3 class="feature-slide__title">The Season</h3>
-                    <p class="feature-slide__desc">New drama series centered on a privileged group of friends whose
-                      summer of luxury in Hong Kong devolves into a complex web of deception and power struggles.</p>
-                    <span class="ghost-link ghost-link__underline">
-                      Stream Now
-                      <span class="circle-btn" style="width:36px;height:36px;">
-                        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
-                        </svg>
-                      </span>
-                    </span>
-                  </div>
-                </a>
-              </div>
+      <!-- Bottom-half content panel -->
+      <div class="relative max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-0 md:absolute md:inset-x-0 md:bottom-8 md:h-1/2"
+        data-feature="panel"
+        style="padding-right: max(env(safe-area-inset-right), 1rem); padding-left: max(env(safe-area-inset-left), 1rem);">
+        <!-- md+: center-align vertically, space between horizontally -->
+        <div
+          class="h-full flex flex-col items-start justify-end gap-6 md:flex-row-reverse md:items-center md:justify-center md:gap-10">
 
-              <!-- Cheer Up Baby! -->
-              <div class="carousel__slide">
-                <a href="https://www.dramaboxdb.com/movie/41000118651/cheer-up-baby" target="_blank" rel="noopener"
-                  aria-label="View Cheer Up Baby" class="feature-slide group">
-                  <div class="feature-slide__media">
-                    <img src="/images/background_CUB.jpg" alt="Cheer Up Baby!" loading="lazy">
-                  </div>
-                  <div class="feature-slide__body">
-                    <div class="feature-slide__tags">
-                      <span class="pill-badge">Digital Mini Series</span>
-                      <span class="pill-badge">2025</span>
-                    </div>
-                    <h3 class="feature-slide__title">Cheer Up Baby!</h3>
-                    <p class="feature-slide__desc">The latest "TikTok Must-Watch" micro-drama — DramaBox's #1
-                      trending show in its first month of release.</p>
-                    <span class="ghost-link ghost-link__underline">
-                      Stream Now
-                      <span class="circle-btn" style="width:36px;height:36px;">
-                        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
-                        </svg>
-                      </span>
-                    </span>
-                  </div>
-                </a>
-              </div>
+          <!-- LEFT: text -->
+          <div class="text-white max-w-2xl p-6 sm:p-8 md:p-10" data-feature-text data-reveal="up">
+            <p class="text-xs sm:text-sm tracking-[0.22em] uppercase opacity-90">Digital Mini Series · 2025</p>
+            <h2 class="mt-3 text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.05]">Cheer Up Baby!</h2>
+            <p class="mt-4 sm:mt-5 text-base sm:text-lg max-w-xl opacity-95">
+              <i>The Latest "TikTok Must-Watch" Micro-drama</i>
+              <br>
+              <i>DramaBox #1 Trending Show In Its First Month Of Release</i>
+            </p>
 
-              <!-- GAI Evolution -->
-              <div class="carousel__slide">
-                <a href="/portfolio-live-entertainment/" aria-label="Watch GAI Evolution highlights" class="feature-slide group">
-                  <div class="feature-slide__media">
-                    <img src="/images/background_gai_lv.JPG" alt="GAI Evolution 2026 World Tour" loading="lazy">
-                  </div>
-                  <div class="feature-slide__body">
-                    <div class="feature-slide__tags">
-                      <span class="pill-badge">Concert</span>
-                      <span class="pill-badge">2026</span>
-                    </div>
-                    <h3 class="feature-slide__title">GAI Evolution 2026 World Tour</h3>
-                    <p class="feature-slide__desc">Sat · Apr 11, 2026 — Dolby Live, Las Vegas, NV.</p>
-                    <span class="ghost-link ghost-link__underline">
-                      Watch Highlights
-                      <span class="circle-btn" style="width:36px;height:36px;">
-                        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
-                        </svg>
-                      </span>
-                    </span>
-                  </div>
-                </a>
-              </div>
-
-              <!-- The Wailing -->
-              <div class="carousel__slide">
-                <a href="https://www.youtube.com/watch?v=43uAputjI4k" target="_blank" rel="noopener"
-                  aria-label="Watch The Wailing Trailer" class="feature-slide group">
-                  <div class="feature-slide__media">
-                    <img src="/images/background_the_wailing.jpg" alt="The Wailing" loading="lazy">
-                  </div>
-                  <div class="feature-slide__body">
-                    <div class="feature-slide__tags">
-                      <span class="pill-badge">Feature</span>
-                      <span class="pill-badge">2016</span>
-                    </div>
-                    <h3 class="feature-slide__title">The Wailing</h3>
-                    <p class="feature-slide__desc">Official Selection, The 69th Cannes Film Festival — an awarded
-                      sensation with 34 wins and 57 nominations.</p>
-                    <span class="ghost-link ghost-link__underline">
-                      Watch Trailer
-                      <span class="circle-btn" style="width:36px;height:36px;">
-                        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
-                        </svg>
-                      </span>
-                    </span>
-                  </div>
-                </a>
-              </div>
-
+            <!-- CTA: only the arrow is clickable -->
+            <div class="mt-7 inline-flex items-center gap-3">
+              <span class="text-white/95">Stream Now</span>
+              <a href="https://www.dramaboxdb.com/movie/41000118651/cheer-up-baby" target="_blank" rel="noopener" aria-label="View Cheer Up Baby"
+                class="inline-flex h-12 w-12 items-center justify-center rounded-full ring-1 ring-white/40 bg-white/5
+                        transition-transform hover:translate-x-1 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/70">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-5 w-5" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </a>
             </div>
           </div>
-          <div class="carousel__controls">
-            <button type="button" class="carousel__arrow" data-carousel-prev aria-label="Previous project">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7" />
-              </svg>
-            </button>
-            <div class="carousel__dots" data-carousel-dots></div>
-            <button type="button" class="carousel__arrow" data-carousel-next aria-label="Next project">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+
+          <!-- RIGHT: poster (centered vertically, padded from right) -->
+          <div class="w-full md:w-auto flex md:items-center md:justify-center md:pr-4">
+            <a href="/portfolio-digital-short-form" class="relative block mx-auto md:ml-8 rounded-[14px] overflow-hidden bg-white/5 ring-1 ring-white/60
+                      shadow-[0_8px_30px_rgba(0,0,0,0.25)] focus:outline-none focus:ring-2 focus:ring-white/70"
+              data-feature-poster>
+              <img src="/images/digital-media/poster-V-CUB.jpg" alt="Cheer Up Baby poster"
+                class="absolute inset-0 w-full h-full object-cover" />
+              <!-- Mobile spacer keeps aspect until image paints -->
+              <div class="relative pb-[66.666%] md:hidden"></div>
+            </a>
           </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECT GAI-->
+    <section class="relative fade-section min-h-screen h-[calc(var(--vh)*100)] overflow-hidden">
+      <!-- Background -->
+      <img src="/images/background_gai_lv.JPG" alt="" aria-hidden="true"
+        class="absolute inset-0 w-full h-full object-cover object-center" />
+
+      <!-- Global overlays -->
+      <div class="absolute inset-0 bg-black/55"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent pointer-events-none"></div>
+
+      <!-- Bottom-half content panel -->
+      <div class="relative max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-0 md:absolute md:inset-x-0 md:bottom-8 md:h-1/2"
+        data-feature="panel"
+        style="padding-right: max(env(safe-area-inset-right), 1rem); padding-left: max(env(safe-area-inset-left), 1rem);">
+        <!-- md+: center-align vertically, space between horizontally -->
+        <div
+          class="h-full flex flex-col items-start justify-end gap-6 md:flex-row md:items-center md:justify-center md:gap-10">
+
+          <!-- LEFT: text -->
+          <div class="text-white max-w-2xl p-6 sm:p-8 md:p-10" data-feature-text data-reveal="up">
+            <p class="text-xs sm:text-sm tracking-[0.22em] uppercase opacity-90">Concert · 2026</p>
+            <h2 class="mt-3 text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.05]">GAI Evolution 2026 World Tour</h2>
+            <p class="mt-4 sm:mt-5 text-base sm:text-lg max-w-xl opacity-95">
+              <i>Sat • Apr 11, 2026</i>
+              <br>
+              <i>Dolby Live, Las Vegas, NV</i>
+            </p>
+
+            <!-- CTA: only the arrow is clickable -->
+            <div class="mt-7 inline-flex items-center gap-3">
+              <span class="text-white/95">Watch Highlights</span>
+              <a href="/portfolio-live-entertainment/" rel="noopener"
+                aria-label="A Mistaken Surrogate"
+                class="inline-flex h-12 w-12 items-center justify-center rounded-full ring-1 ring-white/40 bg-white/5
+                                  transition-transform hover:translate-x-1 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/70">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-5 w-5" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT: poster (centered vertically, padded from right) -->
+          <div class="w-full md:w-auto flex md:items-center md:justify-center md:pr-4">
+            <a href="/portfolio-live-entertainment/" class="relative block mx-auto md:ml-8 rounded-[14px] overflow-hidden bg-white/5 ring-1 ring-white/60
+                                shadow-[0_8px_30px_rgba(0,0,0,0.25)] focus:outline-none focus:ring-2 focus:ring-white/70"
+              data-feature-poster>
+              <img src="/images/poster_GAI.jpg" alt="GAI Evolution Poster" class="absolute inset-0 w-full h-full object-cover" />
+              <!-- Mobile spacer keeps aspect until image paints -->
+              <div class="relative pb-[66.666%] md:hidden"></div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECT #Wailing -->
+    <section class="relative fade-section min-h-screen h-[calc(var(--vh)*100)] overflow-hidden">
+      <!-- Background -->
+      <img src="/images/background_the_wailing.jpg" alt="" aria-hidden="true"
+        class="absolute inset-0 w-full h-full object-cover object-center" />
+
+      <!-- Global overlays -->
+      <div class="absolute inset-0 bg-black/55"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent pointer-events-none"></div>
+
+      <!-- Bottom-half content panel -->
+      <div class="relative max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-0 md:absolute md:inset-x-0 md:bottom-8 md:h-1/2"
+        data-feature="panel"
+        style="padding-right: max(env(safe-area-inset-right), 1rem); padding-left: max(env(safe-area-inset-left), 1rem);">
+        <!-- md+: center-align vertically, space between horizontally -->
+        <div
+          class="h-full flex flex-col items-start justify-end gap-6 md:flex-row-reverse md:items-center md:justify-center md:gap-10">
+
+          <!-- LEFT: text -->
+          <div class="text-white max-w-2xl p-6 sm:p-8 md:p-10" data-feature-text data-reveal="up">
+            <p class="text-xs sm:text-sm tracking-[0.22em] uppercase opacity-90">Feature · 2016</p>
+            <h2 class="mt-3 text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.05]">The Wailing</h2>
+            <p class="mt-4 sm:mt-5 text-base sm:text-lg max-w-xl opacity-95">
+              <i>Official Selection, The 69th Cannes Film Festival</i>
+              <br>
+              <i>An Awarded Sensation — 34 Wins | 57 Nominations</i>
+            </p>
+
+            <!-- CTA: only the arrow is clickable -->
+            <div class="mt-7 inline-flex items-center gap-3">
+              <span class="text-white/95">Watch Trailer</span>
+              <a href="https://www.youtube.com/watch?v=43uAputjI4k" target="_blank" rel="noopener"
+                aria-label="Watch The Wailing Trailer"
+                class="inline-flex h-12 w-12 items-center justify-center rounded-full ring-1 ring-white/40 bg-white/5
+                            transition-transform hover:translate-x-1 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/70">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-5 w-5" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT: poster (centered vertically, padded from right) -->
+          <div class="w-full md:w-auto flex md:items-left md:justify-center md:pr-4">
+            <a href="/portfolio-film-tv/" class="relative block mx-auto md:ml-8 rounded-[14px] overflow-hidden bg-white/5 ring-1 ring-white/60
+                          shadow-[0_8px_30px_rgba(0,0,0,0.25)] focus:outline-none focus:ring-2 focus:ring-white/70"
+              data-feature-poster>
+              <img src="/images/film-tv/poster-the_wailing-2016-2.png" alt="The Wailing poster"
+                class="absolute inset-0 w-full h-full object-cover" />
+              <!-- Mobile spacer keeps aspect until image paints -->
+              <div class="relative pb-[66.666%] md:hidden"></div>
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
