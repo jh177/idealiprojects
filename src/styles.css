@@ -1062,12 +1062,12 @@ button[type="submit"]:active {
         justify-content: center;
         align-items: center;
         gap: 40px;
-        min-height: 58vh;
-        /* Guarantees a real gap between rows even when the poster is taller
-           than min-height leaves room for (short/laptop viewport heights) —
-           min-height alone can collapse to zero space between rows. */
-        margin-bottom: 32px;
-        padding: 48px 0;
+        /* No min-height: each row sizes to its own content (poster height),
+           kept comfortably shorter than a typical viewport on purpose — so
+           the next project's poster peeks in at the bottom of the screen
+           as a "there's more, keep scrolling" cue. */
+        margin-bottom: 16px;
+        padding: 32px 0;
         text-align: left;
         border-top: none;
     }
