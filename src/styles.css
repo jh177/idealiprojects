@@ -671,7 +671,18 @@ button[type="submit"]:active {
 }
 
 /* Category links (Film & TV / Digital Short-Form / Live Entertainment) —
-   Anton display type, uppercase, with a simple hover shift. */
+   Anton display type, uppercase. Same fade rhythm as the site's original
+   hero-loop animation (fade in, hold, fade out, hold hidden, repeat), but
+   all three run in sync (no per-item stagger) and on the same var(--hero-loop)
+   timing. Kept to opacity only so it never fights the :hover transition
+   below, which only ever touches transform. */
+/* Blur-to-focus entrance (like consolidatedarchitects.com's hero): starts
+   soft/blurred and faded, resolves to sharp — a one-time reveal, all three
+   together, not a repeating loop. */
+/* Sits blurred/hidden/offset by default (plain CSS, no timing dependency).
+   main.js adds .hero-link--reveal once the Anton font has actually loaded
+   (avoids the reveal getting masked by a mid-animation font swap), which
+   triggers the keyframe transition to sharp/visible/settled. */
 .hero-link {
     display: block;
     font-family: "Anton", "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -682,43 +693,57 @@ button[type="submit"]:active {
     color: var(--brand);
     text-decoration: none;
     opacity: 0;
-    transition: opacity .18s ease, transform .18s ease;
-    animation: hero-link-in .8s cubic-bezier(.16, .8, .28, 1) forwards;
+    filter: blur(28px);
+    transition: transform .18s ease;
 }
 
-/* Once the entrance animation finishes, main.js swaps this class in so the
-   animation stops holding `transform` — otherwise it blocks the :hover transition. */
-.hero-link.hero-link--in {
-    opacity: 1;
-    animation: none;
+/* main.js adds this once the Anton font has actually loaded (see
+   initHeroLinks) — the blur/fade keeps looping indefinitely. Kept to
+   opacity + filter only, never transform, so it can never fight the
+   :hover transition above. */
+.hero-link.hero-link--reveal {
+    animation: hero-link-pulse 4s cubic-bezier(.2, .7, .2, 1) infinite;
 }
 
-.hero-stack .hero-link:nth-child(1) { animation-delay: .05s; }
-.hero-stack .hero-link:nth-child(2) { animation-delay: .2s; }
-.hero-stack .hero-link:nth-child(3) { animation-delay: .35s; }
+/* Quick one-by-one cascade instead of all three firing at once. */
+.hero-stack .hero-link:nth-child(1).hero-link--reveal { animation-delay: 0s; }
+.hero-stack .hero-link:nth-child(2).hero-link--reveal { animation-delay: .15s; }
+.hero-stack .hero-link:nth-child(3).hero-link--reveal { animation-delay: .3s; }
 
-@keyframes hero-link-in {
-    from {
+@keyframes hero-link-pulse {
+    0% {
         opacity: 0;
-        transform: translateY(28px);
+        filter: blur(28px);
     }
-    to {
+    10% {
         opacity: 1;
-        transform: translateY(0);
+        filter: blur(0);
+    }
+    75% {
+        opacity: 1;
+        filter: blur(0);
+    }
+    88% {
+        opacity: 0;
+        filter: blur(28px);
+    }
+    100% {
+        opacity: 0;
+        filter: blur(28px);
     }
 }
 
 .hero-link:hover,
 .hero-link:focus-visible {
-    opacity: .8;
     transform: translateX(6px);
     outline: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
     .hero-link {
-        animation: none;
-        opacity: 1;
+        animation: none !important;
+        opacity: 1 !important;
+        filter: none !important;
     }
 }
 
@@ -728,41 +753,6 @@ button[type="submit"]:active {
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: -.01em;
-}
-
-@keyframes hero-loop {
-    0% {
-        opacity: 0;
-        transform: translateY(16px);
-    }
-
-    12% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    55% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    80% {
-        opacity: 0;
-        transform: translateY(-8px);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(-8px);
-    }
-}
-
-@media (prefers-reduced-motion:reduce) {
-    .hero-word {
-        animation: none;
-        opacity: 1;
-        transform: none;
-    }
 }
 
 /* Universal image dimmer */
@@ -1171,7 +1161,9 @@ button[type="submit"]:active {
 }
 
 .project-row__media-link:hover img,
-.project-row__media-link:focus-visible img {
+.project-row__media-link:focus-visible img,
+.project-row__media-static:hover img,
+.project-row__media-static:focus-visible img {
     transform: scale(1.03);
 }
 
@@ -1219,4 +1211,28 @@ button[type="submit"]:active {
 .watch-trailer-btn svg {
     width: 16px;
     height: 16px;
+}
+
+.view-imdb-link {
+    margin-top: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.view-imdb-link:hover,
+.view-imdb-link:focus-visible {
+    color: var(--brand);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    outline: none;
+}
+
+.view-imdb-link svg {
+    width: 13px;
+    height: 13px;
 }
