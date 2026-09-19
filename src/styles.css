@@ -1040,6 +1040,78 @@ button[type="submit"]:active {
         align-items: center;
         padding-bottom: 0;
     }
+
+    /* Live Entertainment: title/description pinned at the top, the
+       contact line + capabilities list pinned at the bottom, instead of
+       one block centered in the middle. */
+    .projects-story__intro--split {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        padding: 64px 0;
+    }
+}
+
+/* ----- Live Entertainment: capabilities list (left, bottom) ---------------- */
+.live-capabilities {
+    margin-top: 24px;
+}
+
+.live-capabilities li + li {
+    margin-top: 16px;
+}
+
+.live-capabilities__label {
+    font-weight: 600;
+    color: var(--brand);
+}
+
+.live-capabilities__desc {
+    margin-top: 2px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* ----- Live Entertainment: highlight reel (right, full column width) ------- */
+.live-highlight {
+    padding: 32px 0 48px;
+}
+
+@media (min-width: 768px) {
+    .live-highlight {
+        padding: calc(var(--header-h) + 72px) 0 64px;
+    }
+}
+
+.live-highlight__video {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #000;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, .14);
+}
+
+.live-highlight__video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.live-highlight__poster {
+    margin-top: 24px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: var(--surface-2);
+    box-shadow: 0 24px 60px rgba(15, 23, 42, .08);
+}
+
+.live-highlight__poster img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .project-row {
