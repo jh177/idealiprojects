@@ -478,6 +478,16 @@ function initTrailerModal() {
     card.classList.add("has-trailer");
     card.setAttribute("aria-label", `${card.dataset.trailerTitle || card.querySelector("h3")?.textContent?.trim() || "Project"} trailer`);
 
+    // A standalone trigger (e.g. a "Watch Trailer" button placed off the poster)
+    // is its own trigger — no pill to inject, no outer-click interception.
+    if (card.tagName === "BUTTON") {
+      card.addEventListener("click", (event) => {
+        event.preventDefault();
+        openTrailer(card);
+      });
+      return;
+    }
+
     const poster = card.querySelector(":scope > div:first-child");
     if (poster && !poster.querySelector(".trailer-pill")) {
       const trigger = document.createElement("button");
