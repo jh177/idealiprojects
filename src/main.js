@@ -7,6 +7,7 @@ export function initSite() {
   const footer = document.getElementById("site-footer");
   const scrollUpBtn = document.getElementById("scroll-up-btn");
   initTrailerModal();
+  initCarousels();
 
   // Mark header for white hamburger on the homepage only
   const isHome =
@@ -234,6 +235,102 @@ export function initSite() {
     );
     revealEls.forEach((el) => rio.observe(el));
   }
+}
+
+/* ----------------------------- project carousel --------------------------- */
+function initCarousels() {
+  document.querySelectorAll("[data-carousel]").forEach((root) => {
+    const track = root.querySelector("[data-carousel-track]");
+    const prevBtn = root.querySelector("[data-carousel-prev]");
+    const nextBtn = root.querySelector("[data-carousel-next]");
+    const dotsWrap = root.querySelector("[data-carousel-dots]");
+    if (!track) return;
+
+    const slides = Array.from(track.children);
+    if (!slides.length) return;
+
+    let slidesPerView = 1;
+    let pageCount = 1;
+    let activePage = 0;
+    let dots = [];
+
+    const computeLayout = () => {
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || "0");
+      slidesPerView = Math.max(1, Math.round((track.clientWidth + gap) / (slideWidth + gap)));
+      pageCount = Math.max(1, Math.ceil(slides.length / slidesPerView));
+    };
+
+    const buildDots = () => {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = "";
+      dots = [];
+      for (let i = 0; i < pageCount; i++) {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "carousel__dot";
+        dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+        dot.addEventListener("click", () => goToPage(i));
+        dotsWrap.appendChild(dot);
+        dots.push(dot);
+      }
+      updateDots();
+    };
+
+    const updateDots = () => {
+      dots.forEach((dot, i) => dot.classList.toggle("is-active", i === activePage));
+    };
+
+    const updateArrows = () => {
+      if (prevBtn) prevBtn.disabled = activePage <= 0;
+      if (nextBtn) nextBtn.disabled = activePage >= pageCount - 1;
+    };
+
+    const goToPage = (page) => {
+      activePage = Math.max(0, Math.min(pageCount - 1, page));
+      const slide = slides[activePage * slidesPerView];
+      if (slide) {
+        track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: "smooth" });
+      }
+      updateDots();
+      updateArrows();
+    };
+
+    const syncFromScroll = () => {
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || "0");
+      const perPageWidth = (slideWidth + gap) * slidesPerView;
+      activePage = Math.min(pageCount - 1, Math.round(track.scrollLeft / perPageWidth));
+      updateDots();
+      updateArrows();
+    };
+
+    let scrollRaf = null;
+    track.addEventListener("scroll", () => {
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = requestAnimationFrame(syncFromScroll);
+    });
+
+    prevBtn?.addEventListener("click", () => goToPage(activePage - 1));
+    nextBtn?.addEventListener("click", () => goToPage(activePage + 1));
+
+    const refresh = () => {
+      computeLayout();
+      buildDots();
+      activePage = 0;
+      updateArrows();
+    };
+
+    refresh();
+    window.addEventListener("resize", () => {
+      const prevPerView = slidesPerView;
+      computeLayout();
+      if (slidesPerView !== prevPerView) {
+        buildDots();
+      }
+      updateArrows();
+    });
+  });
 }
 
 function initTrailerModal() {

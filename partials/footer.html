@@ -1,13 +1,12 @@
-<footer id="site-footer"
-  class="border-t border-black/5 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
-  <div class="max-w-6xl mx-auto px-4 py-16 grid gap-12 md:grid-cols-2">
+<footer id="site-footer" class="border-t" style="background-color: var(--surface); border-color: var(--border);">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid gap-12 md:grid-cols-2">
     <!-- LEFT: Company / Contact -->
     <div class="text-center md:text-left">
-      <h4 class="text-sm tracking-widest uppercase text-gray-500">Contact</h4>
-      <ul class="mt-4 space-y-1 text-[15px] text-gray-800">
-        <li><a class="underline-offset-4 hover:underline"
+      <h4 class="section-label">Contact</h4>
+      <ul class="mt-4 space-y-1 text-[15px] body-copy">
+        <li><a class="ghost-link ghost-link__underline"
             href="mailto:info@idealiprojects.com">info@idealiprojects.com</a></li>
-        <li><a class="underline-offset-4 hover:underline" href="tel:+14243330608">Tel: (424) 333-0608</a></li>
+        <li><a class="ghost-link ghost-link__underline" href="tel:+14243330608">Tel: (424) 333-0608</a></li>
         <li>5150 Wilshire Blvd</li>
         <li>Los Angeles, CA 90036</li>
       </ul>
@@ -17,20 +16,22 @@
     <div class="text-center md:text-right flex flex-col items-center md:items-end gap-8">
       <!-- Social -->
       <div class="w-full">
-        <h4 class="text-sm tracking-widest uppercase text-gray-500">Follow</h4>
+        <h4 class="section-label">Follow</h4>
         <ul class="mt-3 flex items-center gap-4 justify-center md:justify-end">
           <li>
             <a href="https://instagram.com/idealiprojects" target="_blank" rel="noopener" aria-label="Instagram"
-              class="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-black/10 hover:ring-black/20 transition">
-              <img src="https://cdn.simpleicons.org/instagram/000000" alt="Instagram" class="h-6 w-6" width="24"
+              class="inline-flex h-10 w-10 items-center justify-center rounded-full transition"
+              style="background-color: var(--surface-2);">
+              <img src="https://cdn.simpleicons.org/instagram/00522d" alt="Instagram" class="h-5 w-5" width="24"
                 height="24" loading="lazy">
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/company/ideali-projects" target="_blank" rel="noopener"
               aria-label="LinkedIn"
-              class="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-black/10 hover:ring-black/20 transition">
-              <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+              class="inline-flex h-10 w-10 items-center justify-center rounded-full transition"
+              style="background-color: var(--surface-2); color: var(--brand);">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
                 <path
                   d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.454C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0zM6.813 20.452H3.861V9h2.952v11.452zM5.337 7.433a2.062 2.062 0 110-4.124 2.062 2.062 0 010 4.124zM20.447 20.452h-3.554V14.86c0-1.335-.024-3.053-1.86-3.053-1.86 0-2.144 1.45-2.144 2.948v5.697H9.336V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.6 0 4.264 2.371 4.264 5.455v6.288z" />
               </svg>
@@ -38,8 +39,9 @@
           </li>
           <li>
             <a href="https://pro.imdb.com/company/co1081267" target="_blank" rel="noopener" aria-label="IMDb"
-              class="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-black/10 hover:ring-black/20 transition">
-              <img src="https://cdn.simpleicons.org/imdb/000000" alt="IMDb" class="h-6 w-6" width="24" height="24"
+              class="inline-flex h-10 w-10 items-center justify-center rounded-full transition"
+              style="background-color: var(--surface-2);">
+              <img src="https://cdn.simpleicons.org/imdb/00522d" alt="IMDb" class="h-5 w-5" width="24" height="24"
                 loading="lazy">
             </a>
           </li>
@@ -49,16 +51,16 @@
       <!-- Nav + Legal -->
       <div class="w-full space-y-8">
         <nav aria-label="Footer" class="w-full">
-          <h4 class="text-sm tracking-widest uppercase text-gray-500">Navigate</h4>
-          <ul class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1 text-[15px] text-gray-800
+          <h4 class="section-label">Navigate</h4>
+          <ul class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1 text-[15px] body-copy
            justify-items-center md:inline-grid md:justify-items-end md:text-right">
-            <li><a class="underline-offset-4 hover:underline" href="/">Home</a></li>
-            <li><a class="underline-offset-4 hover:underline" href="/about/">About Us</a></li>
-            <li><a class="underline-offset-4 hover:underline" href="/team/">The Team</a></li>
-            <li><a class="underline-offset-4 hover:underline" href="/portfolio-film-tv/">Film &amp; TV</a></li>
-            <li><a class="underline-offset-4 hover:underline" href="/portfolio-digital-short-form/">Digital Short-Form</a>
+            <li><a class="ghost-link ghost-link__underline" href="/">Home</a></li>
+            <li><a class="ghost-link ghost-link__underline" href="/about/">About Us</a></li>
+            <li><a class="ghost-link ghost-link__underline" href="/team/">The Team</a></li>
+            <li><a class="ghost-link ghost-link__underline" href="/portfolio-film-tv/">Film &amp; TV</a></li>
+            <li><a class="ghost-link ghost-link__underline" href="/portfolio-digital-short-form/">Digital Short-Form</a>
             </li>
-            <li><a class="underline-offset-4 hover:underline" href="/portfolio-live-entertainment/">Live Entertainment</a>
+            <li><a class="ghost-link ghost-link__underline" href="/portfolio-live-entertainment/">Live Entertainment</a>
             </li>
           </ul>
         </nav>
@@ -67,20 +69,20 @@
   </div>
 
   <!-- Bottom bar -->
-  <div class="border-t border-black/5">
+  <div class="border-t" style="border-color: var(--border);">
     <div
-      class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-      <div class="text-3xl md:text-5xl font-semibold tracking-[0.25em] leading-none">
-        IDEALI&nbsp;PROJECTS
+      class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div class="display-heading" style="font-size: clamp(28px, 6vw, 56px);">
+        Ideali&nbsp;Projects
       </div>
-      <div class="flex flex-col md:items-end gap-2">
-        <p class="text-sm text-gray-600">© Ideali Projects. All rights reserved.</p>
-        <p class="text-xs text-gray-600 flex flex-wrap gap-x-3 gap-y-1">
-          <a class="underline-offset-4 hover:underline" href="/legal/privacy/">Privacy</a>
-          <span class="text-gray-400">•</span>
-          <a class="underline-offset-4 hover:underline" href="/legal/terms/">Terms</a>
-          <span class="text-gray-400">•</span>
-          <a class="underline-offset-4 hover:underline" href="/legal/submissions/">Submissions</a>
+      <div class="flex flex-col md:items-end gap-2 body-copy text-sm">
+        <p>© Ideali Projects. All rights reserved.</p>
+        <p class="text-xs flex flex-wrap gap-x-3 gap-y-1">
+          <a class="ghost-link ghost-link__underline" href="/legal/privacy/">Privacy</a>
+          <span>•</span>
+          <a class="ghost-link ghost-link__underline" href="/legal/terms/">Terms</a>
+          <span>•</span>
+          <a class="ghost-link ghost-link__underline" href="/legal/submissions/">Submissions</a>
         </p>
       </div>
     </div>

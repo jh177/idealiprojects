@@ -9,415 +9,271 @@
   <link rel="stylesheet" href="/src/styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/src/tw-setup.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
   <title>Digital Media — Ideali Projects</title>
   <meta name="description"
     content="Highlights from our team’s digital media work — Mini-series and online projects." />
 </head>
 
-<body class="bg-[var(--surface)]">
+<body style="background-color: var(--surface);">
   <!-- HEADER -->
   <div data-include="/partials/header.html"></div>
 
   <main id="content-wrapper">
     <!-- Page hero (matches film/TV spacing & container widths) -->
-    <section class="pt-[calc(var(--header-h)+56px)] md:pt-[calc(var(--header-h)+72px)] pb-8 bg-[var(--surface)]">
+    <section class="pt-[calc(var(--header-h)+56px)] md:pt-[calc(var(--header-h)+72px)] pb-8" style="background-color: var(--surface);">
       <div class="mx-auto px-6 md:px-10 xl:px-16">
-        <h1 class="text-3xl md:text-5xl font-semibold tracking-tight text-brand">
+        <span class="section-label">Digital Short-Form</span>
+        <h1 class="display-heading" style="font-size: clamp(2.6rem, 8vw, 6rem);">
           Digital Line-up
         </h1>
-        <p class="mt-3 text-base md:text-xl text-gray-700 max-w-4xl">
+        <p class="mt-5 body-copy text-base md:text-xl">
           A slate of micro-drama digital series produced by our team in collaboration with leading platforms.
         </p>
       </div>
     </section>
 
     <!-- Grid of posters -->
-    <section class="pb-24 bg-[var(--surface)]">
+    <section class="pb-24" style="background-color: var(--surface);">
       <div class="mx-auto px-6 md:px-10 xl:px-16">
-        <!-- 2 cols mobile, 3 cols tablet, 4 cols desktop; centered items; consistent gaps -->
-        <div class="digital-portfolio-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 justify-items-center items-start">
-
-          <!-- Add data-vimeo-id="123456789" or data-vimeo-url="https://vimeo.com/123456789" to any card to enable its trailer modal. -->
-          <!-- Card template: smaller, centered posters with hover overlay/caption -->
-
-          <!-- MSRB -->
-          <a href="https://www.imdb.com/title/tt34895715/" target="_blank" rel="noopener"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-MSRB.jpg" alt="A Mistaken Surrogate for the Ruthless Billionaire poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <!-- Add data-vimeo-id="123456789" or data-vimeo-url="https://vimeo.com/123456789" to any card to enable its trailer modal. -->
+        <div class="carousel" data-carousel>
+          <div class="carousel__viewport">
+            <div class="carousel__track" data-carousel-track>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt34895715/" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-MSRB.jpg" alt="A Mistaken Surrogate for the Ruthless Billionaire poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">A Mistaken Surrogate for the Ruthless Billionaire</h3>
-                <p class="text-white/85 text-xs">Digital Mini Series — 2024</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2024</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">A Mistaken Surrogate for the Ruthless Billionaire</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2024</p>
-            </div>
-          </a>
-
-          <!-- CUB -->
-          <a href="https://www.imdb.com/title/tt37672959/" target="_blank" rel="noopener"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-CUB.jpg" alt="Cheer Up Baby! poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">A Mistaken Surrogate for the Ruthless Billionaire</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt37672959/" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-CUB.jpg" alt="Cheer Up Baby! poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Cheer Up Baby!</h3>
-                <p class="text-white/85 text-xs">Digial Mini Series — 2025</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2025</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Cheer Up Baby!</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2025</p>
-            </div>
-          </a>
-
-          <!-- MFAGD -->
-          <a href="https://www.imdb.com/title/tt36014723/" target="_blank" rel="noopener" data-trailer-label="Watch Episode 1"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-MFAGD.JPG" alt="MFAGD poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Cheer Up Baby!</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt36014723/" target="_blank" rel="noopener" data-trailer-label="Watch Episode 1" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-MFAGD.JPG" alt="MFAGD poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Mistaken for a Gold Digger</h3>
-                <p class="text-white/85 text-xs">Digital Mini Series — 2025</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2025</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Mistaken for a Gold Digger</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2025</p>
-            </div>
-          </a>
-
-          <!-- CFBS -->
-          <a href="https://www.imdb.com/title/tt33347396/" target="_blank" rel="noopener"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-CFBS.jpg" alt="CFBS poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Mistaken for a Gold Digger</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt33347396/" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-CFBS.jpg" alt="CFBS poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Call for Billionaire's Surrogate</h3>
-                <p class="text-white/85 text-xs">Digital Mini Series — 2024</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2024</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Call for Billionaire's Surrogate</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2024</p>
-            </div>
-          </a>
-
-          <!-- BTDWMHBB -->
-          <a href="https://www.imdb.com/title/tt37241211/" target="_blank" rel="noopener"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-BTDWMHB.jpg" alt="BTDWMHB poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Call for Billionaire's Surrogate</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt37241211/" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-BTDWMHB.jpg" alt="BTDWMHB poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Breaking the Deal with My Hockey Bad Boy</h3>
-                <p class="text-white/85 text-xs">Digital Mini Series — 2025</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2025</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Breaking the Deal with My Hockey Bad Boy</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2025</p>
-            </div>
-          </a>
-
-          <!-- Breaking News -->
-          <a href="https://www.imdb.com/title/tt39796975/" target="_blank" rel="noopener"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-BN.jpg" alt="Breaking News"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Breaking the Deal with My Hockey Bad Boy</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt39796975/" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-BN.jpg" alt="Breaking News" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Breaking News</h3>
-                <p class="text-white/85 text-xs">Digial Mini Series — 2026</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2026</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Breaking News</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2026</p>
-            </div>
-          </a>
-
-          <!-- GIB -->
-          <a href="https://www.imdb.com/title/tt35472186/" target="_blank" rel="noopener"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-GIB.jpg" alt="GIB poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Breaking News</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt35472186/" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-GIB.jpg" alt="GIB poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Get Into Bed with My Husband's Best Friend</h3>
-                <p class="text-white/85 text-xs">Digital Mini Series — 2025</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2025</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Get Into Bed with My Husband's Best Friend</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2025</p>
-            </div>
-          </a>
-
-          <!-- Stepbrother -->
-          <a href="https://www.imdb.com/title/tt42719844/" target="_blank" rel="noopener" class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-Stepbrother.jpg" alt="Stepbrother poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Get Into Bed with My Husband's Best Friend</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt42719844/" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-Stepbrother.jpg" alt="Stepbrother poster" loading="lazy">
               </div>
-              <div
-                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">The Stepbrother I Hate to Love</h3>
-                <p class="text-white/85 text-xs">Digial Mini Series — 2026</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2026</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">The Stepbrother I Hate to Love</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2026</p>
-            </div>
-          </a>
-
-          <!-- Touchdown -->
-          <a href="https://www.imdb.com/title/tt41683056/" target="_blank" rel="noopener" class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-Touchdown.jpg" alt="Touchdown poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">The Stepbrother I Hate to Love</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt41683056/" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-Touchdown.jpg" alt="Touchdown poster" loading="lazy">
               </div>
-              <div
-                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Touchdown with a Superstar</h3>
-                <p class="text-white/85 text-xs">Digial Mini Series — 2026</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2026</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Touchdown with a Superstar</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2026</p>
-            </div>
-          </a>
-
-          <!-- Good Girl -->
-          <a href="https://www.imdb.com/title/tt40450840/" target="_blank" rel="noopener" class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-HGG.jpg" alt="His Good Girl poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Touchdown with a Superstar</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt40450840/" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-HGG.jpg" alt="His Good Girl poster" loading="lazy">
               </div>
-              <div
-                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Not His Holy Good Girl</h3>
-                <p class="text-white/85 text-xs">Digial Mini Series — 2026</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2026</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Not His Holy Good Girl</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2026</p>
-            </div>
-          </a>
-
-          <!-- MCTIAB -->
-          <a href="https://www.imdb.com/title/tt39293173/" target="_blank" rel="noopener" class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-MCTIAB.PNG" alt="My Crush Thinks I'm a Boy poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Not His Holy Good Girl</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt39293173/" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-MCTIAB.PNG" alt="My Crush Thinks I'm a Boy poster" loading="lazy">
               </div>
-              <div
-                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">My Crush Thinks I'm a Boy</h3>
-                <p class="text-white/85 text-xs">Digial Mini Series — 2025</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2025</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">My Crush Thinks I'm a Boy</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2025</p>
-            </div>
-          </a>
-
-          <!-- TLMTL -->
-          <a href="https://www.imdb.com/title/tt38644728/" target="_blank" rel="noopener" class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-TLMTL.JPG" alt="They love me too late poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">My Crush Thinks I'm a Boy</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt38644728/" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-TLMTL.JPG" alt="They love me too late poster" loading="lazy">
               </div>
-              <div
-                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">They Love Me Too Late</h3>
-                <p class="text-white/85 text-xs">Digial Mini Series — 2025</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2025</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">They Love Me Too Late</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2025</p>
-            </div>
-          </a>
-
-          <!-- FPD -->
-          <a href="https://www.imdb.com/title/tt38691287/" target="_blank" rel="noopener" class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-FPD.jpg" alt="Fake Princess Diary poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">They Love Me Too Late</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt38691287/" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-FPD.jpg" alt="Fake Princess Diary poster" loading="lazy">
               </div>
-              <div
-                class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Fake Princess Diary</h3>
-                <p class="text-white/85 text-xs">Digial Mini Series — 2025</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2025</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Fake Princess Diary</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2025</p>
-            </div>
-          </a>
-
-          <!-- BHVHMH -->
-          <a href="https://www.imdb.com/title/tt36457971" target="_blank" rel="noopener"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-BHVHMH.jpg" alt="BHVHMH poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Fake Princess Diary</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt36457971" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-BHVHMH.jpg" alt="BHVHMH poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Billionaire Heiress vs Her Murderer Husband</h3>
-                <p class="text-white/85 text-xs">Digital Mini Series — 2025</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2025</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Billionaire Heiress vs Her Murderer Husband</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2025</p>
-            </div>
-          </a>
-
-          <!-- LAIR -->
-          <a href="https://www.imdb.com/title/tt33378984/" target="_blank" rel="noopener"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-LAIR.jpg" alt="LAIR poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Billionaire Heiress vs Her Murderer Husband</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt33378984/" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-LAIR.jpg" alt="LAIR poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Love as I Remember</h3>
-                <p class="text-white/85 text-xs">Digital Mini Series — 2024</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2024</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Love as I Remember</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2024</p>
-            </div>
-          </a>
-
-          <!-- SBSC -->
-          <a href="https://www.imdb.com/title/tt33347404/" target="_blank" rel="noopener"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-SBSC.jpg" alt="SBSC poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Love as I Remember</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt33347404/" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-SBSC.jpg" alt="SBSC poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Second Baby Second Chance</h3>
-                <p class="text-white/85 text-xs">Digital Mini Series — 2024</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2024</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Second Baby Second Chance</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2024</p>
-            </div>
-          </a>
-
-          <!-- 100DFYL -->
-          <a href="https://www.imdb.com/title/tt34691753/" target="_blank" rel="noopener"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-100DFYL.jpg" alt="100DFYL poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">Second Baby Second Chance</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt34691753/" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-100DFYL.jpg" alt="100DFYL poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">100% Destined for Your Love</h3>
-                <p class="text-white/85 text-xs">Digital Mini Series — 2024</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2024</span>
               </div>
-            </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">100% Destined for Your Love</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2024</p>
-            </div>
-          </a>
-
-          <!-- DDDD -->
-          <a href="https://www.imdb.com/title/tt31194220/" target="_blank" rel="noopener"
-            class="group block w-full max-w-[220px] sm:max-w-[240px] mx-auto">
-            <div class="relative aspect-[2/3] overflow-hidden rounded-2xl ring-1 ring-black/10 bg-white shadow-sm">
-              <img src="/images/digital-media/poster-V-DDDD.JPG" alt="DDDD poster"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="project-card__title">100% Destined for Your Love</h3>
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.imdb.com/title/tt31194220/" target="_blank" rel="noopener" class="project-card group">
+              <div class="project-card__media">
+                <img src="/images/digital-media/poster-V-DDDD.JPG" alt="DDDD poster" loading="lazy">
               </div>
-              <div class="absolute left-3 right-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 class="text-white font-semibold">Deadly Divas: Seduce My Billionaire Enemy</h3>
-                <p class="text-white/85 text-xs">Digital Mini Series — 2024</p>
+              <div class="project-card__tags">
+                <span class="pill-badge">Digital Mini Series</span>
+              <span class="pill-badge">2024</span>
               </div>
+              <h3 class="project-card__title">Deadly Divas: Seduce My Billionaire Enemy</h3>
+            </a>
+          </div>
             </div>
-            <div class="mt-3">
-              <h3 class="font-medium text-brand">Deadly Divas: Seduce My Billionaire Enemy</h3>
-              <p class="text-sm text-gray-600">Digital Mini Series — 2024</p>
-            </div>
-          </a>
-
+          </div>
+          <div class="carousel__controls">
+            <button type="button" class="carousel__arrow" data-carousel-prev aria-label="Previous projects">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7" />
+              </svg>
+            </button>
+            <div class="carousel__dots" data-carousel-dots></div>
+            <button type="button" class="carousel__arrow" data-carousel-next aria-label="Next projects">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
