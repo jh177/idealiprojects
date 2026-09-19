@@ -1059,7 +1059,11 @@ button[type="submit"]:active {
 @media (min-width: 768px) {
     .project-row {
         flex-direction: row;
-        justify-content: center;
+        /* flex-start (not center): centering the poster+info as one group
+           shifts the poster left/right depending on how wide that row's
+           title happens to be. Anchoring to the start keeps every poster
+           at the same horizontal position down the page. */
+        justify-content: flex-start;
         align-items: center;
         gap: 40px;
         /* No min-height: each row sizes to its own content (poster height),
