@@ -387,11 +387,33 @@ function initCarousels() {
 
 /* --------------------------- homepage hero links --------------------------- */
 function initHeroLinks() {
-  // Once the blur-to-focus reveal finishes, stop it from holding `transform`
-  // so the :hover transition (translateX) can take over.
-  document.querySelectorAll(".hero-link").forEach((el) => {
-    el.addEventListener("animationend", () => el.classList.add("hero-link--in"), { once: true });
-  });
+  const links = document.querySelectorAll(".hero-link");
+  if (!links.length) return;
+
+  const reveal = () => {
+    links.forEach((el) => {
+      el.addEventListener("animationend", () => el.classList.add("hero-link--in"), { once: true });
+      el.classList.add("hero-link--reveal");
+    });
+  };
+
+  // Wait for the Anton font to actually be loaded before starting the
+  // reveal — otherwise the fallback font renders first, the animation
+  // plays, then Anton swaps in afterwards with no transition, which reads
+  // as "there's no animation." Race against a timeout so a slow/blocked
+  // font request can never leave the links stuck invisible.
+  if (document.fonts && document.fonts.ready) {
+    let done = false;
+    const revealOnce = () => {
+      if (done) return;
+      done = true;
+      reveal();
+    };
+    document.fonts.ready.then(revealOnce);
+    setTimeout(revealOnce, 1200);
+  } else {
+    reveal();
+  }
 }
 
 function initTrailerModal() {
