@@ -686,16 +686,23 @@ button[type="submit"]:active {
     animation: hero-link-in .8s cubic-bezier(.16, .8, .28, 1) forwards;
 }
 
-/* Once the entrance animation finishes, main.js swaps this class in so the
-   animation stops holding `transform` — otherwise it blocks the :hover transition. */
+/* Once the entrance animation finishes, main.js swaps this class in. From
+   here the link settles into a slow infinite fade-out/in "breathing" loop
+   (opacity only — kept off `transform` so it never fights the :hover
+   transition below, which only ever touches transform). */
 .hero-link.hero-link--in {
     opacity: 1;
-    animation: none;
+    animation: hero-pulse 7s ease-in-out infinite;
 }
 
 .hero-stack .hero-link:nth-child(1) { animation-delay: .05s; }
 .hero-stack .hero-link:nth-child(2) { animation-delay: .2s; }
 .hero-stack .hero-link:nth-child(3) { animation-delay: .35s; }
+
+/* Stagger the loop itself once it starts, so the three don't fade together. */
+.hero-stack .hero-link:nth-child(1).hero-link--in { animation-delay: 0s; }
+.hero-stack .hero-link:nth-child(2).hero-link--in { animation-delay: 2s; }
+.hero-stack .hero-link:nth-child(3).hero-link--in { animation-delay: 4s; }
 
 @keyframes hero-link-in {
     from {
@@ -708,17 +715,32 @@ button[type="submit"]:active {
     }
 }
 
+@keyframes hero-pulse {
+    0%, 50% {
+        opacity: 1;
+    }
+    65% {
+        opacity: 0;
+    }
+    85% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .hero-link:hover,
 .hero-link:focus-visible {
-    opacity: .8;
     transform: translateX(6px);
     outline: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hero-link {
-        animation: none;
-        opacity: 1;
+    .hero-link,
+    .hero-link.hero-link--in {
+        animation: none !important;
+        opacity: 1 !important;
     }
 }
 
@@ -1171,7 +1193,9 @@ button[type="submit"]:active {
 }
 
 .project-row__media-link:hover img,
-.project-row__media-link:focus-visible img {
+.project-row__media-link:focus-visible img,
+.project-row__media-static:hover img,
+.project-row__media-static:focus-visible img {
     transform: scale(1.03);
 }
 
@@ -1219,4 +1243,28 @@ button[type="submit"]:active {
 .watch-trailer-btn svg {
     width: 16px;
     height: 16px;
+}
+
+.view-imdb-link {
+    margin-top: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.view-imdb-link:hover,
+.view-imdb-link:focus-visible {
+    color: var(--brand);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    outline: none;
+}
+
+.view-imdb-link svg {
+    width: 13px;
+    height: 13px;
 }
