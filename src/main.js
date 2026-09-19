@@ -8,6 +8,7 @@ export function initSite() {
   const scrollUpBtn = document.getElementById("scroll-up-btn");
   initTrailerModal();
   initCarousels();
+  initHeroLinks();
 
   // Mark header for white hamburger on the homepage only
   const isHome =
@@ -381,6 +382,15 @@ function initCarousels() {
       }
       updateArrows();
     });
+  });
+}
+
+/* --------------------------- homepage hero links --------------------------- */
+function initHeroLinks() {
+  // Once the blur-to-focus reveal finishes, stop it from holding `transform`
+  // so the :hover transition (translateX) can take over.
+  document.querySelectorAll(".hero-link").forEach((el) => {
+    el.addEventListener("animationend", () => el.classList.add("hero-link--in"), { once: true });
   });
 }
 
