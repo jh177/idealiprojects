@@ -694,6 +694,14 @@ button[type="submit"]:active {
     outline: none;
 }
 
+/* Same Anton display treatment, for page/section headings site-wide */
+.font-display {
+    font-family: "Anton", "Jost", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -.01em;
+}
+
 @keyframes hero-loop {
     0% {
         opacity: 0;
