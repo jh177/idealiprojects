@@ -1075,6 +1075,16 @@ button[type="submit"]:active {
     .project-row:last-child {
         margin-bottom: 0;
     }
+
+    /* The fade-up reveal hides the next poster (opacity:0) until it scrolls
+       past the intersection threshold, which defeats the "peek at the next
+       project" cue on desktop. Keep the reveal on mobile; posters are
+       always visible on md+ where the peek matters. */
+    .project-row[data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 .project-row__media-link,
