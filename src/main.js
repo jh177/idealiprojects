@@ -8,6 +8,7 @@ export function initSite() {
   const scrollUpBtn = document.getElementById("scroll-up-btn");
   initTrailerModal();
   initCarousels();
+  initHeroLinks();
 
   // Mark header for white hamburger on the homepage only
   const isHome =
@@ -235,6 +236,15 @@ export function initSite() {
     );
     revealEls.forEach((el) => rio.observe(el));
   }
+}
+
+/* --------------------------- homepage hero links --------------------------- */
+function initHeroLinks() {
+  // Once the entrance animation finishes, stop it from holding `transform`
+  // so the :hover transition (translateX) can take over.
+  document.querySelectorAll(".hero-link").forEach((el) => {
+    el.addEventListener("animationend", () => el.classList.add("hero-link--in"), { once: true });
+  });
 }
 
 /* ----------------------------- project carousel --------------------------- */

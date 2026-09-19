@@ -686,6 +686,13 @@ button[type="submit"]:active {
     animation: hero-link-in .8s cubic-bezier(.16, .8, .28, 1) forwards;
 }
 
+/* Once the entrance animation finishes, main.js swaps this class in so the
+   animation stops holding `transform` — otherwise it blocks the :hover transition. */
+.hero-link.hero-link--in {
+    opacity: 1;
+    animation: none;
+}
+
 .hero-stack .hero-link:nth-child(1) { animation-delay: .05s; }
 .hero-stack .hero-link:nth-child(2) { animation-delay: .2s; }
 .hero-stack .hero-link:nth-child(3) { animation-delay: .35s; }
