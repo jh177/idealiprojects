@@ -1063,9 +1063,17 @@ button[type="submit"]:active {
         align-items: center;
         gap: 40px;
         min-height: 58vh;
-        padding: 0;
+        /* Guarantees a real gap between rows even when the poster is taller
+           than min-height leaves room for (short/laptop viewport heights) —
+           min-height alone can collapse to zero space between rows. */
+        margin-bottom: 64px;
+        padding: 48px 0;
         text-align: left;
         border-top: none;
+    }
+
+    .project-row:last-child {
+        margin-bottom: 0;
     }
 }
 
