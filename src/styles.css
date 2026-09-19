@@ -2,12 +2,12 @@
    Ideali Projects — Custom Styles (Tailwind CDN companion)
    ========================================================================== */
 
-/* Load Jost once for the whole site */
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200..900;1,200..900&display=swap");
+/* Anton (display) + Inter (body/UI) — the design doc's Beni / Clash Grotesk substitutes */
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
 
 html,
 body {
-    font-family: "Jost", Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-optical-sizing: auto;
 }
 
@@ -60,9 +60,8 @@ body {
 
 html,
 body {
-    font-family: "Jost", Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-optical-sizing: auto;
-    /* looks nicer with Jost variable font */
 }
 
 /* Fade-in on view */
@@ -661,59 +660,74 @@ button[type="submit"]:active {
 /* ----- Big stacked hero type --------------------------------------------- */
 .hero-stack {
     display: grid;
-    gap: clamp(18px, 2.2vw, 44px);
+    gap: clamp(36px, 6vw, 96px);
 }
 
 /* extra spacing on very large screens */
 @media (min-width: 1280px) {
     .hero-stack {
-        gap: clamp(24px, 2.6vw, 56px);
+        gap: clamp(48px, 6.5vw, 120px);
     }
 }
 
-.hero-word {
-    font-weight: 600;
-    letter-spacing: -.02em;
-    line-height: 1.02;
-    font-size: clamp(2rem, 4.6vw, 4.4rem);
-    opacity: 0;
-    transform: translateY(16px);
-    animation: hero-loop var(--hero-loop) cubic-bezier(.2, .7, .2, 1) infinite both;
-}
-
-.hero-word:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.hero-word:nth-child(2) {
-    animation-delay: .15s;
-}
-
-.hero-word:nth-child(3) {
-    animation-delay: .30s;
-}
-
-/* Hero pill appears only on hover/focus */
-.hero-pill {
-    display: inline-block;
-    max-width: min(92vw, 48rem);
-    padding: clamp(6px, .9vw, 10px) clamp(12px, 1.6vw, 18px);
-    border-radius: 14px;
-    background: transparent;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    box-shadow: none;
+/* Category links (Film & TV / Digital Short-Form / Live Entertainment) —
+   Anton display type, uppercase, with a simple hover shift. */
+.hero-link {
+    display: block;
+    font-family: "Anton", "Inter", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: 0.01em;
+    color: var(--brand);
     text-decoration: none;
-    color: inherit;
-    transition: background .2s ease, box-shadow .2s ease, -webkit-backdrop-filter .2s ease, backdrop-filter .2s ease;
+    opacity: 0;
+    transition: opacity .18s ease, transform .18s ease;
+    animation: hero-link-in .8s cubic-bezier(.16, .8, .28, 1) forwards;
 }
 
-.hero-pill:hover,
-.hero-pill:focus-visible {
-    background: rgba(var(--surface-rgb), .7);
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, .08);
+/* Once the entrance animation finishes, main.js swaps this class in so the
+   animation stops holding `transform` — otherwise it blocks the :hover transition. */
+.hero-link.hero-link--in {
+    opacity: 1;
+    animation: none;
+}
+
+.hero-stack .hero-link:nth-child(1) { animation-delay: .05s; }
+.hero-stack .hero-link:nth-child(2) { animation-delay: .2s; }
+.hero-stack .hero-link:nth-child(3) { animation-delay: .35s; }
+
+@keyframes hero-link-in {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-link:hover,
+.hero-link:focus-visible {
+    opacity: .8;
+    transform: translateX(6px);
+    outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-link {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+/* Same Anton display treatment, for page/section headings site-wide */
+.font-display {
+    font-family: "Anton", "Inter", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -.01em;
 }
 
 @keyframes hero-loop {
@@ -792,4 +806,199 @@ button[type="submit"]:active {
         transform: none !important;
         transition: none !important;
     }
+}
+
+/* ==========================================================================
+   Project carousel — horizontally snapping cards with arrows + dots
+   (used on the Digital Short-Form and Film & TV portfolio pages)
+   ========================================================================== */
+.carousel {
+    position: relative;
+}
+
+.carousel__viewport {
+    overflow: hidden;
+}
+
+.carousel__track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+    /* Firefox / IE scrollbar hidden, Chrome via ::-webkit below */
+    scrollbar-width: none;
+}
+
+.carousel__track::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel__slide {
+    flex: 0 0 auto;
+    width: 58vw;
+    max-width: 200px;
+    scroll-snap-align: start;
+}
+
+@media (min-width: 640px) {
+    .carousel__slide {
+        width: calc((100% - 20px) / 2);
+        max-width: 200px;
+    }
+}
+
+@media (min-width: 900px) {
+    .carousel__slide {
+        width: calc((100% - 40px) / 3);
+        max-width: 200px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .carousel__slide {
+        width: calc((100% - 60px) / 4);
+        max-width: 200px;
+    }
+}
+
+.carousel__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.carousel__arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+    border: 1.5px solid var(--brand);
+    background: transparent;
+    color: var(--brand);
+    cursor: pointer;
+    transition: background .18s ease, color .18s ease, border-color .18s ease, opacity .18s ease;
+}
+
+.carousel__arrow:hover,
+.carousel__arrow:focus-visible {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    outline: none;
+}
+
+.carousel__arrow:disabled {
+    opacity: .3;
+    cursor: default;
+    background: transparent;
+    border-color: var(--brand);
+    color: var(--brand);
+}
+
+.carousel__arrow svg {
+    width: 18px;
+    height: 18px;
+}
+
+.carousel__dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.carousel__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background: var(--border);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background .18s ease, transform .18s ease;
+}
+
+.carousel__dot:hover {
+    background: var(--muted);
+}
+
+.carousel__dot.is-active {
+    background: var(--accent);
+    transform: scale(1.2);
+}
+
+/* ----- Project card (used inside the carousel) ------------------------------ */
+.project-card {
+    display: block;
+    text-decoration: none;
+}
+
+.project-card__media {
+    position: relative;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--surface-2);
+}
+
+.project-card__media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s cubic-bezier(.2, .7, .2, 1);
+}
+
+.project-card:hover .project-card__media img,
+.project-card:focus-visible .project-card__media img {
+    transform: scale(1.04);
+}
+
+.project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.project-card__title {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.3;
+    color: var(--brand);
+}
+
+.project-card__meta {
+    margin-top: 4px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel__track {
+        scroll-behavior: auto;
+    }
+}
+
+/* ----- Pill badge / tag (used on the project cards above) ------------------- */
+.pill-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 13px;
+    border-radius: 9999px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: .02em;
+    white-space: nowrap;
 }

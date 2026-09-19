@@ -37,10 +37,10 @@
   <!-- (Optional) Preload hero image for faster LCP -->
   <link rel="preload" as="image" href="/images/hero_7.jpeg" imagesrcset="/images/hero_7" imagesizes="100vw" />
 
-  <!-- Jost (variable) -->
+  <!-- Anton (display) + Inter (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200..900;1,200..900&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
     rel="stylesheet">
 
   <!-- JSON-LD Organization -->
@@ -83,104 +83,26 @@
         <!-- TEXT second on mobile (remaining 50%) -->
         <div class="relative z-[1] order-2 md:order-1 flex items-center px-4 md:px-10 py-8 md:py-0
                     h-[calc(var(--vh)*50)] md:h-auto overflow-y-auto">
-          <div class="w-full max-w-2xl text-brand">
+          <div class="w-full max-w-4xl text-brand">
             <div class="hero-stack">
               <a href="/portfolio-film-tv"
-                class="hero-word hero-pill transition rounded-[14px] focus:outline-none focus:ring-2 focus:ring-brand/30">
+                class="hero-link transition focus:outline-none focus:ring-2 focus:ring-brand/30"
+                style="font-size: clamp(2.2rem, 5.2vw, 4.8rem);">
                 Film &amp; TV
               </a>
 
               <a href="/portfolio-digital-short-form"
-                class="hero-word hero-pill transition rounded-[14px] focus:outline-none focus:ring-2 focus:ring-brand/30">
+                class="hero-link transition focus:outline-none focus:ring-2 focus:ring-brand/30"
+                style="font-size: clamp(2.2rem, 5.2vw, 4.8rem);">
                 Digital Short-Form
               </a>
 
               <a href="/portfolio-live-entertainment"
-                class="hero-word hero-pill transition rounded-[14px] focus:outline-none focus:ring-2 focus:ring-brand/30">
+                class="hero-link transition focus:outline-none focus:ring-2 focus:ring-brand/30"
+                style="font-size: clamp(2.2rem, 5.2vw, 4.8rem);">
                 Live Entertainment
               </a>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICE SECTION (centered; icons always in one row; smaller descriptions) -->
-    <section id="services" class="relative fade-section bg-[var(--surface)]">
-      <div class="grid md:grid-cols-2">
-        <!-- LEFT: image -->
-        <div class="order-1 relative h-[48vh] sm:h-[56vh] md:h-[calc(var(--vh)*100)] overflow-hidden">
-          <img src="/images/hero_3.png" alt="On set: camera and lighting for Ideali production"
-            class="absolute inset-0 w-full h-full object-cover img-dim" loading="eager" />
-        </div>
-
-        <!-- RIGHT: content -->
-        <div class="order-2 flex items-center px-6 py-10 md:px-12 md:py-0">
-          <div class="w-full mx-10 text-center">
-            <!-- Top copy -->
-            <p class="text-xl mx-2 md:text-2xl leading-relaxed text-brand/90" data-reveal="up">
-              End-to-end creative development and production across film, TV, digital content, and live events.
-            </p>
-
-            <!-- Icons row: always 3 columns -->
-            <div class="mt-10 grid grid-cols-3 gap-6 sm:gap-8" data-reveal-group>
-              <!-- Development -->
-              <div class="flex flex-col items-center gap-2" data-reveal="up">
-                <span
-                  class="inline-flex h-12 w-12 items-center justify-center rounded-full ring-1 ring-black/10 bg-[var(--surface)]">
-                  <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8"
-                    aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M9 18h6m-5 3h4M6 9a6 6 0 1112 0c0 2.05-.86 3.38-2.06 4.66-.65.7-1.3 1.53-1.53 2.59H9.59c-.23-1.06-.88-1.89-1.53-2.6C6.86 12.37 6 11.04 6 9z" />
-                  </svg>
-                </span>
-                <h3 class="font-semibold text-brand text-sm">Development</h3>
-                <p class="text-xs text-gray-700">IP Sourcing, Packaging,<br>Writers’ Room</p>
-              </div>
-
-              <!-- Production -->
-              <div class="flex flex-col items-center gap-2" data-reveal="up">
-                <span
-                  class="inline-flex h-12 w-12 items-center justify-center rounded-full ring-1 ring-black/10 bg-[var(--surface)]">
-                  <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8"
-                    aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M3 10h18v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8zM3 10l3.6-5.4a2 2 0 011.66-.9H21l-3 4.5M7 10l3-6m4 6l3-6" />
-                  </svg>
-                </span>
-                <h3 class="font-semibold text-brand text-sm">Production</h3>
-                <p class="text-xs text-gray-700">From Script To Screen</p>
-              </div>
-
-              <!-- Live Events -->
-              <div class="flex flex-col items-center gap-2" data-reveal="up">
-                <span
-                  class="inline-flex h-12 w-12 items-center justify-center rounded-full ring-1 ring-black/10 bg-[var(--surface)]">
-                  <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8"
-                    aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M4 8a3 3 0 000 6v2a2 2 0 002 2h12a2 2 0 002-2v-2a3 3 0 000-6V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 7v10" />
-                  </svg>
-                </span>
-                <h3 class="font-semibold text-brand text-sm">Live Events</h3>
-                <p class="text-xs text-gray-700">Concerts Productions,<br>Venue Partnerships</p>
-              </div>
-            </div>
-
-            <!-- CTA -->
-            <div class="mt-12 flex justify-center">
-              <a href="/about" class="group inline-flex items-center gap-3 text-lg md:text-xl font-semibold
-                        text-brand/80 hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand/30
-                        rounded px-3 py-2 -mx-3 -my-2" data-reveal="up" style="--reveal-delay: 120ms">
-                Learn more
-                <svg viewBox="0 0 24 24" class="h-6 w-6 transition-transform translate-x-0.5 group-hover:translate-x-1" fill="none"
-                  stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-
           </div>
         </div>
       </div>
@@ -207,7 +129,7 @@
           <!-- LEFT: text -->
           <div class="text-white max-w-2xl p-6 sm:p-8 md:p-10" data-feature-text data-reveal="up">
             <p class="text-xs sm:text-sm tracking-[0.22em] uppercase opacity-90">TV Series · 2026</p>
-            <h2 class="mt-3 text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.05]">The Season</h2>
+            <h2 class="font-display mt-3 text-4xl sm:text-5xl md:text-6xl leading-[1.05]">The Season</h2>
             <p class="mt-4 sm:mt-5 text-base sm:text-lg max-w-xl opacity-95">
               <i>New drama series centered on a privileged group of friends whose summer of luxury in Hong Kong devolves into a
               complex web of deception and power struggles.</i>
@@ -264,7 +186,7 @@
           <!-- LEFT: text -->
           <div class="text-white max-w-2xl p-6 sm:p-8 md:p-10" data-feature-text data-reveal="up">
             <p class="text-xs sm:text-sm tracking-[0.22em] uppercase opacity-90">Digital Mini Series · 2025</p>
-            <h2 class="mt-3 text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.05]">Cheer Up Baby!</h2>
+            <h2 class="font-display mt-3 text-4xl sm:text-5xl md:text-6xl leading-[1.05]">Cheer Up Baby!</h2>
             <p class="mt-4 sm:mt-5 text-base sm:text-lg max-w-xl opacity-95">
               <i>The Latest "TikTok Must-Watch" Micro-drama</i>
               <br>
@@ -321,7 +243,7 @@
           <!-- LEFT: text -->
           <div class="text-white max-w-2xl p-6 sm:p-8 md:p-10" data-feature-text data-reveal="up">
             <p class="text-xs sm:text-sm tracking-[0.22em] uppercase opacity-90">Concert · 2026</p>
-            <h2 class="mt-3 text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.05]">GAI Evolution 2026 World Tour</h2>
+            <h2 class="font-display mt-3 text-4xl sm:text-5xl md:text-6xl leading-[1.05]">GAI Evolution 2026 World Tour</h2>
             <p class="mt-4 sm:mt-5 text-base sm:text-lg max-w-xl opacity-95">
               <i>Sat • Apr 11, 2026</i>
               <br>
@@ -347,7 +269,7 @@
             <a href="/portfolio-live-entertainment/" class="relative block mx-auto md:ml-8 rounded-[14px] overflow-hidden bg-white/5 ring-1 ring-white/60
                                 shadow-[0_8px_30px_rgba(0,0,0,0.25)] focus:outline-none focus:ring-2 focus:ring-white/70"
               data-feature-poster>
-              <img src="/images/poster_GAI.jpg" alt="GAI Evolution Poster" class="absolute inset-0 w-full h-full object-cover" />
+              <img src="/images/poster_GAI-web.jpg" alt="GAI Evolution Poster" class="absolute inset-0 w-full h-full object-cover" />
               <!-- Mobile spacer keeps aspect until image paints -->
               <div class="relative pb-[66.666%] md:hidden"></div>
             </a>
@@ -378,7 +300,7 @@
           <!-- LEFT: text -->
           <div class="text-white max-w-2xl p-6 sm:p-8 md:p-10" data-feature-text data-reveal="up">
             <p class="text-xs sm:text-sm tracking-[0.22em] uppercase opacity-90">Feature · 2016</p>
-            <h2 class="mt-3 text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.05]">The Wailing</h2>
+            <h2 class="font-display mt-3 text-4xl sm:text-5xl md:text-6xl leading-[1.05]">The Wailing</h2>
             <p class="mt-4 sm:mt-5 text-base sm:text-lg max-w-xl opacity-95">
               <i>Official Selection, The 69th Cannes Film Festival</i>
               <br>

@@ -7,6 +7,8 @@ export function initSite() {
   const footer = document.getElementById("site-footer");
   const scrollUpBtn = document.getElementById("scroll-up-btn");
   initTrailerModal();
+  initCarousels();
+  initHeroLinks();
 
   // Mark header for white hamburger on the homepage only
   const isHome =
@@ -234,6 +236,162 @@ export function initSite() {
     );
     revealEls.forEach((el) => rio.observe(el));
   }
+}
+
+/* --------------------------- homepage hero links --------------------------- */
+function initHeroLinks() {
+  // Once the entrance animation finishes, stop it from holding `transform`
+  // so the :hover transition (translateX) can take over.
+  document.querySelectorAll(".hero-link").forEach((el) => {
+    el.addEventListener("animationend", () => el.classList.add("hero-link--in"), { once: true });
+  });
+}
+
+/* ----------------------------- project carousel --------------------------- */
+function initCarousels() {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  document.querySelectorAll("[data-carousel]").forEach((root) => {
+    const track = root.querySelector("[data-carousel-track]");
+    const prevBtn = root.querySelector("[data-carousel-prev]");
+    const nextBtn = root.querySelector("[data-carousel-next]");
+    const dotsWrap = root.querySelector("[data-carousel-dots]");
+    if (!track) return;
+
+    const slides = Array.from(track.children);
+    if (!slides.length) return;
+
+    // data-carousel-autoplay="5000" on the root enables auto-rotate (ms per slide);
+    // it also makes prev/next/dots wrap around instead of stopping at the ends.
+    const autoplayMs = parseInt(root.dataset.carouselAutoplay, 10) || 0;
+    const loop = autoplayMs > 0;
+
+    let slidesPerView = 1;
+    let pageCount = 1;
+    let activePage = 0;
+    let dots = [];
+    let autoplayTimer = null;
+
+    const computeLayout = () => {
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || "0");
+      slidesPerView = Math.max(1, Math.round((track.clientWidth + gap) / (slideWidth + gap)));
+      pageCount = Math.max(1, Math.ceil(slides.length / slidesPerView));
+    };
+
+    const buildDots = () => {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = "";
+      dots = [];
+      for (let i = 0; i < pageCount; i++) {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "carousel__dot";
+        dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+        dot.addEventListener("click", () => {
+          goToPage(i);
+          startAutoplay();
+        });
+        dotsWrap.appendChild(dot);
+        dots.push(dot);
+      }
+      updateDots();
+    };
+
+    const updateDots = () => {
+      dots.forEach((dot, i) => dot.classList.toggle("is-active", i === activePage));
+    };
+
+    const updateArrows = () => {
+      if (loop) {
+        if (prevBtn) prevBtn.disabled = false;
+        if (nextBtn) nextBtn.disabled = false;
+        return;
+      }
+      if (prevBtn) prevBtn.disabled = activePage <= 0;
+      if (nextBtn) nextBtn.disabled = activePage >= pageCount - 1;
+    };
+
+    const goToPage = (page) => {
+      activePage = loop
+        ? ((page % pageCount) + pageCount) % pageCount
+        : Math.max(0, Math.min(pageCount - 1, page));
+      const slide = slides[activePage * slidesPerView];
+      if (slide) {
+        track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: "smooth" });
+      }
+      updateDots();
+      updateArrows();
+    };
+
+    const syncFromScroll = () => {
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || "0");
+      const perPageWidth = (slideWidth + gap) * slidesPerView;
+      activePage = Math.min(pageCount - 1, Math.round(track.scrollLeft / perPageWidth));
+      updateDots();
+      updateArrows();
+    };
+
+    let scrollRaf = null;
+    track.addEventListener("scroll", () => {
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = requestAnimationFrame(syncFromScroll);
+    });
+
+    prevBtn?.addEventListener("click", () => {
+      goToPage(activePage - 1);
+      startAutoplay();
+    });
+    nextBtn?.addEventListener("click", () => {
+      goToPage(activePage + 1);
+      startAutoplay();
+    });
+
+    /* ------------------------------- auto-rotate ------------------------------ */
+    const stopAutoplay = () => {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    };
+
+    const startAutoplay = () => {
+      if (!loop || prefersReducedMotion || pageCount <= 1) return;
+      stopAutoplay();
+      autoplayTimer = setInterval(() => goToPage(activePage + 1), autoplayMs);
+    };
+
+    if (loop) {
+      // Pause on hover/focus/touch so it never fights a reader who's interacting.
+      root.addEventListener("mouseenter", stopAutoplay);
+      root.addEventListener("mouseleave", startAutoplay);
+      root.addEventListener("focusin", stopAutoplay);
+      root.addEventListener("focusout", (e) => {
+        if (!root.contains(e.relatedTarget)) startAutoplay();
+      });
+      track.addEventListener("pointerdown", stopAutoplay);
+      track.addEventListener("pointerup", startAutoplay);
+    }
+
+    const refresh = () => {
+      computeLayout();
+      buildDots();
+      activePage = 0;
+      updateArrows();
+    };
+
+    refresh();
+    startAutoplay();
+    window.addEventListener("resize", () => {
+      const prevPerView = slidesPerView;
+      computeLayout();
+      if (slidesPerView !== prevPerView) {
+        buildDots();
+      }
+      updateArrows();
+    });
+  });
 }
 
 function initTrailerModal() {
