@@ -1066,7 +1066,7 @@ button[type="submit"]:active {
         /* Guarantees a real gap between rows even when the poster is taller
            than min-height leaves room for (short/laptop viewport heights) —
            min-height alone can collapse to zero space between rows. */
-        margin-bottom: 64px;
+        margin-bottom: 32px;
         padding: 48px 0;
         text-align: left;
         border-top: none;
