@@ -1040,36 +1040,6 @@ button[type="submit"]:active {
         align-items: center;
         padding-bottom: 0;
     }
-
-    /* Live Entertainment: title/description pinned at the top, the
-       contact line + capabilities list pinned at the bottom, instead of
-       one block centered in the middle. */
-    .projects-story__intro--split {
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: space-between;
-        padding: 64px 0;
-    }
-}
-
-/* ----- Live Entertainment: capabilities list (left, bottom) ---------------- */
-.live-capabilities {
-    margin-top: 24px;
-}
-
-.live-capabilities li + li {
-    margin-top: 16px;
-}
-
-.live-capabilities__label {
-    font-weight: 600;
-    color: var(--brand);
-}
-
-.live-capabilities__desc {
-    margin-top: 2px;
-    font-size: 14px;
-    color: var(--muted);
 }
 
 /* ----- Live Entertainment: highlight reel (right, full column width) ------- */
