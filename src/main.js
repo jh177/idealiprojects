@@ -239,6 +239,8 @@ export function initSite() {
 
 /* ----------------------------- project carousel --------------------------- */
 function initCarousels() {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   document.querySelectorAll("[data-carousel]").forEach((root) => {
     const track = root.querySelector("[data-carousel-track]");
     const prevBtn = root.querySelector("[data-carousel-prev]");
@@ -249,10 +251,16 @@ function initCarousels() {
     const slides = Array.from(track.children);
     if (!slides.length) return;
 
+    // data-carousel-autoplay="5000" on the root enables auto-rotate (ms per slide);
+    // it also makes prev/next/dots wrap around instead of stopping at the ends.
+    const autoplayMs = parseInt(root.dataset.carouselAutoplay, 10) || 0;
+    const loop = autoplayMs > 0;
+
     let slidesPerView = 1;
     let pageCount = 1;
     let activePage = 0;
     let dots = [];
+    let autoplayTimer = null;
 
     const computeLayout = () => {
       const slideWidth = slides[0].getBoundingClientRect().width;
@@ -270,7 +278,10 @@ function initCarousels() {
         dot.type = "button";
         dot.className = "carousel__dot";
         dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
-        dot.addEventListener("click", () => goToPage(i));
+        dot.addEventListener("click", () => {
+          goToPage(i);
+          startAutoplay();
+        });
         dotsWrap.appendChild(dot);
         dots.push(dot);
       }
@@ -282,12 +293,19 @@ function initCarousels() {
     };
 
     const updateArrows = () => {
+      if (loop) {
+        if (prevBtn) prevBtn.disabled = false;
+        if (nextBtn) nextBtn.disabled = false;
+        return;
+      }
       if (prevBtn) prevBtn.disabled = activePage <= 0;
       if (nextBtn) nextBtn.disabled = activePage >= pageCount - 1;
     };
 
     const goToPage = (page) => {
-      activePage = Math.max(0, Math.min(pageCount - 1, page));
+      activePage = loop
+        ? ((page % pageCount) + pageCount) % pageCount
+        : Math.max(0, Math.min(pageCount - 1, page));
       const slide = slides[activePage * slidesPerView];
       if (slide) {
         track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: "smooth" });
@@ -311,8 +329,40 @@ function initCarousels() {
       scrollRaf = requestAnimationFrame(syncFromScroll);
     });
 
-    prevBtn?.addEventListener("click", () => goToPage(activePage - 1));
-    nextBtn?.addEventListener("click", () => goToPage(activePage + 1));
+    prevBtn?.addEventListener("click", () => {
+      goToPage(activePage - 1);
+      startAutoplay();
+    });
+    nextBtn?.addEventListener("click", () => {
+      goToPage(activePage + 1);
+      startAutoplay();
+    });
+
+    /* ------------------------------- auto-rotate ------------------------------ */
+    const stopAutoplay = () => {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    };
+
+    const startAutoplay = () => {
+      if (!loop || prefersReducedMotion || pageCount <= 1) return;
+      stopAutoplay();
+      autoplayTimer = setInterval(() => goToPage(activePage + 1), autoplayMs);
+    };
+
+    if (loop) {
+      // Pause on hover/focus/touch so it never fights a reader who's interacting.
+      root.addEventListener("mouseenter", stopAutoplay);
+      root.addEventListener("mouseleave", startAutoplay);
+      root.addEventListener("focusin", stopAutoplay);
+      root.addEventListener("focusout", (e) => {
+        if (!root.contains(e.relatedTarget)) startAutoplay();
+      });
+      track.addEventListener("pointerdown", stopAutoplay);
+      track.addEventListener("pointerup", startAutoplay);
+    }
 
     const refresh = () => {
       computeLayout();
@@ -322,6 +372,7 @@ function initCarousels() {
     };
 
     refresh();
+    startAutoplay();
     window.addEventListener("resize", () => {
       const prevPerView = slidesPerView;
       computeLayout();

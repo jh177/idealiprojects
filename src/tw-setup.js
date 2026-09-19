@@ -5,7 +5,6 @@ tailwind.config = {
       colors: { brand: { DEFAULT: "#0f172a", accent: "#ed2100" } },
       fontFamily: {
         sans: [
-          "Jost",
           "Inter",
           "ui-sans-serif",
           "system-ui",
@@ -16,6 +15,7 @@ tailwind.config = {
           "Arial",
           "sans-serif",
         ],
+        display: ["Anton", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       boxShadow: { card: "0 8px 30px rgba(0,0,0,.08)" },
     },

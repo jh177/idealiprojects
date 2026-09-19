@@ -2,14 +2,12 @@
    Ideali Projects — Custom Styles (Tailwind CDN companion)
    ========================================================================== */
 
-/* Load Jost once for the whole site */
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200..900;1,200..900&display=swap");
-/* Anton — display font used only for the homepage category links (hero-link) */
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+/* Anton (display) + Inter (body/UI) — the design doc's Beni / Clash Grotesk substitutes */
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
 
 html,
 body {
-    font-family: "Jost", Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-optical-sizing: auto;
 }
 
@@ -62,9 +60,8 @@ body {
 
 html,
 body {
-    font-family: "Jost", Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-optical-sizing: auto;
-    /* looks nicer with Jost variable font */
 }
 
 /* Fade-in on view */
@@ -663,13 +660,13 @@ button[type="submit"]:active {
 /* ----- Big stacked hero type --------------------------------------------- */
 .hero-stack {
     display: grid;
-    gap: clamp(18px, 2.2vw, 44px);
+    gap: clamp(26px, 3.2vw, 64px);
 }
 
 /* extra spacing on very large screens */
 @media (min-width: 1280px) {
     .hero-stack {
-        gap: clamp(24px, 2.6vw, 56px);
+        gap: clamp(34px, 3.6vw, 84px);
     }
 }
 
@@ -677,14 +674,31 @@ button[type="submit"]:active {
    Anton display type, uppercase, with a simple hover shift. */
 .hero-link {
     display: block;
-    font-family: "Anton", "Jost", ui-sans-serif, system-ui, sans-serif;
+    font-family: "Anton", "Inter", ui-sans-serif, system-ui, sans-serif;
     font-weight: 400;
     text-transform: uppercase;
     line-height: 0.9;
     letter-spacing: -.01em;
     color: var(--brand);
     text-decoration: none;
+    opacity: 0;
     transition: opacity .18s ease, transform .18s ease;
+    animation: hero-link-in .8s cubic-bezier(.16, .8, .28, 1) forwards;
+}
+
+.hero-stack .hero-link:nth-child(1) { animation-delay: .05s; }
+.hero-stack .hero-link:nth-child(2) { animation-delay: .2s; }
+.hero-stack .hero-link:nth-child(3) { animation-delay: .35s; }
+
+@keyframes hero-link-in {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-link:hover,
@@ -694,9 +708,16 @@ button[type="submit"]:active {
     outline: none;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .hero-link {
+        animation: none;
+        opacity: 1;
+    }
+}
+
 /* Same Anton display treatment, for page/section headings site-wide */
 .font-display {
-    font-family: "Anton", "Jost", ui-sans-serif, system-ui, sans-serif;
+    font-family: "Anton", "Inter", ui-sans-serif, system-ui, sans-serif;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: -.01em;
