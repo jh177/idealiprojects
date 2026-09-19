@@ -698,27 +698,32 @@ button[type="submit"]:active {
 }
 
 /* main.js adds this once the Anton font has actually loaded (see
-   initHeroLinks) — the blur/fade keeps looping indefinitely, all three
-   together. Kept to opacity + filter only, never transform, so it can
-   never fight the :hover transition above. */
+   initHeroLinks) — the blur/fade keeps looping indefinitely. Kept to
+   opacity + filter only, never transform, so it can never fight the
+   :hover transition above. */
 .hero-link.hero-link--reveal {
-    animation: hero-link-pulse 6s cubic-bezier(.2, .7, .2, 1) infinite;
+    animation: hero-link-pulse 4s cubic-bezier(.2, .7, .2, 1) infinite;
 }
+
+/* Quick one-by-one cascade instead of all three firing at once. */
+.hero-stack .hero-link:nth-child(1).hero-link--reveal { animation-delay: 0s; }
+.hero-stack .hero-link:nth-child(2).hero-link--reveal { animation-delay: .15s; }
+.hero-stack .hero-link:nth-child(3).hero-link--reveal { animation-delay: .3s; }
 
 @keyframes hero-link-pulse {
     0% {
         opacity: 0;
         filter: blur(28px);
     }
-    20% {
+    10% {
         opacity: 1;
         filter: blur(0);
     }
-    65% {
+    75% {
         opacity: 1;
         filter: blur(0);
     }
-    90% {
+    88% {
         opacity: 0;
         filter: blur(28px);
     }
