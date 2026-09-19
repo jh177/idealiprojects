@@ -391,10 +391,7 @@ function initHeroLinks() {
   if (!links.length) return;
 
   const reveal = () => {
-    links.forEach((el) => {
-      el.addEventListener("animationend", () => el.classList.add("hero-link--in"), { once: true });
-      el.classList.add("hero-link--reveal");
-    });
+    links.forEach((el) => el.classList.add("hero-link--reveal"));
   };
 
   // Wait for the Anton font to actually be loaded before starting the

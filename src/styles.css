@@ -694,35 +694,38 @@ button[type="submit"]:active {
     text-decoration: none;
     opacity: 0;
     filter: blur(28px);
-    transform: translateY(28px);
     transition: transform .18s ease;
 }
 
+/* main.js adds this once the Anton font has actually loaded (see
+   initHeroLinks) — the blur/fade keeps looping indefinitely, all three
+   together. Kept to opacity + filter only, never transform, so it can
+   never fight the :hover transition above. */
 .hero-link.hero-link--reveal {
-    animation: hero-link-reveal 1.8s cubic-bezier(.19, 1, .22, 1) forwards;
+    animation: hero-link-pulse 6s cubic-bezier(.2, .7, .2, 1) infinite;
 }
 
-@keyframes hero-link-reveal {
-    from {
+@keyframes hero-link-pulse {
+    0% {
         opacity: 0;
         filter: blur(28px);
-        transform: translateY(28px);
     }
-    to {
+    20% {
         opacity: 1;
         filter: blur(0);
-        transform: translateY(0);
     }
-}
-
-/* Once the reveal finishes, main.js swaps this class in: locks in the
-   settled state and drops the animation, which otherwise keeps holding
-   `transform` forever and blocks the :hover transition below. */
-.hero-link.hero-link--in {
-    opacity: 1;
-    filter: blur(0);
-    transform: none;
-    animation: none;
+    65% {
+        opacity: 1;
+        filter: blur(0);
+    }
+    90% {
+        opacity: 0;
+        filter: blur(28px);
+    }
+    100% {
+        opacity: 0;
+        filter: blur(28px);
+    }
 }
 
 .hero-link:hover,
@@ -736,7 +739,6 @@ button[type="submit"]:active {
         animation: none !important;
         opacity: 1 !important;
         filter: none !important;
-        transform: none !important;
     }
 }
 
