@@ -1243,6 +1243,10 @@ button[type="submit"]:active {
     outline: none;
 }
 
+.project-row__actions > .view-imdb-link:first-child {
+    margin-top: 0;
+}
+
 .view-imdb-link svg {
     width: 13px;
     height: 13px;
