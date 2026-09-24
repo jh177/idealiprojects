@@ -1215,6 +1215,10 @@ button[type="submit"]:active {
     transform: scale(.97);
 }
 
+.project-row__actions--start {
+    align-items: flex-start;
+}
+
 .project-row__actions .watch-trailer-btn {
     margin-top: 0;
 }
