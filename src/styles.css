@@ -1181,6 +1181,13 @@ button[type="submit"]:active {
     color: var(--muted);
 }
 
+.project-row__actions {
+    margin-top: 24px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .watch-trailer-btn {
     margin-top: 24px;
     display: inline-flex;
@@ -1206,6 +1213,10 @@ button[type="submit"]:active {
 
 .watch-trailer-btn:active {
     transform: scale(.97);
+}
+
+.project-row__actions .watch-trailer-btn {
+    margin-top: 0;
 }
 
 .watch-trailer-btn svg {
